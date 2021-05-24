@@ -8,3 +8,14 @@ C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.csp
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.csproj.CoreCompileInputs.cache
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.exe
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.pdb
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\bin\Debug\juego.exe.config
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\bin\Debug\juego.exe
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\bin\Debug\juego.pdb
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.csprojAssemblyReference.cache
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.MenuPrincipal.resources
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.Properties.Resources.resources
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.VentanaJuego.resources
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.csproj.GenerateResource.cache
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.csproj.CoreCompileInputs.cache
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.exe
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.pdb

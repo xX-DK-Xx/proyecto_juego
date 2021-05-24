@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Timers;
-
 
 namespace juego
 {
-    public partial class Form1 : Form
+    public partial class VentanaJuego : Form
     {
-        public int hpp=3;
+        public int hpp = 3;
         public int sha;
-        public Form1()
+        public VentanaJuego()
         {
             InitializeComponent();
             HP();
@@ -24,28 +22,27 @@ namespace juego
             pla.SizeMode = PictureBoxSizeMode.Zoom;
             ene.Image = Image.FromFile(@"ima\bruja.png");
             ene.SizeMode = PictureBoxSizeMode.Zoom;
-            int r= new Random().Next(0,11);
-            texto.Text =""+r;
+            int r = new Random().Next(0, 11);
+            texto.Text = "" + r;
         }
-       
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Respuesta_Click(object sender, EventArgs e)
         {
-            int res= int.Parse(tex.Text);
+            int res = int.Parse(tex.Text);
             cal_res(res);
         }
-        private void cal_res(int ress)
+        private void cal_res(int respuestarecibida)
         {
-            if (ress==int.Parse(texto.Text))
+            if (respuestarecibida == int.Parse(texto.Text))
             {
                 ene.Image = Image.FromFile(@"ima\bruja_ani.gif");
                 ene.SizeMode = PictureBoxSizeMode.Zoom;
                 sha = 1;
-                timer1.Start();                       
+                timer1.Start();
             }
             else
             {
@@ -100,7 +97,7 @@ namespace juego
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (sha==1)
+            if (sha == 1)
             {
                 ene.Image = Image.FromFile(@"ima\bruja.png");
                 ene.SizeMode = PictureBoxSizeMode.Zoom;
@@ -110,7 +107,7 @@ namespace juego
                 pla.Image = Image.FromFile(@"ima\juga.png");
                 pla.SizeMode = PictureBoxSizeMode.Zoom;
             }
-            
+
             timer1.Stop();
         }
 
@@ -119,5 +116,12 @@ namespace juego
             hpp = 3;
             HP();
         }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
