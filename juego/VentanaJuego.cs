@@ -22,7 +22,7 @@ namespace juego
             pla.SizeMode = PictureBoxSizeMode.Zoom;
             ene.Image = Image.FromFile(@"ima\bruja.png");
             ene.SizeMode = PictureBoxSizeMode.Zoom;
-            int r = new Random().Next(0, 11);
+            int r = new Random().Next(0, 101);
             texto.Text = "" + r;
         }
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -53,7 +53,8 @@ namespace juego
                 sha = 0;
                 timer1.Start();
             }
-            int r = new Random().Next(0, 11);
+            tex.Text = "";
+            int r = new Random().Next(0,101);
             texto.Text = "" + r;
         }
         private void HP()
@@ -122,6 +123,54 @@ namespace juego
 
         }
 
-        
+        private void uno_Click(object sender, EventArgs e)
+        {
+            tex.Text += "1";
+        }
+
+        private void dos_Click(object sender, EventArgs e)
+        {
+            tex.Text += "2";
+        }
+
+        private void tres_Click(object sender, EventArgs e)
+        {
+            tex.Text += "3";
+        }
+
+        private void cuatro_Click(object sender, EventArgs e)
+        {
+            tex.Text += "4";
+        }
+
+        private void cinco_Click(object sender, EventArgs e)
+        {
+            tex.Text += "5";
+        }
+
+        private void seis_Click(object sender, EventArgs e)
+        {
+            tex.Text += "6";
+        }
+
+        private void siete_Click(object sender, EventArgs e)
+        {
+            tex.Text += "7";
+        }
+
+        private void ocho_Click(object sender, EventArgs e)
+        {
+            tex.Text += "8";
+        }
+
+        private void nuebe_Click(object sender, EventArgs e)
+        {
+            tex.Text += "9";
+        }
+
+        private void cero_Click(object sender, EventArgs e)
+        {
+            tex.Text += "0";
+        }
     }
 }
