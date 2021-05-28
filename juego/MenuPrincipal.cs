@@ -18,11 +18,18 @@ namespace juego
         public MenuPrincipal()
         {
             InitializeComponent();
-            this.Hide();
-            VentanaJuego Juego = new VentanaJuego();
-            Juego.Show();
+            
+            //VentanaJuego Juego = new VentanaJuego();
+            //Juego.Show();
         }
-       
-       
+
+        private void botonImprimir_Click(object sender, EventArgs e)
+        {
+            //Personajes archivos = new Personajes();
+            VentanaJuego Juego = new VentanaJuego();
+            this.Hide();
+            Juego.Show();
+            
+        }
     }
 }

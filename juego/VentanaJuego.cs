@@ -17,13 +17,17 @@ namespace juego
         public VentanaJuego()
         {
             InitializeComponent();
+            Personajes imagenes = new Personajes();
             HP();
-            pla.Image = Image.FromFile(@"ima\juga.png");
+            //pla.Image = Image.FromFile(imagenes.DireccionImagenes);
+            //pla.Image = Image.FromFile(@"ima\juga.png");
+            pla.Image = Image.FromFile(imagenes.archivosimagenes[1]);
             pla.SizeMode = PictureBoxSizeMode.Zoom;
-            ene.Image = Image.FromFile(@"ima\bruja.png");
+            
+            ene.Image = Image.FromFile(imagenes.AdministradorEnemigos(imagenes.Enemigo));
             ene.SizeMode = PictureBoxSizeMode.Zoom;
             int r = new Random().Next(0, 101);
-            texto.Text = "" + r;
+            textoRespuesta.Text = "" + r;
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -32,12 +36,12 @@ namespace juego
 
         private void Respuesta_Click(object sender, EventArgs e)
         {
-            int res = int.Parse(tex.Text);
+            int res = int.Parse(textoRespuesta.Text);
             cal_res(res);
         }
         private void cal_res(int respuestarecibida)
         {
-            if (respuestarecibida == int.Parse(texto.Text))
+            if (respuestarecibida == int.Parse(textoRespuesta.Text))
             {
                 ene.Image = Image.FromFile(@"ima\bruja_ani.gif");
                 ene.SizeMode = PictureBoxSizeMode.Zoom;
@@ -53,9 +57,9 @@ namespace juego
                 sha = 0;
                 timer1.Start();
             }
-            tex.Text = "";
+            textoRespuesta.Text = "";
             int r = new Random().Next(0,101);
-            texto.Text = "" + r;
+            textoRespuesta.Text = "" + r;
         }
         private void HP()
         {
@@ -125,52 +129,52 @@ namespace juego
 
         private void uno_Click(object sender, EventArgs e)
         {
-            tex.Text += "1";
+            textoRespuesta.Text += "1";
         }
 
         private void dos_Click(object sender, EventArgs e)
         {
-            tex.Text += "2";
+            textoRespuesta.Text += "2";
         }
 
         private void tres_Click(object sender, EventArgs e)
         {
-            tex.Text += "3";
+            textoRespuesta.Text += "3";
         }
 
         private void cuatro_Click(object sender, EventArgs e)
         {
-            tex.Text += "4";
+            textoRespuesta.Text += "4";
         }
 
         private void cinco_Click(object sender, EventArgs e)
         {
-            tex.Text += "5";
+            textoRespuesta.Text += "5";
         }
 
         private void seis_Click(object sender, EventArgs e)
         {
-            tex.Text += "6";
+            textoRespuesta.Text += "6";
         }
 
         private void siete_Click(object sender, EventArgs e)
         {
-            tex.Text += "7";
+            textoRespuesta.Text += "7";
         }
 
         private void ocho_Click(object sender, EventArgs e)
         {
-            tex.Text += "8";
+            textoRespuesta.Text += "8";
         }
 
         private void nuebe_Click(object sender, EventArgs e)
         {
-            tex.Text += "9";
+            textoRespuesta.Text += "9";
         }
 
         private void cero_Click(object sender, EventArgs e)
         {
-            tex.Text += "0";
+            textoRespuesta.Text += "0";
         }
     }
 }
