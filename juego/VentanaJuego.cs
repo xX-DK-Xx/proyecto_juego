@@ -25,7 +25,7 @@ namespace juego
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             imagenes.Enemigo = 10;
-            enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
+            enemi.Image = Image.FromFile(imagenes.archivosimagenes[5]);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
             int r = new Random().Next(0, 101);
             textoRespuesta.Text = "" + r;
