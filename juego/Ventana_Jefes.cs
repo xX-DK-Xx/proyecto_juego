@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace juego
 {
-    public partial class VentanaJuego : Form
+    public partial class Ventana_Jefes : Form
     {
         public int hpp = 3;
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
@@ -22,22 +22,21 @@ namespace juego
         private int r = new Random().Next(0, 101);
         private string respaldopersonaje;
         private byte contadorenemigos = 0;
-        public VentanaJuego()
+        public Ventana_Jefes ()
         {
             InitializeComponent();
-            
+
             HP();
-            
+
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             imagenes.Enemigo = 10;
             respaldopersonaje = imagenes.AdministradorEnemigos();
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
-            
+
             textoRespuesta.Text = r.ToString();
         }
-      
 
         private void HP()
         {
@@ -92,7 +91,7 @@ namespace juego
             {
                 /*si la variable "Cambio Imagen" es verdadera, entonces cambiara la imagen 
                  * del enemigo                 
-                 */                
+                 */
             }
             else
             {
@@ -105,10 +104,9 @@ namespace juego
 
             timer1.Stop();
 
-            if (contadorenemigos%2==0) {
-                Ventana_Jefes clasjefes = new Ventana_Jefes();
+            if (contadorenemigos % 2 == 0)
+            {
                 this.Hide();
-                clasjefes.Show();
             }
         }
         private void uno_Click(object sender, EventArgs e)
@@ -190,7 +188,7 @@ namespace juego
             }
             textoRespuesta.Text = "";
 
-            textoRespuesta.Text = new Random().Next(0,101).ToString();
+            textoRespuesta.Text = new Random().Next(0, 101).ToString();
         }
 
         private void BotonCura_Click(object sender, EventArgs e)

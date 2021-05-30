@@ -1,7 +1,7 @@
 ﻿
 namespace juego
 {
-    partial class VentanaJuego
+    partial class Ventana_Jefes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,30 +30,29 @@ namespace juego
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tres = new System.Windows.Forms.Button();
+            this.uno = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textoRespuesta = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Respuesta = new System.Windows.Forms.Button();
+            this.seis = new System.Windows.Forms.Button();
+            this.cinco = new System.Windows.Forms.Button();
+            this.cuatro = new System.Windows.Forms.Button();
             this.enemi = new System.Windows.Forms.PictureBox();
             this.PanelCorazones = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.player = new System.Windows.Forms.PictureBox();
-            this.panelBotones = new System.Windows.Forms.Panel();
             this.cero = new System.Windows.Forms.Button();
             this.nuebe = new System.Windows.Forms.Button();
             this.ocho = new System.Windows.Forms.Button();
             this.siete = new System.Windows.Forms.Button();
-            this.seis = new System.Windows.Forms.Button();
-            this.cinco = new System.Windows.Forms.Button();
-            this.cuatro = new System.Windows.Forms.Button();
-            this.tres = new System.Windows.Forms.Button();
+            this.player = new System.Windows.Forms.PictureBox();
             this.dos = new System.Windows.Forms.Button();
-            this.uno = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).BeginInit();
             this.PanelCorazones.SuspendLayout();
@@ -62,38 +61,43 @@ namespace juego
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panelBotones.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timer1
+            // tres
             // 
-            this.timer1.Interval = 900;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.tres.BackColor = System.Drawing.SystemColors.Control;
+            this.tres.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.tres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tres.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tres.Location = new System.Drawing.Point(251, 10);
+            this.tres.Name = "tres";
+            this.tres.Size = new System.Drawing.Size(88, 55);
+            this.tres.TabIndex = 30;
+            this.tres.Text = "3";
+            this.tres.UseVisualStyleBackColor = false;
+            this.tres.Click += new System.EventHandler(this.tres_Click);
             // 
-            // tableLayoutPanel1
+            // uno
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 455F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.enemi, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.PanelCorazones, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.player, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 364);
-            this.tableLayoutPanel1.TabIndex = 41;
+            this.uno.BackColor = System.Drawing.SystemColors.Control;
+            this.uno.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.uno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.uno.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uno.Location = new System.Drawing.Point(26, 10);
+            this.uno.Name = "uno";
+            this.uno.Size = new System.Drawing.Size(88, 55);
+            this.uno.TabIndex = 21;
+            this.uno.Text = "1";
+            this.uno.UseVisualStyleBackColor = false;
+            this.uno.Click += new System.EventHandler(this.uno_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.textoRespuesta);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Respuesta);
-            this.panel1.Location = new System.Drawing.Point(300, 299);
+            this.panel1.Location = new System.Drawing.Point(241, 254);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 52);
             this.panel1.TabIndex = 45;
@@ -126,9 +130,51 @@ namespace juego
             this.Respuesta.UseVisualStyleBackColor = true;
             this.Respuesta.Click += new System.EventHandler(this.BotonenviarRespuesta_Click);
             // 
+            // seis
+            // 
+            this.seis.BackColor = System.Drawing.SystemColors.Control;
+            this.seis.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.seis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.seis.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.seis.Location = new System.Drawing.Point(26, 89);
+            this.seis.Name = "seis";
+            this.seis.Size = new System.Drawing.Size(88, 55);
+            this.seis.TabIndex = 33;
+            this.seis.Text = "6";
+            this.seis.UseVisualStyleBackColor = false;
+            this.seis.Click += new System.EventHandler(this.seis_Click);
+            // 
+            // cinco
+            // 
+            this.cinco.BackColor = System.Drawing.SystemColors.Control;
+            this.cinco.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.cinco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cinco.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cinco.Location = new System.Drawing.Point(483, 10);
+            this.cinco.Name = "cinco";
+            this.cinco.Size = new System.Drawing.Size(88, 55);
+            this.cinco.TabIndex = 32;
+            this.cinco.Text = "5";
+            this.cinco.UseVisualStyleBackColor = false;
+            this.cinco.Click += new System.EventHandler(this.cinco_Click);
+            // 
+            // cuatro
+            // 
+            this.cuatro.BackColor = System.Drawing.SystemColors.Control;
+            this.cuatro.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.cuatro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cuatro.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cuatro.Location = new System.Drawing.Point(369, 10);
+            this.cuatro.Name = "cuatro";
+            this.cuatro.Size = new System.Drawing.Size(88, 55);
+            this.cuatro.TabIndex = 31;
+            this.cuatro.Text = "4";
+            this.cuatro.UseVisualStyleBackColor = false;
+            this.cuatro.Click += new System.EventHandler(this.cuatro_Click);
+            // 
             // enemi
             // 
-            this.enemi.Location = new System.Drawing.Point(755, 151);
+            this.enemi.Location = new System.Drawing.Point(755, 85);
             this.enemi.Name = "enemi";
             this.enemi.Size = new System.Drawing.Size(134, 139);
             this.enemi.TabIndex = 41;
@@ -141,7 +187,7 @@ namespace juego
             this.PanelCorazones.Controls.Add(this.pictureBox3);
             this.PanelCorazones.Location = new System.Drawing.Point(3, 3);
             this.PanelCorazones.Name = "PanelCorazones";
-            this.PanelCorazones.Size = new System.Drawing.Size(224, 81);
+            this.PanelCorazones.Size = new System.Drawing.Size(224, 76);
             this.PanelCorazones.TabIndex = 40;
             // 
             // pictureBox1
@@ -167,31 +213,6 @@ namespace juego
             this.pictureBox3.Size = new System.Drawing.Size(69, 70);
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
-            // 
-            // player
-            // 
-            this.player.Location = new System.Drawing.Point(3, 151);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(146, 139);
-            this.player.TabIndex = 42;
-            this.player.TabStop = false;
-            // 
-            // panelBotones
-            // 
-            this.panelBotones.Controls.Add(this.cero);
-            this.panelBotones.Controls.Add(this.nuebe);
-            this.panelBotones.Controls.Add(this.ocho);
-            this.panelBotones.Controls.Add(this.siete);
-            this.panelBotones.Controls.Add(this.seis);
-            this.panelBotones.Controls.Add(this.cinco);
-            this.panelBotones.Controls.Add(this.cuatro);
-            this.panelBotones.Controls.Add(this.tres);
-            this.panelBotones.Controls.Add(this.dos);
-            this.panelBotones.Controls.Add(this.uno);
-            this.panelBotones.Location = new System.Drawing.Point(155, 382);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(579, 153);
-            this.panelBotones.TabIndex = 44;
             // 
             // cero
             // 
@@ -249,61 +270,13 @@ namespace juego
             this.siete.UseVisualStyleBackColor = false;
             this.siete.Click += new System.EventHandler(this.siete_Click);
             // 
-            // seis
+            // player
             // 
-            this.seis.BackColor = System.Drawing.SystemColors.Control;
-            this.seis.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.seis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.seis.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.seis.Location = new System.Drawing.Point(26, 89);
-            this.seis.Name = "seis";
-            this.seis.Size = new System.Drawing.Size(88, 55);
-            this.seis.TabIndex = 33;
-            this.seis.Text = "6";
-            this.seis.UseVisualStyleBackColor = false;
-            this.seis.Click += new System.EventHandler(this.seis_Click);
-            // 
-            // cinco
-            // 
-            this.cinco.BackColor = System.Drawing.SystemColors.Control;
-            this.cinco.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.cinco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cinco.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cinco.Location = new System.Drawing.Point(483, 10);
-            this.cinco.Name = "cinco";
-            this.cinco.Size = new System.Drawing.Size(88, 55);
-            this.cinco.TabIndex = 32;
-            this.cinco.Text = "5";
-            this.cinco.UseVisualStyleBackColor = false;
-            this.cinco.Click += new System.EventHandler(this.cinco_Click);
-            // 
-            // cuatro
-            // 
-            this.cuatro.BackColor = System.Drawing.SystemColors.Control;
-            this.cuatro.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.cuatro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cuatro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cuatro.Location = new System.Drawing.Point(369, 10);
-            this.cuatro.Name = "cuatro";
-            this.cuatro.Size = new System.Drawing.Size(88, 55);
-            this.cuatro.TabIndex = 31;
-            this.cuatro.Text = "4";
-            this.cuatro.UseVisualStyleBackColor = false;
-            this.cuatro.Click += new System.EventHandler(this.cuatro_Click);
-            // 
-            // tres
-            // 
-            this.tres.BackColor = System.Drawing.SystemColors.Control;
-            this.tres.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.tres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tres.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tres.Location = new System.Drawing.Point(251, 10);
-            this.tres.Name = "tres";
-            this.tres.Size = new System.Drawing.Size(88, 55);
-            this.tres.TabIndex = 30;
-            this.tres.Text = "3";
-            this.tres.UseVisualStyleBackColor = false;
-            this.tres.Click += new System.EventHandler(this.tres_Click);
+            this.player.Location = new System.Drawing.Point(3, 85);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(146, 139);
+            this.player.TabIndex = 42;
+            this.player.TabStop = false;
             // 
             // dos
             // 
@@ -319,30 +292,56 @@ namespace juego
             this.dos.UseVisualStyleBackColor = false;
             this.dos.Click += new System.EventHandler(this.dos_Click);
             // 
-            // uno
+            // panelBotones
             // 
-            this.uno.BackColor = System.Drawing.SystemColors.Control;
-            this.uno.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.uno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.uno.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uno.Location = new System.Drawing.Point(26, 10);
-            this.uno.Name = "uno";
-            this.uno.Size = new System.Drawing.Size(88, 55);
-            this.uno.TabIndex = 21;
-            this.uno.Text = "1";
-            this.uno.UseVisualStyleBackColor = false;
-            this.uno.Click += new System.EventHandler(this.uno_Click);
+            this.panelBotones.Controls.Add(this.cero);
+            this.panelBotones.Controls.Add(this.nuebe);
+            this.panelBotones.Controls.Add(this.ocho);
+            this.panelBotones.Controls.Add(this.siete);
+            this.panelBotones.Controls.Add(this.seis);
+            this.panelBotones.Controls.Add(this.cinco);
+            this.panelBotones.Controls.Add(this.cuatro);
+            this.panelBotones.Controls.Add(this.tres);
+            this.panelBotones.Controls.Add(this.dos);
+            this.panelBotones.Controls.Add(this.uno);
+            this.panelBotones.Location = new System.Drawing.Point(216, 383);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(579, 153);
+            this.panelBotones.TabIndex = 46;
             // 
-            // VentanaJuego
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 514F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.enemi, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.PanelCorazones, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.player, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.54237F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.45763F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 364);
+            this.tableLayoutPanel1.TabIndex = 45;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 900;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Ventana_Jefes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 547);
+            this.ClientSize = new System.Drawing.Size(987, 604);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "VentanaJuego";
-            this.Text = "VentanaJuego";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Name = "Ventana_Jefes";
+            this.Text = "Ventana_Jefes";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).EndInit();
@@ -352,34 +351,35 @@ namespace juego
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panelBotones.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button tres;
+        private System.Windows.Forms.Button uno;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textoRespuesta;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Respuesta;
+        private System.Windows.Forms.Button seis;
+        private System.Windows.Forms.Button cinco;
+        private System.Windows.Forms.Button cuatro;
         private System.Windows.Forms.PictureBox enemi;
         private System.Windows.Forms.Panel PanelCorazones;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox player;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Button cero;
         private System.Windows.Forms.Button nuebe;
         private System.Windows.Forms.Button ocho;
         private System.Windows.Forms.Button siete;
-        private System.Windows.Forms.Button seis;
-        private System.Windows.Forms.Button cinco;
-        private System.Windows.Forms.Button cuatro;
-        private System.Windows.Forms.Button tres;
+        private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Button dos;
-        private System.Windows.Forms.Button uno;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelBotones;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
