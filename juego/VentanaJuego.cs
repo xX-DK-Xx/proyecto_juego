@@ -12,8 +12,10 @@ namespace juego
 {
     public partial class VentanaJuego : Form
     {
-        public int hpp = 3,sha;
-
+        public int hpp = 3;
+        private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
+        //volver a la normalidad
+        //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
 
         private int r = new Random().Next(0, 101);
@@ -34,13 +36,8 @@ namespace juego
             int r = new Random().Next(0, 101);
             textoRespuesta.Text = "" + r;
         }
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
+      
 
-        }
-
-       
-        
         private void HP()
         {
             switch (hpp)
@@ -82,32 +79,26 @@ namespace juego
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (sha == 1)
+            if (CambioImagen == true)
             {
-                enemi.Image = Image.FromFile(@"ima\bruja.png");
-                enemi.SizeMode = PictureBoxSizeMode.Zoom;
+                /*si la variable "Cambio Imagen" es verdadera, entonces cambiara la imagen 
+                 * del enemigo                 
+                 */
+
+                //enemi.Image = Image.FromFile(@"ima\bruja.png");
+                //enemi.SizeMode = PictureBoxSizeMode.Zoom;
             }
             else
             {
-                player.Image = Image.FromFile(@"ima\juga.png");
+                /*
+                 Si la variable es falsa, entonces cambiara la imagen del jugador
+                 */
+                player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
             }
 
             timer1.Stop();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            hpp = 3;
-            
-            HP();
-        }
-
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void uno_Click(object sender, EventArgs e)
         {
             textoRespuesta.Text += "1";
@@ -161,20 +152,10 @@ namespace juego
 
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
         {
-            int res = int.Parse(textoRespuesta.Text);
-            cal_res(res);
-            if (textoRespuesta.Text==r.ToString())
-            {
-                enemi.Image=Image.FromFile();
-             
-            }
-            else
-            {
-                hpp--;
-                HP();
-                player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
-            }
 
+            int res = int.Parse(textoRespuesta.Text);
+
+            cal_res(res);
         }
         private void cal_res(int respuestarecibida)
         {
@@ -182,7 +163,7 @@ namespace juego
             {
                 enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
-                sha = 1;
+                CambioImagen = true;
                 timer1.Start();
             }
             else
@@ -191,7 +172,7 @@ namespace juego
                 HP();
                 player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
-                sha = 0;
+                CambioImagen = false;
                 timer1.Start();
             }
             textoRespuesta.Text = "";

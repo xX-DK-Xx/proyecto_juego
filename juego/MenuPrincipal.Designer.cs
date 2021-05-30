@@ -43,9 +43,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 19);
+            this.button1.Location = new System.Drawing.Point(367, 246);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(98, 32);
             this.button1.TabIndex = 0;
             this.button1.Text = "IniciarJuego";
             this.button1.UseVisualStyleBackColor = true;
