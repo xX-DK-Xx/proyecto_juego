@@ -14,7 +14,8 @@ namespace juego
     {
         public int hpp = 3;
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
-        //volver a la normalidad
+        //volver a la normalidads
+
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
 
@@ -25,16 +26,15 @@ namespace juego
             InitializeComponent();
             
             HP();
-            //pla.Image = Image.FromFile(imagenes.DireccionImagenes);
-            //pla.Image = Image.FromFile(@"ima\juga.png");
+            
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             imagenes.Enemigo = 10;
             respaldopersonaje = imagenes.AdministradorEnemigos();
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
-            int r = new Random().Next(0, 101);
-            textoRespuesta.Text = "" + r;
+            
+            textoRespuesta.Text = r.ToString();
         }
       
 
@@ -43,36 +43,44 @@ namespace juego
             switch (hpp)
             {
                 case 0:
+                    PanelCorazones.Visible = false;
                     pictureBox1.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox2.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox3.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
                     break;
                 case 1:
+                    PanelCorazones.Visible = false;
                     pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox2.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox3.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
                     break;
                 case 2:
+                    PanelCorazones.Visible = false;
                     pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox3.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
                     break;
                 case 3:
+                    PanelCorazones.Visible = false;
                     pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox3.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
                     break;
             }
         }
@@ -85,8 +93,7 @@ namespace juego
                  * del enemigo                 
                  */
 
-                //enemi.Image = Image.FromFile(@"ima\bruja.png");
-                //enemi.SizeMode = PictureBoxSizeMode.Zoom;
+                
             }
             else
             {
@@ -159,7 +166,7 @@ namespace juego
         }
         private void cal_res(int respuestarecibida)
         {
-            if (respuestarecibida == int.Parse(textoRespuesta.Text))
+            if (respuestarecibida == r)
             {
                 enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
@@ -178,6 +185,12 @@ namespace juego
             textoRespuesta.Text = "";
 
             textoRespuesta.Text = r.ToString();
+        }
+
+        private void BotonCura_Click(object sender, EventArgs e)
+        {
+            hpp = 3;
+            HP();
         }
     }
 }

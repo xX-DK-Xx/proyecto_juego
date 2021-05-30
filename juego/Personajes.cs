@@ -9,22 +9,23 @@ namespace juego
 {
     class Personajes
     {
-        private static string DireccionImagenes = Directory.GetCurrentDirectory();
         //Dirección de todos los personajes
+        private static string DireccionImagenes = Directory.GetCurrentDirectory();
+        //Arreglo que almacena cada dirección 
         private string[] _Archivosimagenes;
         public string[] archivosimagenes
         {
             get => _Archivosimagenes;
             set => _Archivosimagenes = Directory.GetFiles(DireccionImagenes + @"\ima\", "*.*");
         }
-        
+        //Almacena la localización del nombre del personage específicado
         private string _NombrePersonaje;
         private string nombrePersonaje
         {
             get =>_NombrePersonaje;
             set =>_NombrePersonaje=value;
         }
-
+        //Escoge el enemigo a aparecer
         private byte _enemigo;
         public byte Enemigo
         {
