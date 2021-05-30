@@ -123,6 +123,7 @@ namespace juego
             this.Respuesta.TabIndex = 45;
             this.Respuesta.Text = "Respuesta";
             this.Respuesta.UseVisualStyleBackColor = true;
+            this.Respuesta.Click += new System.EventHandler(this.BotonenviarRespuesta_Click);
             // 
             // enemi
             // 
@@ -203,6 +204,7 @@ namespace juego
             this.cero.TabIndex = 37;
             this.cero.Text = "0";
             this.cero.UseVisualStyleBackColor = false;
+            this.cero.Click += new System.EventHandler(this.cero_Click);
             // 
             // nuebe
             // 
@@ -216,6 +218,7 @@ namespace juego
             this.nuebe.TabIndex = 36;
             this.nuebe.Text = "9";
             this.nuebe.UseVisualStyleBackColor = false;
+            this.nuebe.Click += new System.EventHandler(this.nueve_Click);
             // 
             // ocho
             // 
@@ -229,6 +232,7 @@ namespace juego
             this.ocho.TabIndex = 35;
             this.ocho.Text = "8";
             this.ocho.UseVisualStyleBackColor = false;
+            this.ocho.Click += new System.EventHandler(this.ocho_Click);
             // 
             // siete
             // 
@@ -242,6 +246,7 @@ namespace juego
             this.siete.TabIndex = 34;
             this.siete.Text = "7";
             this.siete.UseVisualStyleBackColor = false;
+            this.siete.Click += new System.EventHandler(this.siete_Click);
             // 
             // seis
             // 
@@ -255,6 +260,7 @@ namespace juego
             this.seis.TabIndex = 33;
             this.seis.Text = "6";
             this.seis.UseVisualStyleBackColor = false;
+            this.seis.Click += new System.EventHandler(this.seis_Click);
             // 
             // cinco
             // 
@@ -268,6 +274,7 @@ namespace juego
             this.cinco.TabIndex = 32;
             this.cinco.Text = "5";
             this.cinco.UseVisualStyleBackColor = false;
+            this.cinco.Click += new System.EventHandler(this.cinco_Click);
             // 
             // cuatro
             // 
@@ -281,6 +288,7 @@ namespace juego
             this.cuatro.TabIndex = 31;
             this.cuatro.Text = "4";
             this.cuatro.UseVisualStyleBackColor = false;
+            this.cuatro.Click += new System.EventHandler(this.cuatro_Click);
             // 
             // tres
             // 
@@ -294,6 +302,7 @@ namespace juego
             this.tres.TabIndex = 30;
             this.tres.Text = "3";
             this.tres.UseVisualStyleBackColor = false;
+            this.tres.Click += new System.EventHandler(this.tres_Click);
             // 
             // dos
             // 
@@ -307,6 +316,7 @@ namespace juego
             this.dos.TabIndex = 29;
             this.dos.Text = "2";
             this.dos.UseVisualStyleBackColor = false;
+            this.dos.Click += new System.EventHandler(this.dos_Click);
             // 
             // uno
             // 
@@ -320,6 +330,7 @@ namespace juego
             this.uno.TabIndex = 21;
             this.uno.Text = "1";
             this.uno.UseVisualStyleBackColor = false;
+            this.uno.Click += new System.EventHandler(this.uno_Click);
             // 
             // VentanaJuego
             // 

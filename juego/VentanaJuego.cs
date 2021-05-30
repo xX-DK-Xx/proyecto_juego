@@ -12,9 +12,12 @@ namespace juego
 {
     public partial class VentanaJuego : Form
     {
-        public int hpp = 3;
-        public int sha;
+        public int hpp = 3,sha;
+
         private Personajes imagenes = new Personajes();
+
+        private int r = new Random().Next(0, 101);
+        private string respaldopersonaje;
         public VentanaJuego()
         {
             InitializeComponent();
@@ -25,7 +28,8 @@ namespace juego
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             imagenes.Enemigo = 10;
-            enemi.Image = Image.FromFile(imagenes.archivosimagenes[5]);
+            respaldopersonaje = imagenes.AdministradorEnemigos();
+            enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
             int r = new Random().Next(0, 101);
             textoRespuesta.Text = "" + r;
@@ -35,51 +39,26 @@ namespace juego
 
         }
 
-        private void Respuesta_Click(object sender, EventArgs e)
-        {
-            int res = int.Parse(textoRespuesta.Text);
-            cal_res(res);
-        }
-        private void cal_res(int respuestarecibida)
-        {
-            if (respuestarecibida == int.Parse(textoRespuesta.Text))
-            {
-                enemi.Image = Image.FromFile(@"ima\bruja_ani.gif");
-                enemi.SizeMode = PictureBoxSizeMode.Zoom;
-                sha = 1;
-                timer1.Start();
-            }
-            else
-            {
-                hpp = hpp - 1;
-                HP();
-                player.Image = Image.FromFile(@"ima\juga_daño.png");
-                player.SizeMode = PictureBoxSizeMode.Zoom;
-                sha = 0;
-                timer1.Start();
-            }
-            textoRespuesta.Text = "";
-            int r = new Random().Next(0,101);
-            textoRespuesta.Text = "" + r;
-        }
+       
+        
         private void HP()
         {
             switch (hpp)
             {
                 case 0:
-                    pictureBox1.Image = Image.FromFile(@"image\image6.png");
+                    pictureBox1.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"image\image6.png");
+                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"image\image6.png");
+                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case 1:
                     pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"image\image6.png");
+                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"image\image6.png");
+                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case 2:
@@ -87,7 +66,7 @@ namespace juego
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"image\image6.png");
+                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case 3:
@@ -120,6 +99,7 @@ namespace juego
         private void button1_Click(object sender, EventArgs e)
         {
             hpp = 3;
+            
             HP();
         }
 
@@ -168,14 +148,55 @@ namespace juego
             textoRespuesta.Text += "8";
         }
 
-        private void nuebe_Click(object sender, EventArgs e)
-        {
-            textoRespuesta.Text += "9";
-        }
 
         private void cero_Click(object sender, EventArgs e)
         {
             textoRespuesta.Text += "0";
+        }
+
+        private void nueve_Click(object sender, EventArgs e)
+        {
+            textoRespuesta.Text += "9";
+        }
+
+        private void BotonenviarRespuesta_Click(object sender, EventArgs e)
+        {
+            int res = int.Parse(textoRespuesta.Text);
+            cal_res(res);
+            if (textoRespuesta.Text==r.ToString())
+            {
+                enemi.Image=Image.FromFile();
+             
+            }
+            else
+            {
+                hpp--;
+                HP();
+                player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
+            }
+
+        }
+        private void cal_res(int respuestarecibida)
+        {
+            if (respuestarecibida == int.Parse(textoRespuesta.Text))
+            {
+                enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
+                enemi.SizeMode = PictureBoxSizeMode.Zoom;
+                sha = 1;
+                timer1.Start();
+            }
+            else
+            {
+                hpp--;
+                HP();
+                player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
+                player.SizeMode = PictureBoxSizeMode.Zoom;
+                sha = 0;
+                timer1.Start();
+            }
+            textoRespuesta.Text = "";
+
+            textoRespuesta.Text = r.ToString();
         }
     }
 }

@@ -24,6 +24,7 @@ namespace juego
             get =>_NombrePersonaje;
             set =>_NombrePersonaje=value;
         }
+
         private byte _enemigo;
         public byte Enemigo
         {
@@ -36,21 +37,21 @@ namespace juego
             archivosimagenes = archivosimagenes;
             AdministradorEnemigos();
         }
+
         public string AdministradorEnemigos()
-        {
-            Enemigo = 1;
+        {            
             byte indexEnemigo = Enemigo;
             bool ciclovalidacion;
             do
             {
-                if (indexEnemigo==10|| indexEnemigo==11|| indexEnemigo==15|| indexEnemigo==16|| indexEnemigo==17|| indexEnemigo==18)
+                if (indexEnemigo==1|| indexEnemigo==6|| indexEnemigo==8)
                 {
-                    
                     ciclovalidacion = true;
                     nombrePersonaje = archivosimagenes[indexEnemigo];
                 }
                 else
-                {                    
+                {
+                    Enemigo = 1;
                     indexEnemigo = Enemigo;
                     ciclovalidacion = false;
                 }
