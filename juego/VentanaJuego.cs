@@ -14,18 +14,19 @@ namespace juego
     {
         public int hpp = 3;
         public int sha;
+        private Personajes imagenes = new Personajes();
         public VentanaJuego()
         {
             InitializeComponent();
-            Personajes imagenes = new Personajes();
+            
             HP();
             //pla.Image = Image.FromFile(imagenes.DireccionImagenes);
             //pla.Image = Image.FromFile(@"ima\juga.png");
-            pla.Image = Image.FromFile(imagenes.archivosimagenes[1]);
-            pla.SizeMode = PictureBoxSizeMode.Zoom;
-            
-            ene.Image = Image.FromFile(imagenes.AdministradorEnemigos(imagenes.Enemigo));
-            ene.SizeMode = PictureBoxSizeMode.Zoom;
+            player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
+            player.SizeMode = PictureBoxSizeMode.Zoom;
+            imagenes.Enemigo = 10;
+            enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
+            enemi.SizeMode = PictureBoxSizeMode.Zoom;
             int r = new Random().Next(0, 101);
             textoRespuesta.Text = "" + r;
         }
@@ -43,8 +44,8 @@ namespace juego
         {
             if (respuestarecibida == int.Parse(textoRespuesta.Text))
             {
-                ene.Image = Image.FromFile(@"ima\bruja_ani.gif");
-                ene.SizeMode = PictureBoxSizeMode.Zoom;
+                enemi.Image = Image.FromFile(@"ima\bruja_ani.gif");
+                enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 sha = 1;
                 timer1.Start();
             }
@@ -52,8 +53,8 @@ namespace juego
             {
                 hpp = hpp - 1;
                 HP();
-                pla.Image = Image.FromFile(@"ima\juga_daño.png");
-                pla.SizeMode = PictureBoxSizeMode.Zoom;
+                player.Image = Image.FromFile(@"ima\juga_daño.png");
+                player.SizeMode = PictureBoxSizeMode.Zoom;
                 sha = 0;
                 timer1.Start();
             }
@@ -66,35 +67,35 @@ namespace juego
             switch (hpp)
             {
                 case 0:
-                    pictureBox1.Image = Image.FromFile(@"ima\co2.png");
+                    pictureBox1.Image = Image.FromFile(@"image\image6.png");
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\co2.png");
+                    pictureBox2.Image = Image.FromFile(@"image\image6.png");
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\co2.png");
+                    pictureBox3.Image = Image.FromFile(@"image\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case 1:
-                    pictureBox1.Image = Image.FromFile(@"ima\co.gif");
+                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\co2.png");
+                    pictureBox2.Image = Image.FromFile(@"image\image6.png");
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\co2.png");
+                    pictureBox3.Image = Image.FromFile(@"image\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case 2:
-                    pictureBox1.Image = Image.FromFile(@"ima\co.gif");
+                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\co.gif");
+                    pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\co2.png");
+                    pictureBox3.Image = Image.FromFile(@"image\image6.png");
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case 3:
-                    pictureBox1.Image = Image.FromFile(@"ima\co.gif");
+                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\co.gif");
+                    pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\co.gif");
+                    pictureBox3.Image = Image.FromFile(imagenes.archivosimagenes[19]);
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
             }
@@ -104,13 +105,13 @@ namespace juego
         {
             if (sha == 1)
             {
-                ene.Image = Image.FromFile(@"ima\bruja.png");
-                ene.SizeMode = PictureBoxSizeMode.Zoom;
+                enemi.Image = Image.FromFile(@"ima\bruja.png");
+                enemi.SizeMode = PictureBoxSizeMode.Zoom;
             }
             else
             {
-                pla.Image = Image.FromFile(@"ima\juga.png");
-                pla.SizeMode = PictureBoxSizeMode.Zoom;
+                player.Image = Image.FromFile(@"ima\juga.png");
+                player.SizeMode = PictureBoxSizeMode.Zoom;
             }
 
             timer1.Stop();

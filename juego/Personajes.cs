@@ -19,7 +19,7 @@ namespace juego
         }
         
         private string _NombrePersonaje;
-        public string nombrePersonaje
+        private string nombrePersonaje
         {
             get =>_NombrePersonaje;
             set =>_NombrePersonaje=value;
@@ -34,25 +34,27 @@ namespace juego
         public Personajes()
         {
             archivosimagenes = archivosimagenes;
-            AdministradorEnemigos(Enemigo);
+            AdministradorEnemigos();
         }
-        public string AdministradorEnemigos(byte indexEnemigo)
+        public string AdministradorEnemigos()
         {
-            for(byte i=0; i < archivosimagenes.Length; i++)
+            byte indexEnemigo = Enemigo;
+            bool ciclovalidacion;
+            do
             {
-                if (indexEnemigo == 0||indexEnemigo==1)
+                if (indexEnemigo==10|| indexEnemigo==11|| indexEnemigo==15|| indexEnemigo==16|| indexEnemigo==17|| indexEnemigo==18)
                 {
-                    Enemigo = 1;
+                    
+                    ciclovalidacion = true;
+                    nombrePersonaje = archivosimagenes[indexEnemigo];
                 }
                 else
-                {
-                    if (i == indexEnemigo)
-                    {
-                        nombrePersonaje = archivosimagenes[i];
-                    }
+                {                    
+                    indexEnemigo = Enemigo;
+                    ciclovalidacion = false;
                 }
-                
-            }
+            } while (ciclovalidacion == false);
+            
             return nombrePersonaje;
         }
 

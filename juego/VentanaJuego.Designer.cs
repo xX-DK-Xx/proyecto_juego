@@ -32,15 +32,16 @@ namespace juego
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ene = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textoRespuesta = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Respuesta = new System.Windows.Forms.Button();
+            this.enemi = new System.Windows.Forms.PictureBox();
             this.PanelCorazones = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pla = new System.Windows.Forms.PictureBox();
-            this.textoRespuesta = new System.Windows.Forms.TextBox();
-            this.Respuesta = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.player = new System.Windows.Forms.PictureBox();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.cero = new System.Windows.Forms.Button();
             this.nuebe = new System.Windows.Forms.Button();
@@ -52,16 +53,15 @@ namespace juego
             this.tres = new System.Windows.Forms.Button();
             this.dos = new System.Windows.Forms.Button();
             this.uno = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ene)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enemi)).BeginInit();
             this.PanelCorazones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panelBotones.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -76,9 +76,9 @@ namespace juego
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 455F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.ene, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.enemi, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.PanelCorazones, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pla, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.player, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -88,13 +88,49 @@ namespace juego
             this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 364);
             this.tableLayoutPanel1.TabIndex = 41;
             // 
-            // ene
+            // panel1
             // 
-            this.ene.Location = new System.Drawing.Point(755, 160);
-            this.ene.Name = "ene";
-            this.ene.Size = new System.Drawing.Size(134, 139);
-            this.ene.TabIndex = 41;
-            this.ene.TabStop = false;
+            this.panel1.Controls.Add(this.textoRespuesta);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.Respuesta);
+            this.panel1.Location = new System.Drawing.Point(300, 317);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 44);
+            this.panel1.TabIndex = 45;
+            // 
+            // textoRespuesta
+            // 
+            this.textoRespuesta.Enabled = false;
+            this.textoRespuesta.Location = new System.Drawing.Point(88, 16);
+            this.textoRespuesta.Name = "textoRespuesta";
+            this.textoRespuesta.Size = new System.Drawing.Size(100, 20);
+            this.textoRespuesta.TabIndex = 44;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 28);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "cura";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Respuesta
+            // 
+            this.Respuesta.Location = new System.Drawing.Point(220, 11);
+            this.Respuesta.Name = "Respuesta";
+            this.Respuesta.Size = new System.Drawing.Size(75, 23);
+            this.Respuesta.TabIndex = 45;
+            this.Respuesta.Text = "Respuesta";
+            this.Respuesta.UseVisualStyleBackColor = true;
+            // 
+            // enemi
+            // 
+            this.enemi.Location = new System.Drawing.Point(755, 160);
+            this.enemi.Name = "enemi";
+            this.enemi.Size = new System.Drawing.Size(134, 139);
+            this.enemi.TabIndex = 41;
+            this.enemi.TabStop = false;
             // 
             // PanelCorazones
             // 
@@ -130,39 +166,13 @@ namespace juego
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
-            // pla
+            // player
             // 
-            this.pla.Location = new System.Drawing.Point(3, 160);
-            this.pla.Name = "pla";
-            this.pla.Size = new System.Drawing.Size(146, 139);
-            this.pla.TabIndex = 42;
-            this.pla.TabStop = false;
-            // 
-            // textoRespuesta
-            // 
-            this.textoRespuesta.Enabled = false;
-            this.textoRespuesta.Location = new System.Drawing.Point(88, 16);
-            this.textoRespuesta.Name = "textoRespuesta";
-            this.textoRespuesta.Size = new System.Drawing.Size(100, 20);
-            this.textoRespuesta.TabIndex = 44;
-            // 
-            // Respuesta
-            // 
-            this.Respuesta.Location = new System.Drawing.Point(220, 11);
-            this.Respuesta.Name = "Respuesta";
-            this.Respuesta.Size = new System.Drawing.Size(75, 23);
-            this.Respuesta.TabIndex = 45;
-            this.Respuesta.Text = "Respuesta";
-            this.Respuesta.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 28);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "cura";
-            this.button1.UseVisualStyleBackColor = true;
+            this.player.Location = new System.Drawing.Point(3, 160);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(146, 139);
+            this.player.TabIndex = 42;
+            this.player.TabStop = false;
             // 
             // panelBotones
             // 
@@ -176,7 +186,7 @@ namespace juego
             this.panelBotones.Controls.Add(this.tres);
             this.panelBotones.Controls.Add(this.dos);
             this.panelBotones.Controls.Add(this.uno);
-            this.panelBotones.Location = new System.Drawing.Point(12, 382);
+            this.panelBotones.Location = new System.Drawing.Point(155, 382);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(579, 153);
             this.panelBotones.TabIndex = 44;
@@ -311,16 +321,6 @@ namespace juego
             this.uno.Text = "1";
             this.uno.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textoRespuesta);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.Respuesta);
-            this.panel1.Location = new System.Drawing.Point(300, 317);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 44);
-            this.panel1.TabIndex = 45;
-            // 
             // VentanaJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,15 +331,15 @@ namespace juego
             this.Name = "VentanaJuego";
             this.Text = "VentanaJuego";
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ene)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enemi)).EndInit();
             this.PanelCorazones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panelBotones.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -350,12 +350,12 @@ namespace juego
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textoRespuesta;
         private System.Windows.Forms.Button Respuesta;
-        private System.Windows.Forms.PictureBox ene;
+        private System.Windows.Forms.PictureBox enemi;
         private System.Windows.Forms.Panel PanelCorazones;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pla;
+        private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Button cero;

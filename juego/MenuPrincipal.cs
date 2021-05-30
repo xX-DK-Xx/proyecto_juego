@@ -25,7 +25,7 @@ namespace juego
 
         private void botonImprimir_Click(object sender, EventArgs e)
         {
-            //Personajes archivos = new Personajes();
+           
             VentanaJuego Juego = new VentanaJuego();
             this.Hide();
             Juego.Show();
