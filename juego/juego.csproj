@@ -61,6 +61,12 @@
     <Compile Include="VentanaJuego.Designer.cs">
       <DependentUpon>VentanaJuego.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventana_Jefes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventana_Jefes.Designer.cs">
+      <DependentUpon>Ventana_Jefes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="VentanaJuego.resx">
       <DependentUpon>VentanaJuego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventana_Jefes.resx">
+      <DependentUpon>Ventana_Jefes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
