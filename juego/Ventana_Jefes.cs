@@ -12,27 +12,42 @@ namespace juego
 {
     public partial class Ventana_Jefes : Form
     {
-        public int hpp = 3;
+        
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
         //volver a la normalidads
 
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
-
-        private int r = new Random().Next(0, 101);
-        private string respaldopersonaje;
-        private byte contadorenemigos = 0;
-        public Ventana_Jefes ()
+       
+        
+        private readonly int r = new Random().Next(0, 101);
+        
+        
+        public Ventana_Jefes (byte eleccionJefe)
         {
-            InitializeComponent();
 
+            InitializeComponent();
+            imagenes.CorazonesPlayer = 3;
             HP();
 
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
-            imagenes.Enemigo = 10;
-            respaldopersonaje = imagenes.AdministradorEnemigos();
-            enemi.Image = Image.FromFile(respaldopersonaje);
+            switch (eleccionJefe)
+            {
+                case 3:
+                    enemi.Image = Image.FromFile(imagenes.archivosimagenes[4]);
+                    break;
+                case 6:
+                    enemi.Image = Image.FromFile(imagenes.archivosimagenes[11]);
+                    break;
+                case 9:
+                    enemi.Image = Image.FromFile(imagenes.archivosimagenes[15]);
+                    break;
+                    case 10:
+                    MessageBox.Show("Esta es una prueba xdxd");
+                    break;
+
+            }
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
             textoRespuesta.Text = r.ToString();
@@ -40,7 +55,7 @@ namespace juego
 
         private void HP()
         {
-            switch (hpp)
+            switch (imagenes.CorazonesPlayer)
             {
                 case 0:
                     PanelCorazones.Visible = false;
@@ -85,7 +100,7 @@ namespace juego
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             if (CambioImagen == true)
             {
@@ -104,10 +119,6 @@ namespace juego
 
             timer1.Stop();
 
-            if (contadorenemigos % 2 == 0)
-            {
-                this.Hide();
-            }
         }
         private void uno_Click(object sender, EventArgs e)
         {
@@ -144,18 +155,18 @@ namespace juego
             textoRespuesta.Text += "7";
         }
 
-        private void ocho_Click(object sender, EventArgs e)
+        private void Ocho_Click(object sender, EventArgs e)
         {
             textoRespuesta.Text += "8";
         }
 
 
-        private void cero_Click(object sender, EventArgs e)
+        private void Cero_Click(object sender, EventArgs e)
         {
             textoRespuesta.Text += "0";
         }
 
-        private void nueve_Click(object sender, EventArgs e)
+        private void Nueve_Click(object sender, EventArgs e)
         {
             textoRespuesta.Text += "9";
         }
@@ -164,22 +175,22 @@ namespace juego
         {
 
             int res = int.Parse(textoRespuesta.Text);
-            cal_res(res);
+            Cal_res(res);
 
         }
-        private void cal_res(int respuestarecibida)
+        private void Cal_res(int respuestarecibida)
         {
             if (respuestarecibida == r)
             {
                 enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = true;
-                contadorenemigos++;
+               
                 timer1.Start();
             }
             else
             {
-                hpp--;
+                imagenes.CorazonesPlayer--;
                 HP();
                 player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -193,7 +204,7 @@ namespace juego
 
         private void BotonCura_Click(object sender, EventArgs e)
         {
-            hpp = 3;
+            imagenes.CorazonesPlayer = 3;
             HP();
         }
     }

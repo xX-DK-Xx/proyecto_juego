@@ -32,7 +32,11 @@ namespace juego
             get => _enemigo;
             set=>_enemigo= (byte)new Random().Next(0, archivosimagenes.Length);
         }
-        
+        private byte _corazonesPayer;
+        public byte CorazonesPlayer {
+            get => _corazonesPayer;
+            set => _corazonesPayer = value;
+        }
         public Personajes()
         {
             archivosimagenes = archivosimagenes;

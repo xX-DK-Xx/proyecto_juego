@@ -226,7 +226,7 @@ namespace juego
             this.cero.TabIndex = 37;
             this.cero.Text = "0";
             this.cero.UseVisualStyleBackColor = false;
-            this.cero.Click += new System.EventHandler(this.cero_Click);
+            this.cero.Click += new System.EventHandler(this.Cero_Click);
             // 
             // nuebe
             // 
@@ -240,7 +240,7 @@ namespace juego
             this.nuebe.TabIndex = 36;
             this.nuebe.Text = "9";
             this.nuebe.UseVisualStyleBackColor = false;
-            this.nuebe.Click += new System.EventHandler(this.nueve_Click);
+            this.nuebe.Click += new System.EventHandler(this.Nueve_Click);
             // 
             // ocho
             // 
@@ -254,7 +254,7 @@ namespace juego
             this.ocho.TabIndex = 35;
             this.ocho.Text = "8";
             this.ocho.UseVisualStyleBackColor = false;
-            this.ocho.Click += new System.EventHandler(this.ocho_Click);
+            this.ocho.Click += new System.EventHandler(this.Ocho_Click);
             // 
             // siete
             // 
@@ -331,7 +331,7 @@ namespace juego
             // timer1
             // 
             this.timer1.Interval = 900;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Ventana_Jefes
             // 

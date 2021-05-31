@@ -105,8 +105,8 @@ namespace juego
 
             timer1.Stop();
 
-            if (contadorenemigos%2==0) {
-                Ventana_Jefes clasjefes = new Ventana_Jefes();
+            if (contadorenemigos%3==0 || contadorenemigos==10) {
+                Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
                 this.Hide();
                 clasjefes.Show();
             }
