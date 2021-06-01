@@ -13,6 +13,7 @@ namespace juego
     public partial class Ventana_Jefes : Form
     {
         //hola
+        //hola
         //Este es mi hola
         //Axel
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
