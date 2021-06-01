@@ -12,7 +12,7 @@ namespace juego
 {
     public partial class Ventana_Jefes : Form
     {
-        
+        //hola
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
         //volver a la normalidads
 
