@@ -12,7 +12,7 @@ namespace juego
 {
     public partial class VentanaJuego : Form
     {
-        public int hpp = 3;
+        
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
         //volver a la normalidads
 
@@ -27,7 +27,7 @@ namespace juego
             InitializeComponent();
             
             HP();
-            
+            imagenes.CorazonesPlayer = 3;
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             imagenes.Enemigo = 10;
@@ -37,11 +37,11 @@ namespace juego
             
             textoRespuesta.Text = r.ToString();
         }
-      
 
         private void HP()
         {
-            switch (hpp)
+               
+            switch (imagenes.CorazonesPlayer)
             {
                 case 0:
                     PanelCorazones.Visible = false;
@@ -83,6 +83,7 @@ namespace juego
                     pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                     PanelCorazones.Visible = true;
                     break;
+                
             }
         }
 
@@ -181,7 +182,7 @@ namespace juego
             }
             else
             {
-                hpp--;
+                imagenes.CorazonesPlayer--;
                 HP();
                 player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -195,8 +196,13 @@ namespace juego
 
         private void BotonCura_Click(object sender, EventArgs e)
         {
-            hpp = 3;
+            imagenes.CorazonesPlayer= 3;
             HP();
+        }
+        
+        private void CambioEnemigo()
+        {
+            
         }
     }
 }

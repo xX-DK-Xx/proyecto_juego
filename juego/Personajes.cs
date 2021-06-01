@@ -64,6 +64,10 @@ namespace juego
             
             return nombrePersonaje;
         }
+        public void AdministradorJefes()
+        {
+
+        }
 
     }
 }
