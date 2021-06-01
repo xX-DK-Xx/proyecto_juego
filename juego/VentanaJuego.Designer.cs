@@ -57,6 +57,7 @@ namespace juego
             this.tres = new System.Windows.Forms.Button();
             this.dos = new System.Windows.Forms.Button();
             this.uno = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).BeginInit();
@@ -380,6 +381,11 @@ namespace juego
             this.uno.UseVisualStyleBackColor = false;
             this.uno.Click += new System.EventHandler(this.uno_Click);
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 3000;
+            this.timer2.Tick += new System.EventHandler(this.TransicionEnemigo_tick);
+            // 
             // VentanaJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,5 +442,6 @@ namespace juego
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Timer timer2;
     }
 }

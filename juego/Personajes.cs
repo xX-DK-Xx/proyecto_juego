@@ -44,7 +44,8 @@ namespace juego
         }
 
         public string AdministradorEnemigos()
-        {            
+        {
+            Enemigo = 10;
             byte indexEnemigo = Enemigo;
             bool ciclovalidacion;
             do

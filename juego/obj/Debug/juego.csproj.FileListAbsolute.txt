@@ -31,3 +31,4 @@ C:\Users\LINK\Documents\Documentos\Proyectos\Proyectojuego\proyecto_juego\juego\
 C:\Users\LINK\Documents\Documentos\Proyectos\Proyectojuego\proyecto_juego\juego\obj\Debug\juego.csproj.CoreCompileInputs.cache
 C:\Users\LINK\Documents\Documentos\Proyectos\Proyectojuego\proyecto_juego\juego\obj\Debug\juego.exe
 C:\Users\LINK\Documents\Documentos\Proyectos\Proyectojuego\proyecto_juego\juego\obj\Debug\juego.pdb
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.Ventana_Jefes.resources

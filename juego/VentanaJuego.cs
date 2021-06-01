@@ -25,12 +25,12 @@ namespace juego
         public VentanaJuego()
         {
             InitializeComponent();
-            
-            HP();
             imagenes.CorazonesPlayer = 3;
+            HP();
+            
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
-            imagenes.Enemigo = 10;
+            
             respaldopersonaje = imagenes.AdministradorEnemigos();
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
@@ -93,7 +93,8 @@ namespace juego
             {
                 /*si la variable "Cambio Imagen" es verdadera, entonces cambiara la imagen 
                  * del enemigo                 
-                 */                
+                 */
+                CambioEnemigo();
             }
             else
             {
@@ -106,9 +107,9 @@ namespace juego
 
             timer1.Stop();
 
-            if (contadorenemigos%3==0 || contadorenemigos==10) {
+            if (contadorenemigos%3==0 &&contadorenemigos!=0 || contadorenemigos==10) {
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
-                this.Hide();
+                
                 clasjefes.Show();
             }
         }
@@ -190,8 +191,8 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-
-            textoRespuesta.Text = new Random().Next(0,101).ToString();
+            r = new Random().Next(0, 101);
+            textoRespuesta.Text =r.ToString();
         }
 
         private void BotonCura_Click(object sender, EventArgs e)
@@ -202,6 +203,21 @@ namespace juego
         
         private void CambioEnemigo()
         {
+            timer2.Start();
+            this.BackColor = Color.Black;
+            panelBotones.Visible = false;
+            tableLayoutPanel1.Visible = false;
+            enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
+
+        }
+
+        private void TransicionEnemigo_tick(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+            //this.BackgroundImage = Image.FromFile(@"")
+            panelBotones.Visible = true;
+            tableLayoutPanel1.Visible = true;
+            timer2.Stop();
             
         }
     }
