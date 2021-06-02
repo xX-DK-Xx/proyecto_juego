@@ -153,7 +153,6 @@ namespace juego
             textoRespuesta.Text += "8";
         }
 
-
         private void cero_Click(object sender, EventArgs e)
         {
             textoRespuesta.Text += "0";
