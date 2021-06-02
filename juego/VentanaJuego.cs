@@ -18,7 +18,7 @@ namespace juego
 
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
-
+        private string mensaje;
         private int r = new Random().Next(0, 101);
         private string respaldopersonaje;
         private byte contadorenemigos = 0;
@@ -40,51 +40,53 @@ namespace juego
 
         private void HP()
         {
-               
-            switch (imagenes.CorazonesPlayer)
-            {
-                case 0:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-                case 1:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-                case 2:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-                case 3:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-                
-            }
+            
+                switch (imagenes.CorazonesPlayer)
+                {
+                    case 0:
+                        PanelCorazones.Visible = false;
+                        pictureBox1.Image = Image.FromFile(@"ima\image6.png");
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox2.Image = Image.FromFile(@"ima\image6.png");
+                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox3.Image = Image.FromFile(@"ima\image6.png");
+                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                        PanelCorazones.Visible = true;
+                        break;
+                    case 1:
+                        PanelCorazones.Visible = false;
+                        pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox2.Image = Image.FromFile(@"ima\image6.png");
+                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox3.Image = Image.FromFile(@"ima\image6.png");
+                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                        PanelCorazones.Visible = true;
+                        break;
+                    case 2:
+                        PanelCorazones.Visible = false;
+                        pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox3.Image = Image.FromFile(@"ima\image6.png");
+                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                        PanelCorazones.Visible = true;
+                        break;
+                    case 3:
+                        PanelCorazones.Visible = false;
+                        pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox3.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                        PanelCorazones.Visible = true;
+                        break;
+
+                }
+            
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -112,6 +114,28 @@ namespace juego
                 
                 clasjefes.Show();
             }
+            if (imagenes.CorazonesPlayer == 0) {
+                mensaje = "Game Over, has perdido";
+                panelBotones.Visible = false;
+                tableLayoutPanel1.Visible = false;
+                this.BackColor = Color.Black;
+                MessageBoxButtons botones = MessageBoxButtons.YesNo;
+                DialogResult respuesta;
+                respuesta = MessageBox.Show("¿Quieres volver a jugar?", mensaje, botones);
+                if (respuesta == DialogResult.Yes)
+                {
+                    contadorenemigos = 0;
+                    panelBotones.Visible = true;
+                    tableLayoutPanel1.Visible = true;
+                    imagenes.CorazonesPlayer = 3;
+                    HP();
+                    this.BackColor = Color.White;
+                }
+                else
+                {
+                    this.Close();
+                }
+            } 
         }
         private void uno_Click(object sender, EventArgs e)
         {
