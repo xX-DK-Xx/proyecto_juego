@@ -109,11 +109,12 @@ namespace juego
 
             timer1.Stop();
 
-            if (contadorenemigos%3==0 &&contadorenemigos!=0 || contadorenemigos==10) {
+            if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10) {
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
-                
+
                 clasjefes.Show();
-            }
+            } 
+            //Verifica que los corazones del jugador no sean 0
             if (imagenes.CorazonesPlayer == 0) {
                 mensaje = "Game Over, has perdido";
                 panelBotones.Visible = false;
