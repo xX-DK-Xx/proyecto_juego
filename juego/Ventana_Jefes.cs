@@ -23,9 +23,8 @@ namespace juego
         private Personajes imagenes = new Personajes();
        
         
-        private readonly int r = new Random().Next(0, 101);
-        
-        
+        private int r = new Random().Next(0, 101);
+
         public Ventana_Jefes (byte eleccionJefe)
         {
 
