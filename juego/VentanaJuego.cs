@@ -19,7 +19,7 @@ namespace juego
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
         private string mensaje;
-        private int r = new Random().Next(0, 101);
+        private int numerador = new Random().Next(0, 101),denominador=new Random().Next(0,101);
         private string respaldopersonaje;
         private byte contadorenemigos = 0;
         public VentanaJuego()
@@ -35,7 +35,7 @@ namespace juego
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
             
-            textoRespuesta.Text = r.ToString();
+            textoRespuesta.Text = numerador.ToString();
         }
 
         private void HP()
@@ -111,7 +111,7 @@ namespace juego
 
             if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10) {
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
-
+                this.Hide();
                 clasjefes.Show();
             } 
             //Verifica que los corazones del jugador no sean 0
@@ -190,14 +190,20 @@ namespace juego
 
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
         {
-
-            int res = int.Parse(textoRespuesta.Text);
-            cal_res(res);
-
+            try
+            {
+                int res = int.Parse(textoRespuesta.Text);
+                cal_res(res);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                textoRespuesta.Text = "";
+            }
         }
         private void cal_res(int respuestarecibida)
         {
-            if (respuestarecibida == r)
+            if (respuestarecibida == numerador)
             {
                 enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
@@ -215,8 +221,8 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            r = new Random().Next(0, 101);
-            textoRespuesta.Text =r.ToString();
+            numerador = new Random().Next(0, 101);
+            textoRespuesta.Text =numerador.ToString();
         }
 
         private void BotonCura_Click(object sender, EventArgs e)
@@ -244,5 +250,6 @@ namespace juego
             timer2.Stop();
             
         }
+       
     }
 }

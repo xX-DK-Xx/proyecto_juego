@@ -33,6 +33,8 @@ namespace juego
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TextboxRespuestaDenominador = new System.Windows.Forms.TextBox();
             this.textoRespuesta = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Respuesta = new System.Windows.Forms.Button();
@@ -58,6 +60,8 @@ namespace juego
             this.dos = new System.Windows.Forms.Button();
             this.uno = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panel2Problemas = new System.Windows.Forms.Panel();
+            this.MuestraProblemas = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).BeginInit();
@@ -71,6 +75,7 @@ namespace juego
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelBotones.SuspendLayout();
+            this.panel2Problemas.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -89,36 +94,60 @@ namespace juego
             this.tableLayoutPanel1.Controls.Add(this.PanelCorazones, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.player, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panelCorazones2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2Problemas, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.42268F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.57732F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76534F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.23466F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 358);
             this.tableLayoutPanel1.TabIndex = 41;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.TextboxRespuestaDenominador);
             this.panel1.Controls.Add(this.textoRespuesta);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Respuesta);
-            this.panel1.Location = new System.Drawing.Point(233, 288);
+            this.panel1.Location = new System.Drawing.Point(233, 273);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 52);
+            this.panel1.Size = new System.Drawing.Size(356, 82);
             this.panel1.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(130, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "____________";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Visible = false;
+            // 
+            // TextboxRespuestaDenominador
+            // 
+            this.TextboxRespuestaDenominador.Enabled = false;
+            this.TextboxRespuestaDenominador.Location = new System.Drawing.Point(133, 48);
+            this.TextboxRespuestaDenominador.Name = "TextboxRespuestaDenominador";
+            this.TextboxRespuestaDenominador.Size = new System.Drawing.Size(75, 20);
+            this.TextboxRespuestaDenominador.TabIndex = 47;
+            this.TextboxRespuestaDenominador.Visible = false;
             // 
             // textoRespuesta
             // 
             this.textoRespuesta.Enabled = false;
-            this.textoRespuesta.Location = new System.Drawing.Point(106, 13);
+            this.textoRespuesta.Location = new System.Drawing.Point(133, 3);
             this.textoRespuesta.Name = "textoRespuesta";
             this.textoRespuesta.Size = new System.Drawing.Size(75, 20);
             this.textoRespuesta.TabIndex = 44;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 8);
+            this.button1.Location = new System.Drawing.Point(6, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(66, 28);
             this.button1.TabIndex = 46;
@@ -128,7 +157,7 @@ namespace juego
             // 
             // Respuesta
             // 
-            this.Respuesta.Location = new System.Drawing.Point(220, 11);
+            this.Respuesta.Location = new System.Drawing.Point(264, 16);
             this.Respuesta.Name = "Respuesta";
             this.Respuesta.Size = new System.Drawing.Size(75, 23);
             this.Respuesta.TabIndex = 45;
@@ -138,7 +167,7 @@ namespace juego
             // 
             // enemi
             // 
-            this.enemi.Location = new System.Drawing.Point(595, 138);
+            this.enemi.Location = new System.Drawing.Point(595, 124);
             this.enemi.Name = "enemi";
             this.enemi.Size = new System.Drawing.Size(134, 139);
             this.enemi.TabIndex = 41;
@@ -180,7 +209,7 @@ namespace juego
             // 
             // player
             // 
-            this.player.Location = new System.Drawing.Point(3, 138);
+            this.player.Location = new System.Drawing.Point(3, 124);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(146, 139);
             this.player.TabIndex = 42;
@@ -386,6 +415,23 @@ namespace juego
             this.timer2.Interval = 3000;
             this.timer2.Tick += new System.EventHandler(this.TransicionEnemigo_tick);
             // 
+            // panel2Problemas
+            // 
+            this.panel2Problemas.Controls.Add(this.MuestraProblemas);
+            this.panel2Problemas.Location = new System.Drawing.Point(233, 124);
+            this.panel2Problemas.Name = "panel2Problemas";
+            this.panel2Problemas.Size = new System.Drawing.Size(243, 105);
+            this.panel2Problemas.TabIndex = 47;
+            // 
+            // MuestraProblemas
+            // 
+            this.MuestraProblemas.AutoSize = true;
+            this.MuestraProblemas.Location = new System.Drawing.Point(10, 19);
+            this.MuestraProblemas.Name = "MuestraProblemas";
+            this.MuestraProblemas.Size = new System.Drawing.Size(35, 13);
+            this.MuestraProblemas.TabIndex = 0;
+            this.MuestraProblemas.Text = "label2";
+            // 
             // VentanaJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,6 +455,8 @@ namespace juego
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelBotones.ResumeLayout(false);
+            this.panel2Problemas.ResumeLayout(false);
+            this.panel2Problemas.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -443,5 +491,9 @@ namespace juego
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox TextboxRespuestaDenominador;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2Problemas;
+        private System.Windows.Forms.Label MuestraProblemas;
     }
 }

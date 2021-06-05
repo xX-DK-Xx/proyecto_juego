@@ -7,6 +7,7 @@ namespace juego
 {
     class Personajes
     {
+        //Hola soy Jose
         //Dirección de todos los personajes
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
         //Arreglo que almacena cada dirección 
