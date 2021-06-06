@@ -12,7 +12,16 @@ namespace juego
         private Random numero1 = new Random();
         private Random numero2=new Random();
         public string problemagenerado;
-        double respuestacorrecta;
+        
+        public double RespuestaCorrecta {
+            get => _respuestacorrecta;
+            set => _respuestacorrecta=value;
+        }
+
+        private double _respuestacorrecta;
+        
+
+        private char[] caracteresAgrupacion = { '(', '+', '-', '÷', 'x' };
         public Problemas_Y_Control()
         {
             
@@ -44,7 +53,7 @@ namespace juego
 
             byte contadorparen=0;
             
-            char[] caracteresAgrupacion = {'(','+','-','÷','x'};
+            
             string cadenaProblema = "";
             byte numeroOperaciones = (byte)new Random().Next(1,5);//Declara el número de operaciones que se realizará
 
@@ -77,15 +86,38 @@ namespace juego
                 }
                 Problema.Text = cadenaProblema;
                 problemagenerado = cadenaProblema;
+                SolucionadorProblema();
             }   
         }
-
+        //optiene los números de la operación generada
         private void SolucionadorProblema()
         {
+            string[] operaciones = problemagenerado.Split(new char[] {'(',')'}, StringSplitOptions.RemoveEmptyEntries);
+            int ayudaoperacion;
             
-            
-            //optiene los números de la operación generada
-            
+            for (int i=operaciones.Length; i>0 ;i--) {
+                
+                for (byte j=0;j<operaciones[i].Length ;j++) {
+                    switch (operaciones[i][j]) {
+                        case '+':
+                            ayudaoperacion=int.Parse(operaciones[i][j-1].ToString())+int.Parse(operaciones[i][j+1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                        case '-':
+                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) - int.Parse(operaciones[i][j + 1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                        case 'x':
+                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) *int.Parse(operaciones[i][j + 1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                        case '÷':
+                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) / int.Parse(operaciones[i][j + 1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                    }
+                }
+            }        
             
         }
 

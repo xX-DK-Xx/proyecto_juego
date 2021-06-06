@@ -26,7 +26,7 @@ namespace juego
         public VentanaJuego()
         {
             InitializeComponent();
-            //problemMatematicas.AdministradorElementos();
+            problemMatematicas.AdministradorElementos(contadorenemigos,panel1,textoRespuesta,TextboxRespuestaDenominador,MuestraProblemas);
             problemMatematicas.GeneradorProblemas(MuestraProblemas);
             imagenes.CorazonesPlayer = 3;
             HP();
@@ -209,7 +209,7 @@ namespace juego
         }
         private void cal_res(int respuestarecibida)
         {
-            if (respuestarecibida == numerador)
+            if (respuestarecibida == problemMatematicas.RespuestaCorrecta)
             {
                 enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
@@ -228,9 +228,9 @@ namespace juego
             }
             textoRespuesta.Text = "";
             problemMatematicas.GeneradorProblemas(MuestraProblemas);
-            
 
-            textoRespuesta.Text =problemMatematicas.problemagenerado;
+
+            textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
         }
 
         private void BotonCura_Click(object sender, EventArgs e)
