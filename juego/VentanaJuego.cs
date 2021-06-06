@@ -22,9 +22,12 @@ namespace juego
         private int numerador = new Random().Next(0, 101),denominador=new Random().Next(0,101);
         private string respaldopersonaje;
         private byte contadorenemigos = 0;
+        Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
         public VentanaJuego()
         {
             InitializeComponent();
+            //problemMatematicas.AdministradorElementos();
+            problemMatematicas.GeneradorProblemas(MuestraProblemas);
             imagenes.CorazonesPlayer = 3;
             HP();
             
@@ -35,7 +38,7 @@ namespace juego
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
             
-            textoRespuesta.Text = numerador.ToString();
+            textoRespuesta.Text = problemMatematicas.problemagenerado;
         }
 
         private void HP()
@@ -195,10 +198,13 @@ namespace juego
                 int res = int.Parse(textoRespuesta.Text);
                 cal_res(res);
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
                 textoRespuesta.Text = "";
+            }
+            catch(NullReferenceException) {
+                MessageBox.Show("Ingresa un número correcto");
             }
         }
         private void cal_res(int respuestarecibida)
@@ -221,8 +227,10 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            numerador = new Random().Next(0, 101);
-            textoRespuesta.Text =numerador.ToString();
+            problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            
+
+            textoRespuesta.Text =problemMatematicas.problemagenerado;
         }
 
         private void BotonCura_Click(object sender, EventArgs e)
