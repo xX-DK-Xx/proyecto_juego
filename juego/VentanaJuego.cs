@@ -278,23 +278,16 @@ namespace juego
             uno.BackColor = Color.WhiteSmoke;
         }
 
-<<<<<<< HEAD
-        private void Musica_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
             Musica.URL = @"so\loss.wav";
             Musica.Ctlcontrols.play();
             ini();
-=======
+        }
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
->>>>>>> 44ee49bc26a0dde99f469ac4953da1688b337fec
         }
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
