@@ -255,6 +255,11 @@ namespace juego
             uno.BackColor = Color.WhiteSmoke;
         }
 
+        private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
+        {
+            uno.BackColor = Color.Transparent;
+        }
+
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
