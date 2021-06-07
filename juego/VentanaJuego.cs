@@ -29,8 +29,8 @@ namespace juego
         {
 
             InitializeComponent();
+            Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
-            ini();
             problemMatematicas.AdministradorElementos(contadorenemigos, panel1, textoRespuesta, TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas, panel2Problemas);
 
@@ -120,8 +120,18 @@ namespace juego
             }
 
             timer1.Stop();
+<<<<<<< HEAD
             //Llamamiento de los jefes
             if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10) {
+=======
+
+            if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10)
+            {
+                Musica.Ctlcontrols.stop();
+                time_music.Stop();
+                OverM.Ctlcontrols.stop();
+                MF2.Stop();
+>>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
                 this.Hide();
                 clasjefes.Show();
@@ -132,6 +142,7 @@ namespace juego
                 Musica.Ctlcontrols.stop();
                 //Game over, juego acabado
                 mensaje = "Game Over, has perdido";
+                trackBar1.Visible = false;
                 OverM.settings.volume = 20;
                 OverM.URL = @"so\over.wav";
                 MF2.Start();
@@ -144,6 +155,7 @@ namespace juego
                 respuesta = MessageBox.Show("¿Quieres volver a jugar?", mensaje, botones);
                 if (respuesta == DialogResult.Yes)
                 {
+                    trackBar1.Show();
                     OverM.Ctlcontrols.stop();
                     Musica.URL = @"so\loss.wav";
                     time_music.Start();
@@ -276,6 +288,8 @@ namespace juego
 
         private void BotonCura_Click(object sender, EventArgs e)
         {
+            SoundPlayer hp = new SoundPlayer(@"so\up0.wav");
+            hp.Play();
             imagenes.CorazonesPlayer = 3;
             HP();
         }
@@ -290,15 +304,34 @@ namespace juego
 
         }
 
+<<<<<<< HEAD
        
+=======
+        private void Iluminacion_MouseHover1(object sender, EventArgs e)
+        {
+            uno.BackColor = Color.WhiteSmoke;
+        }
+        private void Musica_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+>>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
             Musica.URL = @"so\loss.wav";
             Musica.Ctlcontrols.play();
-            ini();
+            Musica.settings.volume = 20;
         }
+<<<<<<< HEAD
        
+=======
+        private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
+        {
+            uno.BackColor = Color.Transparent;
+        }
+>>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
@@ -310,22 +343,22 @@ namespace juego
 
         }
 
+        //Asigna el volumen a la trackbar
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            //Asigna el volumen a la trackbar
             Musica.settings.volume = trackBar1.Value;
-            OverM.settings.volume = trackBar1.Value;
         }
 
 
-        private void MF2_Tick(object sender, EventArgs e)
+        //Bucle de musica Game Over
+        public void MF2_Tick(object sender, EventArgs e)
         {
-            //Bucle de musica Game Over
+            OverM.settings.volume = 20;
             OverM.URL = @"so\over.wav";
             OverM.Ctlcontrols.play();
-            ini();
         }
 
+<<<<<<< HEAD
         private void FinAnimacion_tick(object sender, EventArgs e)
         {
             problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
@@ -339,5 +372,7 @@ namespace juego
         }
        
 
+=======
+>>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
     }
 }

@@ -209,5 +209,15 @@ namespace juego
             imagenes.CorazonesPlayer = 3;
             HP();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Ventana_Jefes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

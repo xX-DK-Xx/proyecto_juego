@@ -70,9 +70,10 @@ namespace juego
             this.tres.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.tres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tres.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tres.Location = new System.Drawing.Point(251, 10);
+            this.tres.Location = new System.Drawing.Point(335, 12);
+            this.tres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tres.Name = "tres";
-            this.tres.Size = new System.Drawing.Size(88, 55);
+            this.tres.Size = new System.Drawing.Size(117, 68);
             this.tres.TabIndex = 30;
             this.tres.Text = "3";
             this.tres.UseVisualStyleBackColor = false;
@@ -84,9 +85,10 @@ namespace juego
             this.uno.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.uno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.uno.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uno.Location = new System.Drawing.Point(26, 10);
+            this.uno.Location = new System.Drawing.Point(35, 12);
+            this.uno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uno.Name = "uno";
-            this.uno.Size = new System.Drawing.Size(88, 55);
+            this.uno.Size = new System.Drawing.Size(117, 68);
             this.uno.TabIndex = 21;
             this.uno.Text = "1";
             this.uno.UseVisualStyleBackColor = false;
@@ -97,24 +99,27 @@ namespace juego
             this.panel1.Controls.Add(this.textoRespuesta);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Respuesta);
-            this.panel1.Location = new System.Drawing.Point(241, 254);
+            this.panel1.Location = new System.Drawing.Point(322, 313);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 52);
+            this.panel1.Size = new System.Drawing.Size(416, 64);
             this.panel1.TabIndex = 45;
             // 
             // textoRespuesta
             // 
             this.textoRespuesta.Enabled = false;
-            this.textoRespuesta.Location = new System.Drawing.Point(106, 13);
+            this.textoRespuesta.Location = new System.Drawing.Point(141, 16);
+            this.textoRespuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textoRespuesta.Name = "textoRespuesta";
-            this.textoRespuesta.Size = new System.Drawing.Size(75, 20);
+            this.textoRespuesta.Size = new System.Drawing.Size(99, 22);
             this.textoRespuesta.TabIndex = 44;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 8);
+            this.button1.Location = new System.Drawing.Point(4, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 28);
+            this.button1.Size = new System.Drawing.Size(88, 34);
             this.button1.TabIndex = 46;
             this.button1.Text = "cura";
             this.button1.UseVisualStyleBackColor = true;
@@ -122,9 +127,10 @@ namespace juego
             // 
             // Respuesta
             // 
-            this.Respuesta.Location = new System.Drawing.Point(220, 11);
+            this.Respuesta.Location = new System.Drawing.Point(293, 14);
+            this.Respuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Respuesta.Name = "Respuesta";
-            this.Respuesta.Size = new System.Drawing.Size(75, 23);
+            this.Respuesta.Size = new System.Drawing.Size(100, 28);
             this.Respuesta.TabIndex = 45;
             this.Respuesta.Text = "Respuesta";
             this.Respuesta.UseVisualStyleBackColor = true;
@@ -136,9 +142,10 @@ namespace juego
             this.seis.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.seis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.seis.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.seis.Location = new System.Drawing.Point(26, 89);
+            this.seis.Location = new System.Drawing.Point(35, 110);
+            this.seis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.seis.Name = "seis";
-            this.seis.Size = new System.Drawing.Size(88, 55);
+            this.seis.Size = new System.Drawing.Size(117, 68);
             this.seis.TabIndex = 33;
             this.seis.Text = "6";
             this.seis.UseVisualStyleBackColor = false;
@@ -150,9 +157,10 @@ namespace juego
             this.cinco.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cinco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cinco.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cinco.Location = new System.Drawing.Point(483, 10);
+            this.cinco.Location = new System.Drawing.Point(644, 12);
+            this.cinco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cinco.Name = "cinco";
-            this.cinco.Size = new System.Drawing.Size(88, 55);
+            this.cinco.Size = new System.Drawing.Size(117, 68);
             this.cinco.TabIndex = 32;
             this.cinco.Text = "5";
             this.cinco.UseVisualStyleBackColor = false;
@@ -164,9 +172,10 @@ namespace juego
             this.cuatro.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cuatro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cuatro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cuatro.Location = new System.Drawing.Point(369, 10);
+            this.cuatro.Location = new System.Drawing.Point(492, 12);
+            this.cuatro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cuatro.Name = "cuatro";
-            this.cuatro.Size = new System.Drawing.Size(88, 55);
+            this.cuatro.Size = new System.Drawing.Size(117, 68);
             this.cuatro.TabIndex = 31;
             this.cuatro.Text = "4";
             this.cuatro.UseVisualStyleBackColor = false;
@@ -174,9 +183,10 @@ namespace juego
             // 
             // enemi
             // 
-            this.enemi.Location = new System.Drawing.Point(755, 85);
+            this.enemi.Location = new System.Drawing.Point(1007, 104);
+            this.enemi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.enemi.Name = "enemi";
-            this.enemi.Size = new System.Drawing.Size(134, 139);
+            this.enemi.Size = new System.Drawing.Size(179, 171);
             this.enemi.TabIndex = 41;
             this.enemi.TabStop = false;
             // 
@@ -185,32 +195,36 @@ namespace juego
             this.PanelCorazones.Controls.Add(this.pictureBox1);
             this.PanelCorazones.Controls.Add(this.pictureBox2);
             this.PanelCorazones.Controls.Add(this.pictureBox3);
-            this.PanelCorazones.Location = new System.Drawing.Point(3, 3);
+            this.PanelCorazones.Location = new System.Drawing.Point(4, 4);
+            this.PanelCorazones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelCorazones.Name = "PanelCorazones";
-            this.PanelCorazones.Size = new System.Drawing.Size(224, 76);
+            this.PanelCorazones.Size = new System.Drawing.Size(299, 92);
             this.PanelCorazones.TabIndex = 40;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 86);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(77, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(103, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(69, 70);
+            this.pictureBox2.Size = new System.Drawing.Size(92, 86);
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(152, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(203, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(69, 70);
+            this.pictureBox3.Size = new System.Drawing.Size(92, 86);
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
@@ -220,9 +234,10 @@ namespace juego
             this.cero.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cero.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cero.Location = new System.Drawing.Point(483, 89);
+            this.cero.Location = new System.Drawing.Point(644, 110);
+            this.cero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cero.Name = "cero";
-            this.cero.Size = new System.Drawing.Size(88, 55);
+            this.cero.Size = new System.Drawing.Size(117, 68);
             this.cero.TabIndex = 37;
             this.cero.Text = "0";
             this.cero.UseVisualStyleBackColor = false;
@@ -234,9 +249,10 @@ namespace juego
             this.nuebe.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.nuebe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.nuebe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.nuebe.Location = new System.Drawing.Point(369, 89);
+            this.nuebe.Location = new System.Drawing.Point(492, 110);
+            this.nuebe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nuebe.Name = "nuebe";
-            this.nuebe.Size = new System.Drawing.Size(88, 55);
+            this.nuebe.Size = new System.Drawing.Size(117, 68);
             this.nuebe.TabIndex = 36;
             this.nuebe.Text = "9";
             this.nuebe.UseVisualStyleBackColor = false;
@@ -248,9 +264,10 @@ namespace juego
             this.ocho.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.ocho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ocho.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ocho.Location = new System.Drawing.Point(251, 89);
+            this.ocho.Location = new System.Drawing.Point(335, 110);
+            this.ocho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ocho.Name = "ocho";
-            this.ocho.Size = new System.Drawing.Size(88, 55);
+            this.ocho.Size = new System.Drawing.Size(117, 68);
             this.ocho.TabIndex = 35;
             this.ocho.Text = "8";
             this.ocho.UseVisualStyleBackColor = false;
@@ -262,9 +279,10 @@ namespace juego
             this.siete.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.siete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.siete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.siete.Location = new System.Drawing.Point(138, 89);
+            this.siete.Location = new System.Drawing.Point(184, 110);
+            this.siete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.siete.Name = "siete";
-            this.siete.Size = new System.Drawing.Size(88, 55);
+            this.siete.Size = new System.Drawing.Size(117, 68);
             this.siete.TabIndex = 34;
             this.siete.Text = "7";
             this.siete.UseVisualStyleBackColor = false;
@@ -272,9 +290,10 @@ namespace juego
             // 
             // player
             // 
-            this.player.Location = new System.Drawing.Point(3, 85);
+            this.player.Location = new System.Drawing.Point(4, 104);
+            this.player.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(146, 139);
+            this.player.Size = new System.Drawing.Size(195, 171);
             this.player.TabIndex = 42;
             this.player.TabStop = false;
             // 
@@ -284,9 +303,10 @@ namespace juego
             this.dos.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.dos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.dos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dos.Location = new System.Drawing.Point(138, 10);
+            this.dos.Location = new System.Drawing.Point(184, 12);
+            this.dos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dos.Name = "dos";
-            this.dos.Size = new System.Drawing.Size(88, 55);
+            this.dos.Size = new System.Drawing.Size(117, 68);
             this.dos.TabIndex = 29;
             this.dos.Text = "2";
             this.dos.UseVisualStyleBackColor = false;
@@ -304,29 +324,32 @@ namespace juego
             this.panelBotones.Controls.Add(this.tres);
             this.panelBotones.Controls.Add(this.dos);
             this.panelBotones.Controls.Add(this.uno);
-            this.panelBotones.Location = new System.Drawing.Point(216, 383);
+            this.panelBotones.Location = new System.Drawing.Point(288, 471);
+            this.panelBotones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(579, 153);
+            this.panelBotones.Size = new System.Drawing.Size(772, 188);
             this.panelBotones.TabIndex = 46;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 514F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 685F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.enemi, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.PanelCorazones, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.player, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.54237F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.45763F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 364);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1216, 448);
             this.tableLayoutPanel1.TabIndex = 45;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // timer1
             // 
@@ -335,13 +358,15 @@ namespace juego
             // 
             // Ventana_Jefes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 604);
+            this.ClientSize = new System.Drawing.Size(1316, 743);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Ventana_Jefes";
             this.Text = "Ventana_Jefes";
+            this.Load += new System.EventHandler(this.Ventana_Jefes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).EndInit();

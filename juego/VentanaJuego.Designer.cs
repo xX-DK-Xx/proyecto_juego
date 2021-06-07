@@ -477,7 +477,7 @@ namespace juego
             // 
             // timer2
             // 
-            this.timer2.Interval = 3000;
+            this.timer2.Interval = 1500;
             this.timer2.Tick += new System.EventHandler(this.TransicionEnemigo_tick);
             // 
             // Musica
@@ -505,6 +505,7 @@ namespace juego
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(78, 45);
             this.trackBar1.TabIndex = 47;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.Value = 20;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
