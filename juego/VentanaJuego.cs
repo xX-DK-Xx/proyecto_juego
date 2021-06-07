@@ -134,6 +134,7 @@ namespace juego
                 time_music.Stop();
                 Musica.Ctlcontrols.stop();
                 mensaje = "Game Over, has perdido";
+                trackBar1.Visible = false;
                 OverM.settings.volume = 20;
                 OverM.URL = @"so\over.wav";
                 MF2.Start();
