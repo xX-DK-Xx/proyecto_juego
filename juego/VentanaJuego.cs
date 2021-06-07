@@ -29,8 +29,8 @@ namespace juego
         {
 
             InitializeComponent();
+            Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
-            ini();
             problemMatematicas.AdministradorElementos(contadorenemigos, panel1, textoRespuesta, TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas, panel2Problemas);
 
@@ -124,7 +124,12 @@ namespace juego
 
             timer1.Stop();
 
-            if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10) {
+            if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10)
+            {
+                Musica.Ctlcontrols.stop();
+                time_music.Stop();
+                OverM.Ctlcontrols.stop();
+                MF2.Stop();
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
                 this.Hide();
                 clasjefes.Show();
@@ -146,6 +151,7 @@ namespace juego
                 respuesta = MessageBox.Show("¿Quieres volver a jugar?", mensaje, botones);
                 if (respuesta == DialogResult.Yes)
                 {
+                    trackBar1.Show();
                     OverM.Ctlcontrols.stop();
                     Musica.URL = @"so\loss.wav";
                     time_music.Start();
@@ -260,6 +266,8 @@ namespace juego
 
         private void BotonCura_Click(object sender, EventArgs e)
         {
+            SoundPlayer hp = new SoundPlayer(@"so\up0.wav");
+            hp.Play();
             imagenes.CorazonesPlayer = 3;
             HP();
         }
@@ -278,30 +286,21 @@ namespace juego
         {
             uno.BackColor = Color.WhiteSmoke;
         }
-
-<<<<<<< HEAD
-
         private void Musica_Enter(object sender, EventArgs e)
         {
 
         }
 
-=======
->>>>>>> 96bc04c50ee77d5528b08f4352f666c731de50a1
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
             Musica.URL = @"so\loss.wav";
             Musica.Ctlcontrols.play();
-            ini();
+            Musica.settings.volume = 20;
         }
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
-<<<<<<< HEAD
-
-=======
->>>>>>> 96bc04c50ee77d5528b08f4352f666c731de50a1
         }
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
@@ -314,27 +313,20 @@ namespace juego
 
         }
 
+        //Asigna el volumen a la trackbar
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            //Asigna el volumen a la trackbar
             Musica.settings.volume = trackBar1.Value;
-            OverM.settings.volume = trackBar1.Value;
         }
 
 
-        private void MF2_Tick(object sender, EventArgs e)
+        //Bucle de musica Game Over
+        public void MF2_Tick(object sender, EventArgs e)
         {
-            //Bucle de musica Game Over
+            OverM.settings.volume = 20;
             OverM.URL = @"so\over.wav";
             OverM.Ctlcontrols.play();
-            ini();
         }
 
-        public void ini()
-        {
-            //Baja el volumen inicial
-            Musica.settings.volume = 20;
-        }
-        
     }
 }

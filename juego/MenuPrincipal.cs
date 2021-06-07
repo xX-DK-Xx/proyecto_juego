@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
+using System.Media;
 
 
 namespace juego
@@ -18,7 +19,9 @@ namespace juego
         public MenuPrincipal()
         {
             InitializeComponent();
-            
+            Menu.URL= @"so\menu.wav";
+            Menu.settings.volume = 20;
+            time_bu.Start();
             //VentanaJuego Juego = new VentanaJuego();
             //Juego.Show();
         }
@@ -27,9 +30,28 @@ namespace juego
         {
            
             VentanaJuego Juego = new VentanaJuego();
+            Menu.Ctlcontrols.stop();
+            time_bu.Stop();
             this.Hide();
             Juego.Show();
             
+        }
+        //Bucle de musica menu
+        private void Bu(object sender, EventArgs e)
+        {
+            Menu.settings.volume = trackBar1.Value;
+            Menu.URL = @"so\menu.wav";
+            Menu.Ctlcontrols.play();
+        }
+        //barra de volumen
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            Menu.settings.volume = trackBar1.Value;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
