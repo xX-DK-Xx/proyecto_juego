@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace juego
 {
     public partial class VentanaJuego : Form
     {
-        
+
+
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
         //volver a la normalidads
 
@@ -25,7 +27,10 @@ namespace juego
         Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
         public VentanaJuego()
         {
+            
             InitializeComponent();
+            Musica.URL = @"so\loss.wav";
+            ini();
             problemMatematicas.AdministradorElementos(contadorenemigos,panel1,textoRespuesta,TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas,panel2Problemas);
             
@@ -40,6 +45,7 @@ namespace juego
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
             
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
+            time_music.Start();
         }
 
         private void HP()
@@ -92,23 +98,28 @@ namespace juego
             
            
         }
-
+        
+        //Timer del daño 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (CambioImagen == true)
             {
+                //Daño enemigo
                 /*si la variable "Cambio Imagen" es verdadera, entonces cambiara la imagen 
                  * del enemigo                 
                  */
                 CambioEnemigo();
+
             }
             else
             {
                 /*
+                 * Daño personaje
                  Si la variable es falsa, entonces cambiara la imagen del jugador
                  */
                 player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
+                
             }
 
             timer1.Stop();
@@ -120,7 +131,12 @@ namespace juego
             } 
             //Verifica que los corazones del jugador no sean 0
             if (imagenes.CorazonesPlayer == 0) {
+                time_music.Stop();
+                Musica.Ctlcontrols.stop();
                 mensaje = "Game Over, has perdido";
+                OverM.settings.volume = 20;
+                OverM.URL = @"so\over.wav";
+                MF2.Start();
                 panelBotones.Visible = false;
                 tableLayoutPanel1.Visible = false;
                 this.BackColor = Color.Black;
@@ -129,6 +145,9 @@ namespace juego
                 respuesta = MessageBox.Show("¿Quieres volver a jugar?", mensaje, botones);
                 if (respuesta == DialogResult.Yes)
                 {
+                    OverM.Ctlcontrols.stop();
+                    Musica.URL = @"so\loss.wav";
+                    time_music.Start();
                     contadorenemigos = 0;
                     panelBotones.Visible = true;
                     tableLayoutPanel1.Visible = true;
@@ -216,6 +235,8 @@ namespace juego
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = true;
                 contadorenemigos++;
+                SoundPlayer sd = new SoundPlayer(@"so\exp1.wav");
+                sd.Play();
                 timer1.Start();
             }
             else
@@ -225,6 +246,8 @@ namespace juego
                 player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = false;
+                SoundPlayer sd1 = new SoundPlayer(@"so\hit2.wav");
+                sd1.Play();
                 timer1.Start();
             }
             textoRespuesta.Text = "";
@@ -255,9 +278,23 @@ namespace juego
             uno.BackColor = Color.WhiteSmoke;
         }
 
+<<<<<<< HEAD
+        private void Musica_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            //Bucle de musica
+            Musica.URL = @"so\loss.wav";
+            Musica.Ctlcontrols.play();
+            ini();
+=======
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
+>>>>>>> 44ee49bc26a0dde99f469ac4953da1688b337fec
         }
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
@@ -269,6 +306,28 @@ namespace juego
             timer2.Stop();
             
         }
-       
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            //Asigna el volumen a la trackbar
+            Musica.settings.volume = trackBar1.Value;
+            OverM.settings.volume = trackBar1.Value;
+        }
+
+
+        private void MF2_Tick(object sender, EventArgs e)
+        {
+            //Bucle de musica Game Over
+            OverM.URL = @"so\over.wav";
+            OverM.Ctlcontrols.play();
+            ini();
+        }
+
+        public void ini()
+        {
+            //Baja el volumen inicial
+            Musica.settings.volume = 20;
+        }
+
     }
 }
