@@ -47,7 +47,6 @@ namespace juego
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
             time_music.Start();
         }
-
         private void HP()
         {
             switch (imagenes.CorazonesPlayer)
@@ -302,18 +301,6 @@ namespace juego
             enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
 
         }
-
-
-        private void Iluminacion_MouseHover1(object sender, EventArgs e)
-        {
-            uno.BackColor = Color.WhiteSmoke;
-        }
-        private void Musica_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
@@ -326,7 +313,6 @@ namespace juego
         {
             uno.BackColor = Color.Transparent;
         }
-
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
@@ -352,18 +338,10 @@ namespace juego
             OverM.URL = @"so\over.wav";
             OverM.Ctlcontrols.play();
         }
-
-
         private void FinAnimacion_tick(object sender, EventArgs e)
         {
             problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
             Animacionbotones.Stop();
-        }
-
-        public void ini()
-        {
-            //Baja el volumen inicial
-            Musica.settings.volume = 20;
         }
     }
 }

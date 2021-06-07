@@ -127,7 +127,6 @@ namespace juego
                             ayudaoperacion = double.Parse(operaciones[i][j - 1].ToString()) / int.Parse(operaciones[i][j + 1].ToString());
                             RespuestaCorrecta = ayudaoperacion;
                             break;
-                        
                     }
                     
                 }
@@ -139,7 +138,6 @@ namespace juego
             tiempoAnimacion.Start();
             botonImagen.BackgroundImageLayout = ImageLayout.Zoom;
             botoncambioImagen = botonImagen;
-            
         }
         
 
