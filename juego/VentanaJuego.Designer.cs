@@ -295,6 +295,7 @@ namespace juego
             this.cero.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cero.FlatAppearance.BorderSize = 0;
+            this.cero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cero.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cero.Location = new System.Drawing.Point(483, 89);
             this.cero.Name = "cero";
@@ -310,6 +311,7 @@ namespace juego
             this.nuebe.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.nuebe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.nuebe.FlatAppearance.BorderSize = 0;
+            this.nuebe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuebe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.nuebe.Location = new System.Drawing.Point(369, 89);
             this.nuebe.Name = "nuebe";
@@ -325,6 +327,7 @@ namespace juego
             this.ocho.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.ocho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ocho.FlatAppearance.BorderSize = 0;
+            this.ocho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ocho.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ocho.Location = new System.Drawing.Point(251, 89);
             this.ocho.Name = "ocho";
@@ -340,6 +343,7 @@ namespace juego
             this.siete.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.siete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.siete.FlatAppearance.BorderSize = 0;
+            this.siete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.siete.ForeColor = System.Drawing.SystemColors.ControlText;
             this.siete.Location = new System.Drawing.Point(138, 89);
             this.siete.Name = "siete";
@@ -355,6 +359,7 @@ namespace juego
             this.seis.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.seis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.seis.FlatAppearance.BorderSize = 0;
+            this.seis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seis.ForeColor = System.Drawing.SystemColors.ControlText;
             this.seis.Location = new System.Drawing.Point(26, 89);
             this.seis.Name = "seis";
@@ -370,6 +375,7 @@ namespace juego
             this.cinco.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cinco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cinco.FlatAppearance.BorderSize = 0;
+            this.cinco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cinco.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cinco.Location = new System.Drawing.Point(483, 10);
             this.cinco.Name = "cinco";
@@ -385,6 +391,7 @@ namespace juego
             this.cuatro.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cuatro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cuatro.FlatAppearance.BorderSize = 0;
+            this.cuatro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cuatro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cuatro.Location = new System.Drawing.Point(369, 10);
             this.cuatro.Name = "cuatro";
@@ -400,6 +407,7 @@ namespace juego
             this.tres.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.tres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tres.FlatAppearance.BorderSize = 0;
+            this.tres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tres.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tres.Location = new System.Drawing.Point(251, 10);
             this.tres.Name = "tres";
@@ -415,6 +423,7 @@ namespace juego
             this.dos.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.dos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.dos.FlatAppearance.BorderSize = 0;
+            this.dos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dos.ForeColor = System.Drawing.SystemColors.ControlText;
             this.dos.Location = new System.Drawing.Point(138, 10);
             this.dos.Name = "dos";
@@ -430,6 +439,7 @@ namespace juego
             this.uno.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.uno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.uno.FlatAppearance.BorderSize = 0;
+            this.uno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uno.ForeColor = System.Drawing.SystemColors.ControlText;
             this.uno.Location = new System.Drawing.Point(26, 10);
             this.uno.Name = "uno";
