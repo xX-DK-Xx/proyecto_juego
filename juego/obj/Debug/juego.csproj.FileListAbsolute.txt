@@ -50,3 +50,8 @@ C:\Users\carlo\Downloads\Juego\proyecto_juego\juego\bin\Debug\AxInterop.WMPLib.d
 C:\Users\carlo\Downloads\Juego\proyecto_juego\juego\obj\Debug\Interop.WMPLib.dll
 C:\Users\carlo\Downloads\Juego\proyecto_juego\juego\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\carlo\Downloads\Juego\proyecto_juego\juego\obj\Debug\juego.csproj.ResolveComReference.cache
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\Interop.WMPLib.dll
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.csproj.ResolveComReference.cache
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\bin\Debug\Interop.WMPLib.dll
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\bin\Debug\AxInterop.WMPLib.dll

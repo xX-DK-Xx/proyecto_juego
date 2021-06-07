@@ -12,7 +12,8 @@ namespace juego
         private Random numero1 = new Random();
         private Random numero2=new Random();
         public string problemagenerado;
-        
+        public Button botoncambioImagen;
+
         public double RespuestaCorrecta {
             get => _respuestacorrecta;
             set => _respuestacorrecta=value;
@@ -133,9 +134,13 @@ namespace juego
             }        
             
         }
-        private void Animacion(Button botonImagen) {
-            botonImagen.BackgroundImage = Image.FromFile(@"ima\image19");
+        public void Animacionboton(Button botonImagen, Timer tiempoAnimacion) {
+            botonImagen.BackgroundImage = Image.FromFile(@"ima\image19.png");
+            tiempoAnimacion.Start();
+            botonImagen.BackgroundImageLayout = ImageLayout.Zoom;
+            botoncambioImagen = botonImagen;
         }
+        
 
     }
 }
