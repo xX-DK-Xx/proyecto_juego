@@ -11,13 +11,25 @@ namespace juego
     {
         private Random numero1 = new Random();
         private Random numero2=new Random();
-        public Problemas_Y_Control(Label ProblemaMuestra)
+        public string problemagenerado;
+        
+        public double RespuestaCorrecta {
+            get => _respuestacorrecta;
+            set => _respuestacorrecta=value;
+        }
+
+        private double _respuestacorrecta;
+        
+
+        private char[] caracteresAgrupacion = { '(', '+', '-', '÷', 'x' };
+        public Problemas_Y_Control()
         {
-            GeneradorProblemas(ProblemaMuestra);
+            
         }
        
         private bool Fracciones;
-        private void AdministradorElementos(byte contador, Panel PanelProblemas, TextBox Numerado, TextBox Denominador, Label Problema)
+        /*Recibe los objetos de */
+        public void AdministradorElementos(byte contador, Panel PanelProblemas, TextBox Numerado, TextBox Denominador, Label Problema)
         {
             if (contador>5) {
                 Fracciones = true;
@@ -36,26 +48,78 @@ namespace juego
             textoRespuesta.Location = new Point(123, 21);
             panel1.Controls.Add(textoRespuesta);*/
         }
-        private void GeneradorProblemas(Label Problema)
+        public void GeneradorProblemas(Label Problema)
         {
-            bool validarcaracter;
-            char ayudaCaracter;
-            char[] caracteresAgrupacion = {'(',')','+','-','÷','x'};
+
+            byte contadorparen=0;
+            
+            
             string cadenaProblema = "";
-            byte numeroOperaciones = (byte)new Random().Next(1,5);
+            byte numeroOperaciones = (byte)new Random().Next(1,5);//Declara el número de operaciones que se realizará
+
             Random empiezaNumeroCaracter =new Random();
-            Random eleccionOperador = new Random();
+
+            
+            
             if (Fracciones==false) {
-                for (byte i=0;i<numeroOperaciones ;i++) {
-                    if (empiezaNumeroCaracter.Next(0, 1) == 1) {
-                        cadenaProblema += numero1.Next(1, 20).ToString();
-                    }
-                    else
-                    {
-                        
-                    }
+                //Determina si el problema empezará con un "(" o no, si no es así, empieza con un número
+                if (empiezaNumeroCaracter.Next(0, 1) == 1)
+                {
+                    cadenaProblema += numero1.Next(1, 20).ToString();
                 }
+                else
+                {
+                    cadenaProblema += "(";
+                    cadenaProblema += numero1.Next(1,20).ToString();
+                    contadorparen++;
+                }
+                //Comienza a llenar un string de operaciones
+                for (byte i=0;i<numeroOperaciones ;i++) {
+                    cadenaProblema += caracteresAgrupacion[empiezaNumeroCaracter.Next(0,4)];
+                    if (cadenaProblema[cadenaProblema.Length - 1] == '(') {
+                        contadorparen++;
+                    }                    
+                    cadenaProblema += numero1.Next(1,20).ToString();
+                }
+                for (byte i=0;i<contadorparen ;i++) {
+                    cadenaProblema += ")";
+                }
+                Problema.Text = cadenaProblema;
+                problemagenerado = cadenaProblema;
+                SolucionadorProblema();
             }   
         }
+        //optiene los números de la operación generada
+        private void SolucionadorProblema()
+        {
+            string[] operaciones = problemagenerado.Split(new char[] {'(',')'}, StringSplitOptions.RemoveEmptyEntries);
+            int ayudaoperacion;
+            
+            for (int i=operaciones.Length; i>0 ;i--) {
+                
+                for (byte j=0;j<operaciones[i].Length ;j++) {
+                    switch (operaciones[i][j]) {
+                        case '+':
+                            ayudaoperacion=int.Parse(operaciones[i][j-1].ToString())+int.Parse(operaciones[i][j+1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                        case '-':
+                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) - int.Parse(operaciones[i][j + 1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                        case 'x':
+                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) *int.Parse(operaciones[i][j + 1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                        case '÷':
+                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) / int.Parse(operaciones[i][j + 1].ToString());
+                            _respuestacorrecta += ayudaoperacion;
+                            break;
+                    }
+                }
+            }        
+            
+        }
+
     }
 }
