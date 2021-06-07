@@ -120,10 +120,9 @@ namespace juego
             }
 
             timer1.Stop();
-<<<<<<< HEAD
+
             //Llamamiento de los jefes
-            if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10) {
-=======
+            
 
             if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10)
             {
@@ -131,7 +130,7 @@ namespace juego
                 time_music.Stop();
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
+
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
                 this.Hide();
                 clasjefes.Show();
@@ -304,9 +303,7 @@ namespace juego
 
         }
 
-<<<<<<< HEAD
-       
-=======
+
         private void Iluminacion_MouseHover1(object sender, EventArgs e)
         {
             uno.BackColor = Color.WhiteSmoke;
@@ -316,7 +313,7 @@ namespace juego
 
         }
 
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
+
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
@@ -324,14 +321,12 @@ namespace juego
             Musica.Ctlcontrols.play();
             Musica.settings.volume = 20;
         }
-<<<<<<< HEAD
-       
-=======
+
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
         }
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
+
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
@@ -358,7 +353,7 @@ namespace juego
             OverM.Ctlcontrols.play();
         }
 
-<<<<<<< HEAD
+
         private void FinAnimacion_tick(object sender, EventArgs e)
         {
             problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
@@ -370,9 +365,5 @@ namespace juego
             //Baja el volumen inicial
             Musica.settings.volume = 20;
         }
-       
-
-=======
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
     }
 }

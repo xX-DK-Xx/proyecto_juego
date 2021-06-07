@@ -528,6 +528,7 @@ namespace juego
             // 
             // Animacionbotones
             // 
+            this.Animacionbotones.Interval = 50;
             this.Animacionbotones.Tick += new System.EventHandler(this.FinAnimacion_tick);
             // 
             // VentanaJuego
