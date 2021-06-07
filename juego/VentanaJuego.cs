@@ -278,12 +278,15 @@ namespace juego
             uno.BackColor = Color.WhiteSmoke;
         }
 
+<<<<<<< HEAD
 
         private void Musica_Enter(object sender, EventArgs e)
         {
 
         }
 
+=======
+>>>>>>> 96bc04c50ee77d5528b08f4352f666c731de50a1
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
@@ -294,7 +297,10 @@ namespace juego
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 96bc04c50ee77d5528b08f4352f666c731de50a1
         }
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
