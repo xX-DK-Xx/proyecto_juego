@@ -50,6 +50,7 @@ namespace juego
 
         private void HP()
         {
+
             switch (imagenes.CorazonesPlayer)
             {
                 case 0:
@@ -94,6 +95,8 @@ namespace juego
                     break;
 
             }
+
+
         }
 
         //Timer del daño 
@@ -120,10 +123,6 @@ namespace juego
             }
 
             timer1.Stop();
-<<<<<<< HEAD
-            //Llamamiento de los jefes
-            if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10) {
-=======
 
             if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10)
             {
@@ -131,7 +130,6 @@ namespace juego
                 time_music.Stop();
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
                 this.Hide();
                 clasjefes.Show();
@@ -140,7 +138,6 @@ namespace juego
             if (imagenes.CorazonesPlayer == 0) {
                 time_music.Stop();
                 Musica.Ctlcontrols.stop();
-                //Game over, juego acabado
                 mensaje = "Game Over, has perdido";
                 trackBar1.Visible = false;
                 OverM.settings.volume = 20;
@@ -149,7 +146,6 @@ namespace juego
                 panelBotones.Visible = false;
                 tableLayoutPanel1.Visible = false;
                 this.BackColor = Color.Black;
-
                 MessageBoxButtons botones = MessageBoxButtons.YesNo;
                 DialogResult respuesta;
                 respuesta = MessageBox.Show("¿Quieres volver a jugar?", mensaje, botones);
@@ -169,75 +165,57 @@ namespace juego
                 else
                 {
                     this.Close();
-                    MenuPrincipal menu = new MenuPrincipal();
-                    menu.Show();
                 }
             }
         }
-
-        //Funciones de los botones
         private void uno_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno,Animacionbotones);
             textoRespuesta.Text += "1";
         }
 
         private void dos_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno, Animacionbotones);
             textoRespuesta.Text += "2";
         }
 
         private void tres_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno, Animacionbotones);
             textoRespuesta.Text += "3";
         }
 
         private void cuatro_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno, Animacionbotones);
             textoRespuesta.Text += "4";
         }
 
         private void cinco_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno, Animacionbotones);
             textoRespuesta.Text += "5";
         }
 
         private void seis_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno,Animacionbotones);
             textoRespuesta.Text += "6";
         }
 
         private void siete_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno,Animacionbotones);
             textoRespuesta.Text += "7";
         }
 
         private void ocho_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno,Animacionbotones);
             textoRespuesta.Text += "8";
-            
         }
 
         private void cero_Click(object sender, EventArgs e)
         {
-            problemMatematicas.Animacionboton(uno,Animacionbotones);
             textoRespuesta.Text += "0";
         }
 
         private void nueve_Click(object sender, EventArgs e)
         {
-
-            problemMatematicas.Animacionboton(uno, Animacionbotones);
             textoRespuesta.Text += "9";
-            
-            
         }
 
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
@@ -304,9 +282,6 @@ namespace juego
 
         }
 
-<<<<<<< HEAD
-       
-=======
         private void Iluminacion_MouseHover1(object sender, EventArgs e)
         {
             uno.BackColor = Color.WhiteSmoke;
@@ -316,7 +291,6 @@ namespace juego
 
         }
 
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
@@ -324,14 +298,10 @@ namespace juego
             Musica.Ctlcontrols.play();
             Musica.settings.volume = 20;
         }
-<<<<<<< HEAD
-       
-=======
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
         }
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
@@ -358,21 +328,5 @@ namespace juego
             OverM.Ctlcontrols.play();
         }
 
-<<<<<<< HEAD
-        private void FinAnimacion_tick(object sender, EventArgs e)
-        {
-            problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
-            Animacionbotones.Stop();
-        }
-
-        public void ini()
-        {
-            //Baja el volumen inicial
-            Musica.settings.volume = 20;
-        }
-       
-
-=======
->>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
     }
 }
