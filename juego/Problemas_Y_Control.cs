@@ -75,6 +75,7 @@ namespace juego
                 }
                 //Comienza a llenar un string de operaciones
                 for (byte i=0;i<numeroOperaciones ;i++) {
+                    //Agrega la primera operación a realizar
                     cadenaProblema += caracteresAgrupacion[empiezaNumeroCaracter.Next(0,4)];
                     if (cadenaProblema[cadenaProblema.Length - 1] == '(') {
                         contadorparen++;
@@ -84,8 +85,11 @@ namespace juego
                 for (byte i=0;i<contadorparen ;i++) {
                     cadenaProblema += ")";
                 }
+                //Modifica el contenido de la etiqueta
                 Problema.Text = cadenaProblema;
+                
                 PanelMuestraproblema.Controls.Add(Problema);
+
                 problemagenerado = cadenaProblema;
                 SolucionadorProblema();
             }   
@@ -100,11 +104,12 @@ namespace juego
             {
                 RespuestaCorrecta = ayudaoperacion;
             }
-
+            //Comienza a resolver las operaciones desde la ultima subcadena
             for (int i=operaciones.Length-1; i>0 ;i--) {
                 
                 for (byte j=0;j<operaciones[i].Length-1 ;j++) {
                     switch (operaciones[i][j]) {
+                        //Busca en la cadena las operaciones que hay
                         case '+':
                             ayudaoperacion = double.Parse(operaciones[i][j - 1].ToString()) + int.Parse(operaciones[i][j + 1].ToString());
                             RespuestaCorrecta = ayudaoperacion;
@@ -127,6 +132,9 @@ namespace juego
                 }
             }        
             
+        }
+        private void Animacion(Button botonImagen) {
+            botonImagen.BackgroundImage = Image.FromFile(@"ima\image19");
         }
 
     }

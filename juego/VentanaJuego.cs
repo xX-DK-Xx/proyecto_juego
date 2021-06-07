@@ -21,84 +21,84 @@ namespace juego
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
         private string mensaje;
-        private int numerador = new Random().Next(0, 101),denominador=new Random().Next(0,101);
+        private int numerador = new Random().Next(0, 101), denominador = new Random().Next(0, 101);
         private string respaldopersonaje;
         private byte contadorenemigos = 0;
         Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
         public VentanaJuego()
         {
-            
+
             InitializeComponent();
             Musica.URL = @"so\loss.wav";
             ini();
-            problemMatematicas.AdministradorElementos(contadorenemigos,panel1,textoRespuesta,TextboxRespuestaDenominador);
-            problemMatematicas.GeneradorProblemas(MuestraProblemas,panel2Problemas);
-            
+            problemMatematicas.AdministradorElementos(contadorenemigos, panel1, textoRespuesta, TextboxRespuestaDenominador);
+            problemMatematicas.GeneradorProblemas(MuestraProblemas, panel2Problemas);
+
             imagenes.CorazonesPlayer = 3;
             HP();
-            
+
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
-            
+
             respaldopersonaje = imagenes.AdministradorEnemigos();
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
-            
+
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
             time_music.Start();
         }
 
         private void HP()
         {
-            
-                switch (imagenes.CorazonesPlayer)
-                {
-                    case 0:
-                        PanelCorazones.Visible = false;
-                        pictureBox1.Image = Image.FromFile(@"ima\image6.png");
-                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox2.Image = Image.FromFile(@"ima\image6.png");
-                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                        PanelCorazones.Visible = true;
-                        break;
-                    case 1:
-                        PanelCorazones.Visible = false;
-                        pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
-                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox2.Image = Image.FromFile(@"ima\image6.png");
-                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                        PanelCorazones.Visible = true;
-                        break;
-                    case 2:
-                        PanelCorazones.Visible = false;
-                        pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
-                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox2.Image = Image.FromFile(@"ima\imagegif2.gif");
-                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                        PanelCorazones.Visible = true;
-                        break;
-                    case 3:
-                        PanelCorazones.Visible = false;
-                        pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
-                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox2.Image = Image.FromFile(@"ima\imagegif2.gif");
-                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox3.Image = Image.FromFile(@"ima/imagegif2.gif");
-                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                        PanelCorazones.Visible = true;
-                        break;
 
-                }
-            
-           
+            switch (imagenes.CorazonesPlayer)
+            {
+                case 0:
+                    PanelCorazones.Visible = false;
+                    pictureBox1.Image = Image.FromFile(@"ima\image6.png");
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
+                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
+                    break;
+                case 1:
+                    PanelCorazones.Visible = false;
+                    pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
+                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
+                    break;
+                case 2:
+                    PanelCorazones.Visible = false;
+                    pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = Image.FromFile(@"ima\imagegif2.gif");
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
+                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
+                    break;
+                case 3:
+                    PanelCorazones.Visible = false;
+                    pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = Image.FromFile(@"ima\imagegif2.gif");
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox3.Image = Image.FromFile(@"ima/imagegif2.gif");
+                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    PanelCorazones.Visible = true;
+                    break;
+
+            }
+
+
         }
-        
+
         //Timer del daño 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -119,7 +119,7 @@ namespace juego
                  */
                 player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
-                
+
             }
 
             timer1.Stop();
@@ -128,7 +128,7 @@ namespace juego
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
                 this.Hide();
                 clasjefes.Show();
-            } 
+            }
             //Verifica que los corazones del jugador no sean 0
             if (imagenes.CorazonesPlayer == 0) {
                 time_music.Stop();
@@ -160,7 +160,7 @@ namespace juego
                 {
                     this.Close();
                 }
-            } 
+            }
         }
         private void uno_Click(object sender, EventArgs e)
         {
@@ -224,7 +224,7 @@ namespace juego
                 MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
                 textoRespuesta.Text = "";
             }
-            catch(NullReferenceException) {
+            catch (NullReferenceException) {
                 MessageBox.Show("Ingresa un número correcto");
             }
         }
@@ -252,7 +252,7 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            problemMatematicas.GeneradorProblemas(MuestraProblemas,panel2Problemas);
+            problemMatematicas.GeneradorProblemas(MuestraProblemas, panel2Problemas);
 
 
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
@@ -260,10 +260,10 @@ namespace juego
 
         private void BotonCura_Click(object sender, EventArgs e)
         {
-            imagenes.CorazonesPlayer= 3;
+            imagenes.CorazonesPlayer = 3;
             HP();
         }
-        
+
         private void CambioEnemigo()
         {
             timer2.Start();
@@ -279,6 +279,15 @@ namespace juego
             uno.BackColor = Color.WhiteSmoke;
         }
 
+<<<<<<< HEAD
+
+        private void Musica_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+=======
+>>>>>>> 96bc04c50ee77d5528b08f4352f666c731de50a1
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
@@ -289,6 +298,10 @@ namespace juego
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 96bc04c50ee77d5528b08f4352f666c731de50a1
         }
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
@@ -298,7 +311,7 @@ namespace juego
             panelBotones.Visible = true;
             tableLayoutPanel1.Visible = true;
             timer2.Stop();
-            
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -322,6 +335,6 @@ namespace juego
             //Baja el volumen inicial
             Musica.settings.volume = 20;
         }
-
+        
     }
 }
