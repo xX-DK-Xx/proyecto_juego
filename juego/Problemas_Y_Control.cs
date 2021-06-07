@@ -95,29 +95,35 @@ namespace juego
         {
             string[] operaciones = problemagenerado.Split(new char[] {'(',')'}, StringSplitOptions.RemoveEmptyEntries);
             double ayudaoperacion;
-            
+
+            if (double.TryParse(operaciones[operaciones.Length-1][0].ToString(), out ayudaoperacion) == true)
+            {
+                RespuestaCorrecta = ayudaoperacion;
+            }
+
             for (int i=operaciones.Length-1; i>0 ;i--) {
                 
                 for (byte j=0;j<operaciones[i].Length-1 ;j++) {
                     switch (operaciones[i][j]) {
                         case '+':
-                            ayudaoperacion=int.Parse(operaciones[i][j-1].ToString())+int.Parse(operaciones[i][j+1].ToString());
-                            RespuestaCorrecta += ayudaoperacion;
+                            ayudaoperacion = double.Parse(operaciones[i][j - 1].ToString()) + int.Parse(operaciones[i][j + 1].ToString());
+                            RespuestaCorrecta = ayudaoperacion;
                             break;
                         case '-':
-                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) - int.Parse(operaciones[i][j + 1].ToString());
-                            RespuestaCorrecta += ayudaoperacion;
+                            ayudaoperacion = double.Parse(operaciones[i][j - 1].ToString()) - int.Parse(operaciones[i][j + 1].ToString());
+                            RespuestaCorrecta= ayudaoperacion;
                             break;
                         case 'x':
-                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) *int.Parse(operaciones[i][j + 1].ToString());
-                            RespuestaCorrecta += ayudaoperacion;
+                            ayudaoperacion = double.Parse(operaciones[i][j - 1].ToString()) *int.Parse(operaciones[i][j + 1].ToString());
+                            RespuestaCorrecta = ayudaoperacion;
                             break;
                         case '÷':
-                            ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) / int.Parse(operaciones[i][j + 1].ToString());
-                            RespuestaCorrecta += ayudaoperacion;
+                            ayudaoperacion = double.Parse(operaciones[i][j - 1].ToString()) / int.Parse(operaciones[i][j + 1].ToString());
+                            RespuestaCorrecta = ayudaoperacion;
                             break;
+                        
                     }
-
+                    
                 }
             }        
             

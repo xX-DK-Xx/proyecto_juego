@@ -64,11 +64,14 @@ namespace juego
             this.dos = new System.Windows.Forms.Button();
             this.uno = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+<<<<<<< HEAD
             this.Musica = new AxWMPLib.AxWindowsMediaPlayer();
             this.time_music = new System.Windows.Forms.Timer(this.components);
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.MF2 = new System.Windows.Forms.Timer(this.components);
             this.OverM = new AxWMPLib.AxWindowsMediaPlayer();
+=======
+>>>>>>> 44ee49bc26a0dde99f469ac4953da1688b337fec
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).BeginInit();
@@ -325,12 +328,20 @@ namespace juego
             this.punto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.punto.FlatAppearance.BorderSize = 0;
             this.punto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.punto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.punto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.punto.Location = new System.Drawing.Point(797, 59);
             this.punto.Margin = new System.Windows.Forms.Padding(4);
             this.punto.Name = "punto";
             this.punto.Size = new System.Drawing.Size(117, 68);
+=======
+            this.punto.Font = new System.Drawing.Font("Pixel Operator SC", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.punto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.punto.Location = new System.Drawing.Point(598, 48);
+            this.punto.Name = "punto";
+            this.punto.Size = new System.Drawing.Size(88, 55);
+>>>>>>> 44ee49bc26a0dde99f469ac4953da1688b337fec
             this.punto.TabIndex = 38;
             this.punto.Text = ".";
             this.punto.UseVisualStyleBackColor = false;
@@ -504,13 +515,13 @@ namespace juego
             this.uno.Text = "1";
             this.uno.UseVisualStyleBackColor = false;
             this.uno.Click += new System.EventHandler(this.uno_Click);
-            this.uno.MouseHover += new System.EventHandler(this.Iluminacion_MouseHover1);
             // 
             // timer2
             // 
             this.timer2.Interval = 3000;
             this.timer2.Tick += new System.EventHandler(this.TransicionEnemigo_tick);
             // 
+<<<<<<< HEAD
             // Musica
             // 
             this.Musica.Enabled = true;
@@ -554,6 +565,8 @@ namespace juego
             this.OverM.TabIndex = 48;
             this.OverM.Visible = false;
             // 
+=======
+>>>>>>> 44ee49bc26a0dde99f469ac4953da1688b337fec
             // VentanaJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
