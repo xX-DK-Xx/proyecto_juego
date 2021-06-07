@@ -123,6 +123,12 @@ namespace juego
             }
 
             timer1.Stop();
+<<<<<<< HEAD
+=======
+
+            //Llamamiento de los jefes
+            
+>>>>>>> 7077017216a15c76371547e491cbfbfaec94d4d9
 
             if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10)
             {
@@ -130,6 +136,10 @@ namespace juego
                 time_music.Stop();
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7077017216a15c76371547e491cbfbfaec94d4d9
                 Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
                 this.Hide();
                 clasjefes.Show();
@@ -282,6 +292,10 @@ namespace juego
 
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7077017216a15c76371547e491cbfbfaec94d4d9
         private void Iluminacion_MouseHover1(object sender, EventArgs e)
         {
             uno.BackColor = Color.WhiteSmoke;
@@ -291,6 +305,10 @@ namespace juego
 
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7077017216a15c76371547e491cbfbfaec94d4d9
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
@@ -298,10 +316,18 @@ namespace juego
             Musica.Ctlcontrols.play();
             Musica.settings.volume = 20;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7077017216a15c76371547e491cbfbfaec94d4d9
         private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
         {
             uno.BackColor = Color.Transparent;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7077017216a15c76371547e491cbfbfaec94d4d9
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
@@ -328,5 +354,20 @@ namespace juego
             OverM.Ctlcontrols.play();
         }
 
+<<<<<<< HEAD
+=======
+
+        private void FinAnimacion_tick(object sender, EventArgs e)
+        {
+            problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
+            Animacionbotones.Stop();
+        }
+
+        public void ini()
+        {
+            //Baja el volumen inicial
+            Musica.settings.volume = 20;
+        }
+>>>>>>> 7077017216a15c76371547e491cbfbfaec94d4d9
     }
 }
