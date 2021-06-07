@@ -328,7 +328,7 @@ namespace juego
 
         private void FinAnimacion_tick(object sender, EventArgs e)
         {
-            problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31");
+            problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
             Animacionbotones.Stop();
         }
 

@@ -139,6 +139,7 @@ namespace juego
             tiempoAnimacion.Start();
             botonImagen.BackgroundImageLayout = ImageLayout.Zoom;
             botoncambioImagen = botonImagen;
+            
         }
         
 
