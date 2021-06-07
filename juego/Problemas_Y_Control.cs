@@ -95,27 +95,28 @@ namespace juego
             string[] operaciones = problemagenerado.Split(new char[] {'(',')'}, StringSplitOptions.RemoveEmptyEntries);
             int ayudaoperacion;
             
-            for (int i=operaciones.Length; i>0 ;i--) {
+            for (int i=operaciones.Length-1; i>0 ;i--) {
                 
-                for (byte j=0;j<operaciones[i].Length ;j++) {
+                for (byte j=0;j<operaciones[i].Length-1 ;j++) {
                     switch (operaciones[i][j]) {
                         case '+':
                             ayudaoperacion=int.Parse(operaciones[i][j-1].ToString())+int.Parse(operaciones[i][j+1].ToString());
-                            _respuestacorrecta += ayudaoperacion;
+                            RespuestaCorrecta += ayudaoperacion;
                             break;
                         case '-':
                             ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) - int.Parse(operaciones[i][j + 1].ToString());
-                            _respuestacorrecta += ayudaoperacion;
+                            RespuestaCorrecta += ayudaoperacion;
                             break;
                         case 'x':
                             ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) *int.Parse(operaciones[i][j + 1].ToString());
-                            _respuestacorrecta += ayudaoperacion;
+                            RespuestaCorrecta += ayudaoperacion;
                             break;
                         case '÷':
                             ayudaoperacion = int.Parse(operaciones[i][j - 1].ToString()) / int.Parse(operaciones[i][j + 1].ToString());
-                            _respuestacorrecta += ayudaoperacion;
+                            RespuestaCorrecta += ayudaoperacion;
                             break;
                     }
+
                 }
             }        
             

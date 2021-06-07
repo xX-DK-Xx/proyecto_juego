@@ -58,7 +58,7 @@ namespace juego
                         break;
                     case 1:
                         PanelCorazones.Visible = false;
-                        pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
                         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                         pictureBox2.Image = Image.FromFile(@"ima\image6.png");
                         pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -68,9 +68,9 @@ namespace juego
                         break;
                     case 2:
                         PanelCorazones.Visible = false;
-                        pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
                         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox2.Image = Image.FromFile(@"ima\imagegif2.gif");
                         pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
                         pictureBox3.Image = Image.FromFile(@"ima\image6.png");
                         pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -78,11 +78,11 @@ namespace juego
                         break;
                     case 3:
                         PanelCorazones.Visible = false;
-                        pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox1.Image = Image.FromFile(@"ima\imagegif2.gif");
                         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox2.Image = Image.FromFile(@"ima\imagegif2.gif");
                         pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox3.Image = Image.FromFile(imagenes.archivosimagenes[19]);
+                        pictureBox3.Image = Image.FromFile(@"ima/imagegif2.gif");
                         pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                         PanelCorazones.Visible = true;
                         break;
@@ -221,7 +221,7 @@ namespace juego
             {
                 imagenes.CorazonesPlayer--;
                 HP();
-                player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
+                player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = false;
                 timer1.Start();
@@ -247,6 +247,11 @@ namespace juego
             tableLayoutPanel1.Visible = false;
             enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
 
+        }
+
+        private void Iluminacion_MouseHover1(object sender, EventArgs e)
+        {
+            uno.BackColor = Color.WhiteSmoke;
         }
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
