@@ -29,7 +29,7 @@ namespace juego
        
         private bool Fracciones;
         /*Recibe los objetos de */
-        public void AdministradorElementos(byte contador, Panel PanelProblemas, TextBox Numerado, TextBox Denominador, Label Problema)
+        public void AdministradorElementos(byte contador, Panel PanelProblemas, TextBox Numerado, TextBox Denominador)
         {
             if (contador>5) {
                 Fracciones = true;
@@ -37,7 +37,7 @@ namespace juego
             else
             {
                 Fracciones = false;
-                Problema.Visible = false;
+                
                 Denominador.Visible = false;
                 Denominador.Enabled = false;
                 Numerado.Location = new Point(123,21);
@@ -48,7 +48,7 @@ namespace juego
             textoRespuesta.Location = new Point(123, 21);
             panel1.Controls.Add(textoRespuesta);*/
         }
-        public void GeneradorProblemas(Label Problema)
+        public void GeneradorProblemas(Label Problema,Panel PanelMuestraproblema)
         {
 
             byte contadorparen=0;
@@ -85,6 +85,7 @@ namespace juego
                     cadenaProblema += ")";
                 }
                 Problema.Text = cadenaProblema;
+                PanelMuestraproblema.Controls.Add(Problema);
                 problemagenerado = cadenaProblema;
                 SolucionadorProblema();
             }   
@@ -93,7 +94,7 @@ namespace juego
         private void SolucionadorProblema()
         {
             string[] operaciones = problemagenerado.Split(new char[] {'(',')'}, StringSplitOptions.RemoveEmptyEntries);
-            int ayudaoperacion;
+            double ayudaoperacion;
             
             for (int i=operaciones.Length-1; i>0 ;i--) {
                 

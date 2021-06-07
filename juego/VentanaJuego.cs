@@ -26,8 +26,9 @@ namespace juego
         public VentanaJuego()
         {
             InitializeComponent();
-            problemMatematicas.AdministradorElementos(contadorenemigos,panel1,textoRespuesta,TextboxRespuestaDenominador,MuestraProblemas);
-            problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            problemMatematicas.AdministradorElementos(contadorenemigos,panel1,textoRespuesta,TextboxRespuestaDenominador);
+            problemMatematicas.GeneradorProblemas(MuestraProblemas,panel2Problemas);
+            
             imagenes.CorazonesPlayer = 3;
             HP();
             
@@ -38,7 +39,7 @@ namespace juego
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
             
-            textoRespuesta.Text = problemMatematicas.problemagenerado;
+            textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
         }
 
         private void HP()
@@ -227,7 +228,7 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            problemMatematicas.GeneradorProblemas(MuestraProblemas,panel2Problemas);
 
 
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();

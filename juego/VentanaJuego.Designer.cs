@@ -62,6 +62,7 @@ namespace juego
             this.dos = new System.Windows.Forms.Button();
             this.uno = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.punto = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).BeginInit();
@@ -264,7 +265,7 @@ namespace juego
             // MuestraProblemas
             // 
             this.MuestraProblemas.AutoSize = true;
-            this.MuestraProblemas.Location = new System.Drawing.Point(10, 19);
+            this.MuestraProblemas.Location = new System.Drawing.Point(102, 39);
             this.MuestraProblemas.Name = "MuestraProblemas";
             this.MuestraProblemas.Size = new System.Drawing.Size(35, 13);
             this.MuestraProblemas.TabIndex = 0;
@@ -272,6 +273,7 @@ namespace juego
             // 
             // panelBotones
             // 
+            this.panelBotones.Controls.Add(this.punto);
             this.panelBotones.Controls.Add(this.cero);
             this.panelBotones.Controls.Add(this.nuebe);
             this.panelBotones.Controls.Add(this.ocho);
@@ -284,7 +286,7 @@ namespace juego
             this.panelBotones.Controls.Add(this.uno);
             this.panelBotones.Location = new System.Drawing.Point(115, 381);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(579, 153);
+            this.panelBotones.Size = new System.Drawing.Size(738, 153);
             this.panelBotones.TabIndex = 44;
             // 
             // cero
@@ -443,6 +445,22 @@ namespace juego
             this.timer2.Interval = 3000;
             this.timer2.Tick += new System.EventHandler(this.TransicionEnemigo_tick);
             // 
+            // punto
+            // 
+            this.punto.BackColor = System.Drawing.SystemColors.Control;
+            this.punto.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.punto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.punto.FlatAppearance.BorderSize = 0;
+            this.punto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.punto.Font = new System.Drawing.Font("Pixel Operator SC", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.punto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.punto.Location = new System.Drawing.Point(598, 48);
+            this.punto.Name = "punto";
+            this.punto.Size = new System.Drawing.Size(88, 55);
+            this.punto.TabIndex = 38;
+            this.punto.Text = ".";
+            this.punto.UseVisualStyleBackColor = false;
+            // 
             // VentanaJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,5 +524,6 @@ namespace juego
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2Problemas;
         private System.Windows.Forms.Label MuestraProblemas;
+        private System.Windows.Forms.Button punto;
     }
 }
