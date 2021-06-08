@@ -164,7 +164,9 @@ namespace juego
                 }
                 else
                 {
+                    MenuPrincipal menu = new MenuPrincipal();
                     this.Close();
+                    menu.Show();
                 }
             }
         }
