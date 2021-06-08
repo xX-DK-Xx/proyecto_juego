@@ -170,51 +170,61 @@ namespace juego
         }
         private void uno_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(uno, Animacionbotones);
             textoRespuesta.Text += "1";
         }
 
         private void dos_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(dos, Animacionbotones);
             textoRespuesta.Text += "2";
         }
 
         private void tres_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(tres, Animacionbotones);
             textoRespuesta.Text += "3";
         }
 
         private void cuatro_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(cuatro, Animacionbotones);
             textoRespuesta.Text += "4";
         }
 
         private void cinco_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(cinco, Animacionbotones);
             textoRespuesta.Text += "5";
         }
 
         private void seis_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(seis, Animacionbotones);
             textoRespuesta.Text += "6";
         }
 
         private void siete_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(siete, Animacionbotones);
             textoRespuesta.Text += "7";
         }
 
         private void ocho_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(ocho, Animacionbotones);
             textoRespuesta.Text += "8";
         }
 
         private void cero_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(cero, Animacionbotones);
             textoRespuesta.Text += "0";
         }
 
         private void nueve_Click(object sender, EventArgs e)
         {
+            problemMatematicas.Animacionboton(nuebe, Animacionbotones);
             textoRespuesta.Text += "9";
         }
 
@@ -230,8 +240,13 @@ namespace juego
                 MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
                 textoRespuesta.Text = "";
             }
-            catch (NullReferenceException) {
+            catch (NullReferenceException)
+            {
                 MessageBox.Show("Ingresa un número correcto");
+            }
+            catch (OverflowException) {
+                MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                textoRespuesta.Text = "";
             }
         }
         private void cal_res(int respuestarecibida)
@@ -281,18 +296,8 @@ namespace juego
             enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
 
         }
-<<<<<<< HEAD
-=======
+        
 
-        private void Iluminacion_MouseHover1(object sender, EventArgs e)
-        {
-            uno.BackColor = Color.WhiteSmoke;
-        }
-        private void Musica_Enter(object sender, EventArgs e)
-        {
-
-        }
->>>>>>> 0c23d082a18878f7314b2508b8063c35c38bf110
         private void timer3_Tick(object sender, EventArgs e)
         {
             //Bucle de musica
@@ -300,10 +305,7 @@ namespace juego
             Musica.Ctlcontrols.play();
             Musica.settings.volume = 20;
         }
-        private void Ilumicacion_MouseLeave1(object sender, EventArgs e)
-        {
-            uno.BackColor = Color.Transparent;
-        }
+       
 
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
@@ -329,18 +331,12 @@ namespace juego
             OverM.URL = @"so\over.wav";
             OverM.Ctlcontrols.play();
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 0c23d082a18878f7314b2508b8063c35c38bf110
         private void FinAnimacion_tick(object sender, EventArgs e)
         {
             problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
             Animacionbotones.Stop();
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 0c23d082a18878f7314b2508b8063c35c38bf110
     }
 }

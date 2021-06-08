@@ -139,7 +139,10 @@ namespace juego
             botonImagen.BackgroundImageLayout = ImageLayout.Zoom;
             botoncambioImagen = botonImagen;
         }
-        
+        public void FinAnimacionBoton(Button botonimaoriginal)
+        {
+
+        }
 
     }
 }
