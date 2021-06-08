@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gato_raton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gato_raton.Designer.cs">
+      <DependentUpon>Gato_raton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Problemas_Y_Control.cs" />
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -68,6 +74,9 @@
     <Compile Include="Ventana_Jefes.Designer.cs">
       <DependentUpon>Ventana_Jefes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Gato_raton.resx">
+      <DependentUpon>Gato_raton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +130,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
