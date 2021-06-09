@@ -53,5 +53,14 @@ namespace juego
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Gato_raton gato = new Gato_raton();
+            Menu.Ctlcontrols.stop();
+            time_bu.Stop();
+            this.Hide();
+            gato.Show();
+        }
     }
 }

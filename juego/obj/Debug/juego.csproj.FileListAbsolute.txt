@@ -75,3 +75,10 @@ C:\Users\carlo\Desktop\proyecto_juego\juego\obj\Debug\juego.csproj.CoreCompileIn
 C:\Users\carlo\Desktop\proyecto_juego\juego\obj\Debug\juego.exe
 C:\Users\carlo\Desktop\proyecto_juego\juego\obj\Debug\juego.pdb
 >>>>>>> cb857bf4a9e1eae6b99aaf37e4b760404649cf81
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\bin\Debug\Interop.WMPLib.dll
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\Interop.WMPLib.dll
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.csproj.ResolveComReference.cache
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Ventana_Jefes.resources
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Gato_raton.resources
