@@ -56,7 +56,7 @@ namespace juego
             {
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
-                    label1.Text = "1EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -65,7 +65,7 @@ namespace juego
             {
                 if (tablero[3] == "x" || tablero[4] == "o")
                 {
-                    label1.Text = "2EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -74,7 +74,7 @@ namespace juego
             {
                 if (tablero[6] == "x" || tablero[6] == "o")
                 {
-                    label1.Text = "3EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -83,7 +83,7 @@ namespace juego
             {
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
-                    label1.Text = "4EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -92,7 +92,7 @@ namespace juego
             {
                 if (tablero[1] == "x" || tablero[1] == "o")
                 {
-                    label1.Text = "5EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -101,7 +101,7 @@ namespace juego
             {
                 if (tablero[2] == "x" || tablero[2] == "o")
                 {
-                    label1.Text = "6EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -110,7 +110,7 @@ namespace juego
             {
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
-                    label1.Text = "7EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -119,7 +119,7 @@ namespace juego
             {
                 if (tablero[2] == "x" || tablero[2] == "o")
                 {
-                    label1.Text = "8EL GANADOR ES " + quiengana;
+                    label1.Text = "EL GANADOR ES " + quiengana;
                     gana = true;
                     desa();
                 }
@@ -271,7 +271,6 @@ namespace juego
                     do
                     {
                         int tpc =  casilla.Next(0, 9);
-                        label3.Text = "" + tpc;
                         if (tablero[tpc] == "x" || tablero[tpc] == "o")
                         {
                             tur = false;
@@ -282,22 +281,20 @@ namespace juego
                             tur = true;                            
                             direccion = @"imagato\raton.png";                          
                             boton(tpc);
-                            label2.Text = "" + tpc;
                             label1.Text = "Turno de Gato";
                             quiengana = "RATON";
                             ganar();
                         }
                     } while (tur != true);
                     con++;
-                   
+                    juga = 0;
+                    tur = false;
                 }
             }
-            juga = 0;
-            tur = false;
+            
         }
         private void boton(int numboton)
         {
-            label4.Text = "" + numboton;
             switch (numboton)
             {
                 case 0:                    
