@@ -107,7 +107,7 @@ namespace juego
             this.tableLayoutPanel1.Controls.Add(this.panelCorazones2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2Problemas, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.76534F));
@@ -124,7 +124,7 @@ namespace juego
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Respuesta);
             this.panel1.Location = new System.Drawing.Point(310, 337);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 100);
             this.panel1.TabIndex = 45;
@@ -146,7 +146,7 @@ namespace juego
             // 
             this.TextboxRespuestaDenominador.Enabled = false;
             this.TextboxRespuestaDenominador.Location = new System.Drawing.Point(177, 59);
-            this.TextboxRespuestaDenominador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextboxRespuestaDenominador.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxRespuestaDenominador.Name = "TextboxRespuestaDenominador";
             this.TextboxRespuestaDenominador.Size = new System.Drawing.Size(99, 22);
             this.TextboxRespuestaDenominador.TabIndex = 47;
@@ -156,7 +156,7 @@ namespace juego
             // 
             this.textoRespuesta.Enabled = false;
             this.textoRespuesta.Location = new System.Drawing.Point(177, 4);
-            this.textoRespuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textoRespuesta.Margin = new System.Windows.Forms.Padding(4);
             this.textoRespuesta.Name = "textoRespuesta";
             this.textoRespuesta.Size = new System.Drawing.Size(99, 22);
             this.textoRespuesta.TabIndex = 44;
@@ -164,7 +164,7 @@ namespace juego
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(8, 20);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 34);
             this.button1.TabIndex = 46;
@@ -175,7 +175,7 @@ namespace juego
             // Respuesta
             // 
             this.Respuesta.Location = new System.Drawing.Point(352, 20);
-            this.Respuesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Respuesta.Margin = new System.Windows.Forms.Padding(4);
             this.Respuesta.Name = "Respuesta";
             this.Respuesta.Size = new System.Drawing.Size(100, 28);
             this.Respuesta.TabIndex = 45;
@@ -186,7 +186,7 @@ namespace juego
             // enemi
             // 
             this.enemi.Location = new System.Drawing.Point(793, 153);
-            this.enemi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemi.Margin = new System.Windows.Forms.Padding(4);
             this.enemi.Name = "enemi";
             this.enemi.Size = new System.Drawing.Size(179, 171);
             this.enemi.TabIndex = 41;
@@ -198,7 +198,7 @@ namespace juego
             this.PanelCorazones.Controls.Add(this.pictureBox2);
             this.PanelCorazones.Controls.Add(this.pictureBox3);
             this.PanelCorazones.Location = new System.Drawing.Point(4, 4);
-            this.PanelCorazones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelCorazones.Margin = new System.Windows.Forms.Padding(4);
             this.PanelCorazones.Name = "PanelCorazones";
             this.PanelCorazones.Size = new System.Drawing.Size(298, 95);
             this.PanelCorazones.TabIndex = 40;
@@ -206,7 +206,7 @@ namespace juego
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(92, 86);
             this.pictureBox1.TabIndex = 13;
@@ -215,7 +215,7 @@ namespace juego
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(103, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(92, 86);
             this.pictureBox2.TabIndex = 14;
@@ -224,7 +224,7 @@ namespace juego
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(203, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(92, 86);
             this.pictureBox3.TabIndex = 15;
@@ -233,7 +233,7 @@ namespace juego
             // player
             // 
             this.player.Location = new System.Drawing.Point(4, 153);
-            this.player.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.player.Margin = new System.Windows.Forms.Padding(4);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(195, 171);
             this.player.TabIndex = 42;
@@ -245,7 +245,7 @@ namespace juego
             this.panelCorazones2.Controls.Add(this.pictureBox5);
             this.panelCorazones2.Controls.Add(this.pictureBox6);
             this.panelCorazones2.Location = new System.Drawing.Point(310, 4);
-            this.panelCorazones2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelCorazones2.Margin = new System.Windows.Forms.Padding(4);
             this.panelCorazones2.Name = "panelCorazones2";
             this.panelCorazones2.Size = new System.Drawing.Size(305, 95);
             this.panelCorazones2.TabIndex = 46;
@@ -254,7 +254,7 @@ namespace juego
             // pictureBox4
             // 
             this.pictureBox4.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(92, 86);
             this.pictureBox4.TabIndex = 13;
@@ -264,7 +264,7 @@ namespace juego
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(103, 4);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(92, 86);
             this.pictureBox5.TabIndex = 14;
@@ -274,7 +274,7 @@ namespace juego
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(203, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(92, 86);
             this.pictureBox6.TabIndex = 15;
@@ -285,7 +285,7 @@ namespace juego
             // 
             this.panel2Problemas.Controls.Add(this.MuestraProblemas);
             this.panel2Problemas.Location = new System.Drawing.Point(310, 153);
-            this.panel2Problemas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2Problemas.Margin = new System.Windows.Forms.Padding(4);
             this.panel2Problemas.Name = "panel2Problemas";
             this.panel2Problemas.Size = new System.Drawing.Size(324, 129);
             this.panel2Problemas.TabIndex = 47;
@@ -314,7 +314,7 @@ namespace juego
             this.panelBotones.Controls.Add(this.dos);
             this.panelBotones.Controls.Add(this.uno);
             this.panelBotones.Location = new System.Drawing.Point(153, 469);
-            this.panelBotones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBotones.Margin = new System.Windows.Forms.Padding(4);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(984, 188);
             this.panelBotones.TabIndex = 44;
@@ -329,7 +329,7 @@ namespace juego
             this.punto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.punto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.punto.Location = new System.Drawing.Point(797, 59);
-            this.punto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.punto.Margin = new System.Windows.Forms.Padding(4);
             this.punto.Name = "punto";
             this.punto.Size = new System.Drawing.Size(117, 68);
             this.punto.TabIndex = 38;
@@ -345,7 +345,7 @@ namespace juego
             this.cero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cero.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cero.Location = new System.Drawing.Point(644, 110);
-            this.cero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cero.Margin = new System.Windows.Forms.Padding(4);
             this.cero.Name = "cero";
             this.cero.Size = new System.Drawing.Size(117, 68);
             this.cero.TabIndex = 37;
@@ -362,7 +362,7 @@ namespace juego
             this.nuebe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuebe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.nuebe.Location = new System.Drawing.Point(492, 110);
-            this.nuebe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nuebe.Margin = new System.Windows.Forms.Padding(4);
             this.nuebe.Name = "nuebe";
             this.nuebe.Size = new System.Drawing.Size(117, 68);
             this.nuebe.TabIndex = 36;
@@ -379,7 +379,7 @@ namespace juego
             this.ocho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ocho.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ocho.Location = new System.Drawing.Point(335, 110);
-            this.ocho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ocho.Margin = new System.Windows.Forms.Padding(4);
             this.ocho.Name = "ocho";
             this.ocho.Size = new System.Drawing.Size(117, 68);
             this.ocho.TabIndex = 35;
@@ -396,7 +396,7 @@ namespace juego
             this.siete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.siete.ForeColor = System.Drawing.SystemColors.ControlText;
             this.siete.Location = new System.Drawing.Point(184, 110);
-            this.siete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.siete.Margin = new System.Windows.Forms.Padding(4);
             this.siete.Name = "siete";
             this.siete.Size = new System.Drawing.Size(117, 68);
             this.siete.TabIndex = 34;
@@ -413,7 +413,7 @@ namespace juego
             this.seis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seis.ForeColor = System.Drawing.SystemColors.ControlText;
             this.seis.Location = new System.Drawing.Point(35, 110);
-            this.seis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seis.Margin = new System.Windows.Forms.Padding(4);
             this.seis.Name = "seis";
             this.seis.Size = new System.Drawing.Size(117, 68);
             this.seis.TabIndex = 33;
@@ -430,7 +430,7 @@ namespace juego
             this.cinco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cinco.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cinco.Location = new System.Drawing.Point(644, 12);
-            this.cinco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cinco.Margin = new System.Windows.Forms.Padding(4);
             this.cinco.Name = "cinco";
             this.cinco.Size = new System.Drawing.Size(117, 68);
             this.cinco.TabIndex = 32;
@@ -447,7 +447,7 @@ namespace juego
             this.cuatro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cuatro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cuatro.Location = new System.Drawing.Point(492, 12);
-            this.cuatro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cuatro.Margin = new System.Windows.Forms.Padding(4);
             this.cuatro.Name = "cuatro";
             this.cuatro.Size = new System.Drawing.Size(117, 68);
             this.cuatro.TabIndex = 31;
@@ -464,7 +464,7 @@ namespace juego
             this.tres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tres.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tres.Location = new System.Drawing.Point(335, 12);
-            this.tres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tres.Margin = new System.Windows.Forms.Padding(4);
             this.tres.Name = "tres";
             this.tres.Size = new System.Drawing.Size(117, 68);
             this.tres.TabIndex = 30;
@@ -481,7 +481,7 @@ namespace juego
             this.dos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dos.ForeColor = System.Drawing.SystemColors.ControlText;
             this.dos.Location = new System.Drawing.Point(184, 12);
-            this.dos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dos.Margin = new System.Windows.Forms.Padding(4);
             this.dos.Name = "dos";
             this.dos.Size = new System.Drawing.Size(117, 68);
             this.dos.TabIndex = 29;
@@ -498,7 +498,7 @@ namespace juego
             this.uno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uno.ForeColor = System.Drawing.SystemColors.ControlText;
             this.uno.Location = new System.Drawing.Point(35, 12);
-            this.uno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uno.Margin = new System.Windows.Forms.Padding(4);
             this.uno.Name = "uno";
             this.uno.Size = new System.Drawing.Size(117, 68);
             this.uno.TabIndex = 21;
@@ -537,7 +537,7 @@ namespace juego
             this.trackBar1.Size = new System.Drawing.Size(104, 56);
             this.trackBar1.TabIndex = 47;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar1.Value = 20;
+            this.trackBar1.Value = 15;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // MF2
@@ -571,9 +571,10 @@ namespace juego
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.trackBar1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VentanaJuego";
             this.Text = "VentanaJuego";
+            this.Load += new System.EventHandler(this.VentanaJuego_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -636,8 +637,8 @@ namespace juego
         private AxWMPLib.AxWindowsMediaPlayer Musica;
         private System.Windows.Forms.Timer time_music;
         private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Timer MF2;
         private AxWMPLib.AxWindowsMediaPlayer OverM;
         private System.Windows.Forms.Timer Animacionbotones;
+        public System.Windows.Forms.Timer MF2;
     }
 }

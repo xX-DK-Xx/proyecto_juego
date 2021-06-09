@@ -138,7 +138,7 @@ namespace juego
                 Musica.Ctlcontrols.stop();
                 mensaje = "Game Over, has perdido";
                 trackBar1.Visible = false;
-                OverM.settings.volume = 20;
+                OverM.settings.volume = 15;
                 OverM.URL = @"so\over.wav";
                 MF2.Start();
                 panelBotones.Visible = false;
@@ -151,6 +151,7 @@ namespace juego
                 {
                     trackBar1.Show();
                     OverM.Ctlcontrols.stop();
+                    Musica.settings.volume = 15;
                     Musica.URL = @"so\loss.wav";
                     time_music.Start();
                     contadorenemigos = 0;
@@ -296,14 +297,14 @@ namespace juego
             enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
 
         }
-        
 
+
+        //Bucle de musica
         private void timer3_Tick(object sender, EventArgs e)
         {
-            //Bucle de musica
+            Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
             Musica.Ctlcontrols.play();
-            Musica.settings.volume = 20;
         }
        
 
@@ -327,9 +328,14 @@ namespace juego
         //Bucle de musica Game Over
         public void MF2_Tick(object sender, EventArgs e)
         {
-            OverM.settings.volume = 20;
+            OverM.settings.volume = 15;
             OverM.URL = @"so\over.wav";
             OverM.Ctlcontrols.play();
+        }
+
+        private void VentanaJuego_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void FinAnimacion_tick(object sender, EventArgs e)

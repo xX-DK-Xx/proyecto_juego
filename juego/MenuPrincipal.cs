@@ -19,8 +19,8 @@ namespace juego
         public MenuPrincipal()
         {
             InitializeComponent();
+            Menu.settings.volume = 15;
             Menu.URL= @"so\menu.wav";
-            Menu.settings.volume = 20;
             time_bu.Start();
             //VentanaJuego Juego = new VentanaJuego();
             //Juego.Show();
@@ -39,7 +39,7 @@ namespace juego
         //Bucle de musica menu
         private void Bu(object sender, EventArgs e)
         {
-            Menu.settings.volume = trackBar1.Value;
+            Menu.settings.volume = 15;
             Menu.URL = @"so\menu.wav";
             Menu.Ctlcontrols.play();
         }

@@ -23,6 +23,9 @@ namespace juego
         public Gato_raton()
         {
             InitializeComponent();
+            CatM.settings.volume = 15;
+            CatM.URL = @"so\cat.wav";
+            FM_Cat.Start();
             label1.Visible = false;
             juga = 0;
             label1.Text = "Turno de Gato";
@@ -57,6 +60,11 @@ namespace juego
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatLose.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatLose.URL = @"so\over.wav";
+                    FML_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -343,6 +351,20 @@ namespace juego
                     button9.Enabled = false;
                     break;
             }
+        }
+
+        private void FM_Cat_Tick(object sender, EventArgs e)
+        {
+            CatM.settings.volume = 15;
+            CatM.URL = @"so\cat.wav";
+            CatM.Ctlcontrols.play();
+        }
+
+        private void FML_Cat_Tick(object sender, EventArgs e)
+        {
+            CatLose.settings.volume = 15;
+            CatLose.URL = @"so\over.wav";
+            CatLose.Ctlcontrols.play();
         }
     }
 }
