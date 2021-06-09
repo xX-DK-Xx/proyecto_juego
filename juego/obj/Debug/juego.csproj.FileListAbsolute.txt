@@ -82,3 +82,4 @@ C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\AxInterop
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.csproj.ResolveComReference.cache
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Ventana_Jefes.resources
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Gato_raton.resources
+C:\Users\carlo\Desktop\proyecto_juego\juego\obj\Debug\juego.Gato_raton.resources
