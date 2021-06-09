@@ -94,8 +94,6 @@ namespace juego
                     break;
 
             }
-
-
         }
 
         //Timer del daño 

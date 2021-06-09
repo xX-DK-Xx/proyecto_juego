@@ -51,17 +51,12 @@ namespace juego
         }
         public void GeneradorProblemas(Label Problema,Panel PanelMuestraproblema)
         {
-
             byte contadorparen=0;
-            
-            
             string cadenaProblema = "";
             byte numeroOperaciones = (byte)new Random().Next(1,5);//Declara el número de operaciones que se realizará
 
             Random empiezaNumeroCaracter =new Random();
 
-            
-            
             if (Fracciones==false) {
                 //Determina si el problema empezará con un "(" o no, si no es así, empieza con un número
                 if (empiezaNumeroCaracter.Next(0, 1) == 1)
@@ -128,7 +123,6 @@ namespace juego
                             RespuestaCorrecta = ayudaoperacion;
                             break;
                     }
-                    
                 }
             }        
             
