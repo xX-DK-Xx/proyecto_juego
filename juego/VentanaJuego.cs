@@ -25,17 +25,21 @@ namespace juego
         private string respaldopersonaje;
         private byte contadorenemigos = 0;
         Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
+        private PictureBox[] corazones;
         public VentanaJuego()
         {
-
+            
             InitializeComponent();
+            corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
             problemMatematicas.AdministradorElementos(contadorenemigos, panel1, textoRespuesta, TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas, panel2Problemas);
 
             imagenes.CorazonesPlayer = 3;
-            HP();
+            imagenes.MuestraCorazones(corazones);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,panelCorazones2);
+            //HP();
 
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -106,6 +110,7 @@ namespace juego
                  * del enemigo                 
                  */
                 CambioEnemigo();
+                
 
             }
             else
@@ -158,7 +163,7 @@ namespace juego
                     panelBotones.Visible = true;
                     tableLayoutPanel1.Visible = true;
                     imagenes.CorazonesPlayer = 3;
-                    HP();
+                    imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
                     this.BackColor = Color.White;
                 }
                 else
@@ -229,6 +234,12 @@ namespace juego
             textoRespuesta.Text += "9";
         }
 
+        private void punto_Click(object sender, EventArgs e)
+        {
+            problemMatematicas.Animacionboton(punto,Animacionbotones);
+            textoRespuesta.Text += "9";
+        }
+
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
         {
             try
@@ -238,7 +249,7 @@ namespace juego
             }
             catch (FormatException)
             {
-                MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                MessageBox.Show("Introduciste una cantidad no aceptada");
                 textoRespuesta.Text = "";
             }
             catch (NullReferenceException)
@@ -265,7 +276,8 @@ namespace juego
             else
             {
                 imagenes.CorazonesPlayer--;
-                HP();
+                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+                //HP();
                 player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = false;
@@ -285,7 +297,8 @@ namespace juego
             SoundPlayer hp = new SoundPlayer(@"so\up0.wav");
             hp.Play();
             imagenes.CorazonesPlayer = 3;
-            HP();
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+            //            HP();
         }
 
         private void CambioEnemigo()
@@ -337,6 +350,7 @@ namespace juego
         {
 
         }
+
 
         private void FinAnimacion_tick(object sender, EventArgs e)
         {

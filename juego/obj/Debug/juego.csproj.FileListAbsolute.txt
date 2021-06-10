@@ -83,3 +83,4 @@ C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.csp
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Ventana_Jefes.resources
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Gato_raton.resources
 C:\Users\carlo\Desktop\proyecto_juego\juego\obj\Debug\juego.Gato_raton.resources
+C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.Gato_raton.resources

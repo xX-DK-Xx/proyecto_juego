@@ -21,16 +21,19 @@ namespace juego
 
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
-       
+        private PictureBox[] corazones;
+        private Problemas_Y_Control mateproblem = new Problemas_Y_Control();
         
-        private int r = new Random().Next(0, 101);
 
         public Ventana_Jefes (byte eleccionJefe)
         {
 
             InitializeComponent();
+            corazones=new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             imagenes.CorazonesPlayer = 3;
-            HP();
+            imagenes.MuestraCorazones(corazones);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,panelCorazones2);
+            //HP();
 
             player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -45,14 +48,14 @@ namespace juego
                 case 9:
                     enemi.Image = Image.FromFile(imagenes.archivosimagenes[15]);
                     break;
-                    case 10:
+                case 10:
                     MessageBox.Show("Esta es una prueba xdxd");
                     break;
 
             }
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
-            textoRespuesta.Text = r.ToString();
+            textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
         }
 
         private void HP()
@@ -172,6 +175,10 @@ namespace juego
         {
             textoRespuesta.Text += "9";
         }
+        private void punto_Click(object sender, EventArgs e)
+        {
+            textoRespuesta.Text += ".";
+        }
 
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
         {
@@ -182,7 +189,7 @@ namespace juego
         }
         private void Cal_res(int respuestarecibida)
         {
-            if (respuestarecibida == r)
+            if (respuestarecibida == mateproblem.RespuestaCorrecta)
             {
                 enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
@@ -193,7 +200,8 @@ namespace juego
             else
             {
                 imagenes.CorazonesPlayer--;
-                HP();
+                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+                //HP();
                 player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = false;
@@ -207,7 +215,8 @@ namespace juego
         private void BotonCura_Click(object sender, EventArgs e)
         {
             imagenes.CorazonesPlayer = 3;
-            HP();
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+            //HP();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -219,5 +228,7 @@ namespace juego
         {
 
         }
+
+        
     }
 }
