@@ -132,7 +132,7 @@ namespace juego
                                 break;
                         }
                     }
-                    Math.Round(RespuestaCorrecta,2);
+                    RespuestaCorrecta=Math.Round(RespuestaCorrecta,2);
                 }
             }
             Problema.Text = problemagenerado;
