@@ -14,7 +14,7 @@ namespace juego
     {
         public int juga;
         public string quiengana;
-        public int con;
+        public int con,conbotones;
         public string direccion;
         public string[] tablero = new string[9];
         bool computadora;
@@ -151,6 +151,8 @@ namespace juego
             button7.Enabled = false;
             button8.Enabled = false;
             button9.Enabled = false;
+            jugar_nuevo.Enabled = true;
+            jugar_nuevo.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -258,6 +260,11 @@ namespace juego
             button10.Visible = false;
             button11.Enabled = false;
             button11.Visible = false;
+
+            regresar.Enabled = true;
+            regresar.Visible = true;
+            cambiar_modo.Enabled = true;
+            cambiar_modo.Visible = true;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -365,6 +372,129 @@ namespace juego
             CatLose.settings.volume = 15;
             CatLose.URL = @"so\over.wav";
             CatLose.Ctlcontrols.play();
+        }
+
+        private void cambiar_modo_Click(object sender, EventArgs e)
+        {
+            arreglar_botones();
+            label1.Visible = false;
+            button1.Enabled = false;
+            button1.Visible = false;
+            button2.Enabled = false;
+            button2.Visible = false;
+            button3.Enabled = false;
+            button3.Visible = false;
+            button4.Enabled = false;
+            button4.Visible = false;
+            button5.Enabled = false;
+            button5.Visible = false;
+            button6.Enabled = false;
+            button6.Visible = false;
+            button7.Enabled = false;
+            button7.Visible = false;
+            button8.Enabled = false;
+            button8.Visible = false;
+            button9.Enabled = false;
+            button9.Visible = false;
+            button10.Enabled = true;
+            button10.Visible = true;
+            button11.Enabled = true;
+            button11.Visible = true;
+            jugar_nuevo.Enabled = false;
+            jugar_nuevo.Visible = false;
+            regresar.Enabled = false;
+            regresar.Visible = false;
+            cambiar_modo.Enabled = false;
+            cambiar_modo.Visible = false;
+        }
+
+        private void regresar_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menu = new MenuPrincipal();
+            CatM.Ctlcontrols.stop();
+            FM_Cat.Stop();
+            this.Hide();
+            menu.Show();
+        }
+
+        private void jugar_nuevo_Click(object sender, EventArgs e)
+        {
+            jugar_nuevo.Enabled = false;            
+            regresar.Enabled = false;
+            cambiar_modo.Enabled = false;
+            arreglar_botones();
+            jugar_nuevo.Visible = false;
+            regresar.Enabled = true;
+            cambiar_modo.Enabled = true;
+        }
+
+        private void arre_botones(object sender, EventArgs e)
+        {
+            conbotones++;
+            switch (conbotones)
+            {
+                case 1:
+                    button1.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button1.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 2:
+                    button2.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button2.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 3:
+                    button3.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button3.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 4:
+                    button4.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button4.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 5:
+                    button5.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button5.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 6:
+                    button6.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button6.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 7:
+                    button7.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button7.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 8:
+                    button8.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button8.BackgroundImageLayout = ImageLayout.Zoom;
+                    break;
+                case 9:
+                    button9.BackgroundImage = Image.FromFile(@"imagato\boton.png");
+                    button9.BackgroundImageLayout = ImageLayout.Zoom;
+                    conbotones = 0;
+                    botones.Stop();
+                    button1.Enabled = true;
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                    button5.Enabled = true;
+                    button6.Enabled = true;
+                    button7.Enabled = true;
+                    button8.Enabled = true;
+                    button9.Enabled = true;
+                    break;
+            }
+        }
+
+        private void arreglar_botones()
+        {
+            for (int i=0;i<9 ;i++)
+            {
+                tablero[i] = "";
+            }
+            con = 0;
+            gana = false;
+            juga = 0;
+            label1.Text = "Turno de Gato";
+            direccion = @"imagato\gato.png";
+            botones.Start();
         }
     }
 }
