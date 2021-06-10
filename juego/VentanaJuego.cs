@@ -246,6 +246,8 @@ namespace juego
 
         private void BotonCura_Click(object sender, EventArgs e)
         {
+            MF2.Stop();
+            OverM.Ctlcontrols.stop();
             SoundPlayer hp = new SoundPlayer(@"so\up0.wav");
             hp.Play();
             imagenes.CorazonesPlayer = 3;
