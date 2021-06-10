@@ -171,7 +171,7 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-
+            mateproblem.GeneradorProblemas(MuestraProblemas);
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
         }
 
@@ -188,7 +188,7 @@ namespace juego
             AnimacionBotones.Stop();
         }
         private void DerrotaJefe(){
-            if(imagenes.Contadorenemigo==2){
+            if(imagenes.DañoEnemigo==2){
                 Transicionventana.Start();
                 enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe+2]);
                 Cambioventana();
