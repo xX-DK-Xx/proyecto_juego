@@ -10,7 +10,7 @@ namespace juego
         //Hola soy Jose
         //Dirección del directorio actual
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
-        public string direccionEse=@"Escenario\image22.png";
+        public string direccionEse=@"Escenarios\image22.png";
         public byte posicionJefe;
         private byte _contadorenemigo;
         public byte Contadorenemigo { get => _contadorenemigo; set => _contadorenemigo = value; }
