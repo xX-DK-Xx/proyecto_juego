@@ -25,8 +25,13 @@ namespace juego
         private PictureBox[] corazones;
         public VentanaJuego()
         {
-            imagenes.Contadorenemigo = 0;    
             InitializeComponent();
+            //Inicio del juego
+
+            if (imagenes.CorazonesPlayer==0) { 
+                imagenes.CorazonesPlayer = 3;
+                imagenes.Contadorenemigo = 0;
+            }
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
@@ -35,7 +40,7 @@ namespace juego
             problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel2, textoRespuesta, TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas);
 
-            imagenes.CorazonesPlayer = 3;
+            
             imagenes.MuestraCorazones(corazones);
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones);
             //HP();
@@ -86,7 +91,7 @@ namespace juego
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
                 Ventana_JefesES clasjefes = new Ventana_JefesES(imagenes.Contadorenemigo);
-                this.Hide();
+                this.Close();
                 clasjefes.Show();
             }
             //Verifica que los corazones del jugador no sean 0
@@ -256,9 +261,10 @@ namespace juego
         private void CambioEnemigo()
         {
             timer2.Start();
+            this.BackgroundImage = null;
             this.BackColor = Color.Black;
-            panelBotones.Visible = false;
             panel1.Visible = false;
+
             enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
 
         }
@@ -276,8 +282,9 @@ namespace juego
         private void TransicionEnemigo_tick(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
+            this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
             //this.BackgroundImage = Image.FromFile(@"")
-            panelBotones.Visible = true;
+            
             panel1.Visible = true;
             timer2.Stop();
 

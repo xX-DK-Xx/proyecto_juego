@@ -9,10 +9,7 @@ namespace juego
 {
     public partial class Ventana_JefesES : Form
     {
-        //hola
-        //hola
-        //Este es mi hola
-        //Axel
+        
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
         //volver a la normalidads
 
@@ -22,21 +19,23 @@ namespace juego
         private Problemas_Y_Control mateproblem = new Problemas_Y_Control();
         
 
-        public Ventana_JefesES (byte eleccionJefe)
+        public Ventana_JefesES(byte eleccionJefe)
         {
 
             InitializeComponent();
-          
-            corazones=new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
-            imagenes.CorazonesPlayer = 3;
+            corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
+            this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
             imagenes.MuestraCorazones(corazones);
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones);
             
+            mateproblem.AdministradorElementos(imagenes.Contadorenemigo,panel2,textoRespuesta,TextboxRespuestaDenominador);
+            mateproblem.GeneradorProblemas(MuestraProblemas);
 
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
-            imagenes.AdministradorJefes(eleccionJefe,enemi);
-          
+            imagenes.AdministradorJefes(eleccionJefe, enemi);
+
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
@@ -49,6 +48,16 @@ namespace juego
                 /*si la variable "Cambio Imagen" es verdadera, entonces cambiara la imagen 
                  * del enemigo                 
                  */
+                if (imagenes.Contadorenemigo == 10)
+                {
+
+                }
+                else {
+                    imagenes.DañoEnemigo = 0;
+                    imagenes.direccionEse = @"Escenarios\image21.png";
+                    Cambioventana();
+                }
+                
             }
             else
             {
@@ -64,7 +73,7 @@ namespace juego
         }
         private void uno_Click(object sender, EventArgs e)
         {
-            mateproblem.Animacionboton(uno,AnimacionBotones);
+            mateproblem.Animacionboton(uno, AnimacionBotones);
             textoRespuesta.Text += "1";
         }
 
@@ -139,24 +148,24 @@ namespace juego
                 MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
                 textoRespuesta.Text = "";
             }
-            
+
         }
         private void Cal_res(double respuestarecibida)
         {
             if (respuestarecibida == mateproblem.RespuestaCorrecta)
             {
-                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe+1]);
-                //enemi.Image = Image.FromFile(ImagenesJefes[imagenes.]);
+                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe + 1]);
+
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
-                CambioImagen = true;
-               
+                imagenes.DañoEnemigo++;
+                DerrotaJefe();
                 timer1.Start();
             }
             else
             {
                 imagenes.CorazonesPlayer--;
                 imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
-                
+
                 player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = false;
@@ -171,7 +180,7 @@ namespace juego
         {
             imagenes.CorazonesPlayer = 3;
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
-            
+
         }
 
         private void FinAnimacion_Tick(object sender, EventArgs e)
@@ -179,7 +188,18 @@ namespace juego
             mateproblem.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima/image31.png");
             AnimacionBotones.Stop();
         }
-
+        private void DerrotaJefe(){
+            if(imagenes.Contadorenemigo==2){
+                CambioImagen = true;
+            }
+        }
+        private void Cambioventana()
+        {
+            imagenes.CorazonesPlayer = imagenes.contadorvisibles++;
+            VentanaJuego enemigo = new VentanaJuego();
+            enemigo.Show();
+            this.Close();
+        }
        
     }
 }
