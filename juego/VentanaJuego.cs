@@ -18,16 +18,15 @@ namespace juego
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
         private string mensaje;
-        private int numerador = new Random().Next(0, 101), denominador = new Random().Next(0, 101);
+        
         private string respaldopersonaje;
         
         Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
         private PictureBox[] corazones;
-        public VentanaJuego()
+        public VentanaJuego(byte corazonesinicio,byte contadorenemis)
         {
             InitializeComponent();
             //Inicio del juego
-
             if (imagenes.CorazonesPlayer==0) { 
                 imagenes.CorazonesPlayer = 3;
                 imagenes.Contadorenemigo = 0;
@@ -91,7 +90,7 @@ namespace juego
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
                 Ventana_JefesES clasjefes = new Ventana_JefesES(imagenes.Contadorenemigo,imagenes.CorazonesPlayer);
-                this.Close();
+                this.Hide();
                 clasjefes.Show();
             }
             //Verifica que los corazones del jugador no sean 0

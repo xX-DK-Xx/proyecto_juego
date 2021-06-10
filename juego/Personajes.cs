@@ -14,8 +14,8 @@ namespace juego
         public byte posicionJefe,contadorvisibles;
         
         //Contador de los enemigos derrotados
-        private byte _contadorenemigo;
-        public byte Contadorenemigo { get => _contadorenemigo; set => _contadorenemigo = value; }
+        
+        public byte Contadorenemigo;
 
        
         //Dirección de las imagenes de los jefes
@@ -48,11 +48,8 @@ namespace juego
             set=>_enemigo= (byte)new Random().Next(0, Archivosimagenes.Length);
         }
         //Contador de corazones del jugador
-        private byte _corazonesPayer;
-        public byte CorazonesPlayer {
-            get => _corazonesPayer;
-            set => _corazonesPayer = value;
-        }
+        
+        public byte CorazonesPlayer;
         
 
         public Personajes()

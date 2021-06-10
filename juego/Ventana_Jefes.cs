@@ -206,9 +206,9 @@ namespace juego
         {
             Transicionventana.Stop();
             imagenes.CorazonesPlayer = imagenes.contadorvisibles++;
-            VentanaJuego enemigo = new VentanaJuego();
+            VentanaJuego enemigo = new VentanaJuego(imagenes.CorazonesPlayer,imagenes.Contadorenemigo);
             enemigo.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }
