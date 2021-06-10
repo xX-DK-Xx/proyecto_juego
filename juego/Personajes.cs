@@ -93,19 +93,19 @@ namespace juego
                     break;
                 case 6:
                     //Jefe fantasma con hoz
-                    posicionJefe = 1;
+                    posicionJefe = 0;
                     
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 9:
                     //Jefe robot
-                    posicionJefe = 10;
+                    posicionJefe = 9;
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 10:
-                    posicionJefe = 7;
+                    posicionJefe = 6;
                     //Jefe brujita
                     direccionEse = @"Escenarios\image20.png";
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);

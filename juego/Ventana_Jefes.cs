@@ -22,6 +22,7 @@ namespace juego
         public Ventana_JefesES(byte eleccionJefe,byte contacorazones)
         {
             imagenes.CorazonesPlayer = contacorazones;
+            imagenes.Contadorenemigo = eleccionJefe;
             InitializeComponent();
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
@@ -191,6 +192,8 @@ namespace juego
             if(imagenes.DañoEnemigo==2){
                 Transicionventana.Start();
                 enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe+2]);
+                imagenes.CorazonesPlayer = imagenes.contadorvisibles++;
+                imagenes.Contadorenemigo++;
                 Cambioventana();
             }
         }
@@ -205,7 +208,7 @@ namespace juego
         private void CambioVen_Tick(object sender, EventArgs e)
         {
             Transicionventana.Stop();
-            imagenes.CorazonesPlayer = imagenes.contadorvisibles++;
+            
             VentanaJuego enemigo = new VentanaJuego(imagenes.CorazonesPlayer,imagenes.Contadorenemigo);
             enemigo.Show();
             this.Hide();

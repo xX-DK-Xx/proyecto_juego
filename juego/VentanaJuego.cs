@@ -27,10 +27,8 @@ namespace juego
         {
             InitializeComponent();
             //Inicio del juego
-            if (imagenes.CorazonesPlayer==0) { 
-                imagenes.CorazonesPlayer = 3;
-                imagenes.Contadorenemigo = 0;
-            }
+            imagenes.CorazonesPlayer = corazonesinicio;
+            imagenes.Contadorenemigo = contadorenemis;
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
