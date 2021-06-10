@@ -92,6 +92,7 @@ namespace juego
             // Transicionventana
             // 
             this.Transicionventana.Interval = 1500;
+            this.Transicionventana.Tick += new System.EventHandler(this.CambioVen_Tick);
             // 
             // panel1
             // 

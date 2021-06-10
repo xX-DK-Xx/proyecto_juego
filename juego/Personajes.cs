@@ -7,7 +7,7 @@ namespace juego
 {
     class Personajes
     {
-        //Hola soy Jose
+        
         //Dirección del directorio actual
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
         public string direccionEse=@"Escenarios\image22.png";

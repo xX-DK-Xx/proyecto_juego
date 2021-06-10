@@ -50,6 +50,7 @@ namespace juego
                  */
                 if (imagenes.Contadorenemigo!=10) {
                     enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe]);
+                    DerrotaJefe();
                 }
                 else
                 {
@@ -188,16 +189,26 @@ namespace juego
         }
         private void DerrotaJefe(){
             if(imagenes.Contadorenemigo==2){
-                imagenes.CorazonesPlayer = imagenes.contadorvisibles ++;
+                Transicionventana.Start();
+                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe+2]);
+                Cambioventana();
             }
         }
         private void Cambioventana()
         {
+            panel1.Visible = false;
+            this.BackgroundImage = null;
+            this.BackColor = Color.Black;
+
+        }
+
+        private void CambioVen_Tick(object sender, EventArgs e)
+        {
+            Transicionventana.Stop();
             imagenes.CorazonesPlayer = imagenes.contadorvisibles++;
             VentanaJuego enemigo = new VentanaJuego();
             enemigo.Show();
             this.Close();
         }
-       
     }
 }
