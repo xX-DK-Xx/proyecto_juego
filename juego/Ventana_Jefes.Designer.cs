@@ -33,6 +33,8 @@ namespace juego
             this.tres = new System.Windows.Forms.Button();
             this.uno = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TextboxRespuestaDenominador = new System.Windows.Forms.TextBox();
             this.textoRespuesta = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Respuesta = new System.Windows.Forms.Button();
@@ -51,17 +53,17 @@ namespace juego
             this.player = new System.Windows.Forms.PictureBox();
             this.dos = new System.Windows.Forms.Button();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.punto = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelCorazones2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.punto = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TextboxRespuestaDenominador = new System.Windows.Forms.TextBox();
             this.panel2Problemas = new System.Windows.Forms.Panel();
             this.MuestraProblemas = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.AnimacionBotones = new System.Windows.Forms.Timer(this.components);
+            this.Transicionventana = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enemi)).BeginInit();
             this.PanelCorazones.SuspendLayout();
@@ -117,22 +119,43 @@ namespace juego
             this.panel1.Controls.Add(this.textoRespuesta);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Respuesta);
-            this.panel1.Location = new System.Drawing.Point(230, 259);
+            this.panel1.Location = new System.Drawing.Point(233, 271);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 96);
+            this.panel1.Size = new System.Drawing.Size(355, 84);
             this.panel1.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(130, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "____________";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Visible = false;
+            // 
+            // TextboxRespuestaDenominador
+            // 
+            this.TextboxRespuestaDenominador.Enabled = false;
+            this.TextboxRespuestaDenominador.Location = new System.Drawing.Point(133, 58);
+            this.TextboxRespuestaDenominador.Name = "TextboxRespuestaDenominador";
+            this.TextboxRespuestaDenominador.Size = new System.Drawing.Size(75, 20);
+            this.TextboxRespuestaDenominador.TabIndex = 49;
+            this.TextboxRespuestaDenominador.Visible = false;
             // 
             // textoRespuesta
             // 
             this.textoRespuesta.Enabled = false;
-            this.textoRespuesta.Location = new System.Drawing.Point(154, 3);
+            this.textoRespuesta.Location = new System.Drawing.Point(132, 8);
             this.textoRespuesta.Name = "textoRespuesta";
             this.textoRespuesta.Size = new System.Drawing.Size(75, 20);
             this.textoRespuesta.TabIndex = 44;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(25, 30);
+            this.button1.Location = new System.Drawing.Point(6, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(66, 28);
             this.button1.TabIndex = 46;
@@ -142,7 +165,7 @@ namespace juego
             // 
             // Respuesta
             // 
-            this.Respuesta.Location = new System.Drawing.Point(284, 30);
+            this.Respuesta.Location = new System.Drawing.Point(251, 29);
             this.Respuesta.Name = "Respuesta";
             this.Respuesta.Size = new System.Drawing.Size(75, 23);
             this.Respuesta.TabIndex = 45;
@@ -200,7 +223,7 @@ namespace juego
             // 
             // enemi
             // 
-            this.enemi.Location = new System.Drawing.Point(652, 86);
+            this.enemi.Location = new System.Drawing.Point(594, 125);
             this.enemi.Name = "enemi";
             this.enemi.Size = new System.Drawing.Size(134, 139);
             this.enemi.TabIndex = 41;
@@ -306,7 +329,7 @@ namespace juego
             // 
             // player
             // 
-            this.player.Location = new System.Drawing.Point(3, 86);
+            this.player.Location = new System.Drawing.Point(3, 125);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(146, 139);
             this.player.TabIndex = 42;
@@ -330,6 +353,7 @@ namespace juego
             // 
             // panelBotones
             // 
+            this.panelBotones.BackColor = System.Drawing.Color.Transparent;
             this.panelBotones.Controls.Add(this.punto);
             this.panelBotones.Controls.Add(this.cero);
             this.panelBotones.Controls.Add(this.nuebe);
@@ -341,17 +365,35 @@ namespace juego
             this.panelBotones.Controls.Add(this.tres);
             this.panelBotones.Controls.Add(this.dos);
             this.panelBotones.Controls.Add(this.uno);
-            this.panelBotones.Location = new System.Drawing.Point(134, 384);
+            this.panelBotones.Location = new System.Drawing.Point(115, 381);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(711, 153);
+            this.panelBotones.Size = new System.Drawing.Size(738, 153);
             this.panelBotones.TabIndex = 46;
+            // 
+            // punto
+            // 
+            this.punto.BackColor = System.Drawing.SystemColors.Control;
+            this.punto.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.punto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.punto.FlatAppearance.BorderSize = 0;
+            this.punto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.punto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.punto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.punto.Location = new System.Drawing.Point(598, 48);
+            this.punto.Name = "punto";
+            this.punto.Size = new System.Drawing.Size(88, 55);
+            this.punto.TabIndex = 39;
+            this.punto.Text = ".";
+            this.punto.UseVisualStyleBackColor = false;
+            this.punto.Click += new System.EventHandler(this.punto_Click);
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 422F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 361F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 333F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.enemi, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.PanelCorazones, 0, 0);
@@ -361,10 +403,10 @@ namespace juego
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.54237F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.45763F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 364);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.52239F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.47761F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 358);
             this.tableLayoutPanel1.TabIndex = 45;
             // 
             // panelCorazones2
@@ -372,7 +414,7 @@ namespace juego
             this.panelCorazones2.Controls.Add(this.pictureBox4);
             this.panelCorazones2.Controls.Add(this.pictureBox5);
             this.panelCorazones2.Controls.Add(this.pictureBox6);
-            this.panelCorazones2.Location = new System.Drawing.Point(230, 3);
+            this.panelCorazones2.Location = new System.Drawing.Point(233, 3);
             this.panelCorazones2.Name = "panelCorazones2";
             this.panelCorazones2.Size = new System.Drawing.Size(229, 76);
             this.panelCorazones2.TabIndex = 47;
@@ -405,66 +447,37 @@ namespace juego
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Visible = false;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 900;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // punto
-            // 
-            this.punto.BackColor = System.Drawing.SystemColors.Control;
-            this.punto.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.punto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.punto.FlatAppearance.BorderSize = 0;
-            this.punto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.punto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.punto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.punto.Location = new System.Drawing.Point(577, 52);
-            this.punto.Name = "punto";
-            this.punto.Size = new System.Drawing.Size(88, 55);
-            this.punto.TabIndex = 39;
-            this.punto.Text = ".";
-            this.punto.UseVisualStyleBackColor = false;
-            this.punto.Click += new System.EventHandler(this.punto_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Location = new System.Drawing.Point(152, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "____________";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Visible = false;
-            // 
-            // TextboxRespuestaDenominador
-            // 
-            this.TextboxRespuestaDenominador.Enabled = false;
-            this.TextboxRespuestaDenominador.Location = new System.Drawing.Point(155, 53);
-            this.TextboxRespuestaDenominador.Name = "TextboxRespuestaDenominador";
-            this.TextboxRespuestaDenominador.Size = new System.Drawing.Size(75, 20);
-            this.TextboxRespuestaDenominador.TabIndex = 49;
-            this.TextboxRespuestaDenominador.Visible = false;
-            // 
             // panel2Problemas
             // 
             this.panel2Problemas.Controls.Add(this.MuestraProblemas);
-            this.panel2Problemas.Location = new System.Drawing.Point(230, 86);
+            this.panel2Problemas.Location = new System.Drawing.Point(233, 125);
             this.panel2Problemas.Name = "panel2Problemas";
-            this.panel2Problemas.Size = new System.Drawing.Size(415, 167);
+            this.panel2Problemas.Size = new System.Drawing.Size(355, 140);
             this.panel2Problemas.TabIndex = 48;
             // 
             // MuestraProblemas
             // 
             this.MuestraProblemas.AutoSize = true;
             this.MuestraProblemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MuestraProblemas.Location = new System.Drawing.Point(148, 72);
+            this.MuestraProblemas.Location = new System.Drawing.Point(148, 55);
             this.MuestraProblemas.Name = "MuestraProblemas";
             this.MuestraProblemas.Size = new System.Drawing.Size(60, 24);
             this.MuestraProblemas.TabIndex = 0;
             this.MuestraProblemas.Text = "label2";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 900;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // AnimacionBotones
+            // 
+            this.AnimacionBotones.Interval = 50;
+            this.AnimacionBotones.Tick += new System.EventHandler(this.S);
+            // 
+            // Transicionventana
+            // 
+            this.Transicionventana.Interval = 1500;
             // 
             // Ventana_Jefes
             // 
@@ -473,6 +486,7 @@ namespace juego
             this.ClientSize = new System.Drawing.Size(936, 568);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Name = "Ventana_Jefes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventana_Jefes";
@@ -530,5 +544,7 @@ namespace juego
         private System.Windows.Forms.TextBox TextboxRespuestaDenominador;
         private System.Windows.Forms.Panel panel2Problemas;
         private System.Windows.Forms.Label MuestraProblemas;
+        private System.Windows.Forms.Timer AnimacionBotones;
+        private System.Windows.Forms.Timer Transicionventana;
     }
 }

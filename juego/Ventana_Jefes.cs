@@ -35,18 +35,18 @@ namespace juego
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,panelCorazones2);
             //HP();
 
-            player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
+            player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             switch (eleccionJefe)
             {
                 case 3:
-                    enemi.Image = Image.FromFile(imagenes.archivosimagenes[4]);
+                    enemi.Image = Image.FromFile(imagenes.Archivosimagenes[4]);
                     break;
-                case 6:
-                    enemi.Image = Image.FromFile(imagenes.archivosimagenes[11]);
+                case 6: 
+                    enemi.Image = Image.FromFile(imagenes.Archivosimagenes[11]);
                     break;
                 case 9:
-                    enemi.Image = Image.FromFile(imagenes.archivosimagenes[15]);
+                    enemi.Image = Image.FromFile(imagenes.Archivosimagenes[15]);
                     break;
                 case 10:
                     MessageBox.Show("Esta es una prueba xdxd");
@@ -56,53 +56,6 @@ namespace juego
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
-        }
-
-        private void HP()
-        {
-            switch (imagenes.CorazonesPlayer)
-            {
-                case 0:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-                case 1:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-                case 2:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(@"ima\image6.png");
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-                case 3:
-                    PanelCorazones.Visible = false;
-                    pictureBox1.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox3.Image = Image.FromFile(imagenes.archivosimagenes[19]);
-                    pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-                    PanelCorazones.Visible = true;
-                    break;
-            }
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -118,7 +71,7 @@ namespace juego
                 /*
                  Si la variable es falsa, entonces cambiara la imagen del jugador
                  */
-                player.Image = Image.FromFile(imagenes.archivosimagenes[0]);
+                player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
             }
 
@@ -127,71 +80,88 @@ namespace juego
         }
         private void uno_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(uno,AnimacionBotones);
             textoRespuesta.Text += "1";
         }
 
         private void dos_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(dos, AnimacionBotones);
             textoRespuesta.Text += "2";
         }
 
         private void tres_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(tres, AnimacionBotones);
             textoRespuesta.Text += "3";
         }
 
         private void cuatro_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(cuatro, AnimacionBotones);
             textoRespuesta.Text += "4";
         }
 
         private void cinco_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(cinco, AnimacionBotones);
             textoRespuesta.Text += "5";
         }
 
         private void seis_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(seis, AnimacionBotones);
             textoRespuesta.Text += "6";
         }
 
         private void siete_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(siete, AnimacionBotones);
             textoRespuesta.Text += "7";
         }
 
         private void Ocho_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(ocho, AnimacionBotones);
             textoRespuesta.Text += "8";
         }
-
-
         private void Cero_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(cero, AnimacionBotones);
             textoRespuesta.Text += "0";
         }
 
         private void Nueve_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(nuebe, AnimacionBotones);
             textoRespuesta.Text += "9";
         }
         private void punto_Click(object sender, EventArgs e)
         {
+            mateproblem.Animacionboton(punto, AnimacionBotones);
             textoRespuesta.Text += ".";
         }
 
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
         {
-
-            int res = int.Parse(textoRespuesta.Text);
-            Cal_res(res);
-
+            try {
+                double res = double.Parse(textoRespuesta.Text);
+                Cal_res(res);
+            }
+            catch (FormatException) {
+                MessageBox.Show("Ingresaste una cantidad que no es correcta");
+            }
+            catch (OverflowException) {
+                MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                textoRespuesta.Text = "";
+            }
+            
         }
-        private void Cal_res(int respuestarecibida)
+        private void Cal_res(double respuestarecibida)
         {
             if (respuestarecibida == mateproblem.RespuestaCorrecta)
             {
-                enemi.Image = Image.FromFile(imagenes.archivosimagenes[imagenes.Enemigo + 1]);
+                enemi.Image = Image.FromFile(imagenes.Archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = true;
                
@@ -201,8 +171,8 @@ namespace juego
             {
                 imagenes.CorazonesPlayer--;
                 imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
-                //HP();
-                player.Image = Image.FromFile(imagenes.archivosimagenes[10]);
+                
+                player.Image = Image.FromFile(imagenes.Archivosimagenes[10]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = false;
                 timer1.Start();
@@ -216,19 +186,18 @@ namespace juego
         {
             imagenes.CorazonesPlayer = 3;
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
-            //HP();
+            
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void FinAnimacion_Tick(object sender, EventArgs e)
+        {
+            mateproblem.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima/image31.png");
+            AnimacionBotones.Stop();
+        }
+
+        private void S(object sender, EventArgs e)
         {
 
         }
-
-        private void Ventana_Jefes_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

@@ -12,11 +12,11 @@ namespace juego
         //Dirección de todos los personajes
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
         //Arreglo que almacena cada dirección 
-        private string[] _Archivosimagenes;
-        public string[] archivosimagenes
+        private string[] _archivosimagenes;
+        public string[] Archivosimagenes
         {
-            get => _Archivosimagenes;
-            set => _Archivosimagenes = Directory.GetFiles(DireccionImagenes + @"\ima\", "*.*");
+            get => _archivosimagenes;
+            set => _archivosimagenes = Directory.GetFiles(DireccionImagenes + @"\ima\", "*.*");
         }
         //Almacena la localización del nombre del personage específicado
         private string _NombrePersonaje;
@@ -30,7 +30,7 @@ namespace juego
         public byte Enemigo
         {
             get => _enemigo;
-            set=>_enemigo= (byte)new Random().Next(0, archivosimagenes.Length);
+            set=>_enemigo= (byte)new Random().Next(0, Archivosimagenes.Length);
         }
         private byte _corazonesPayer;
         public byte CorazonesPlayer {
@@ -39,7 +39,7 @@ namespace juego
         }
         public Personajes()
         {
-            archivosimagenes = archivosimagenes;
+            Archivosimagenes = Archivosimagenes;
             AdministradorEnemigos();
         }
 
@@ -50,10 +50,10 @@ namespace juego
             bool ciclovalidacion;
             do
             {
-                if (indexEnemigo==1|| indexEnemigo==6|| indexEnemigo==8)
+                if (indexEnemigo==1|| indexEnemigo==3|| indexEnemigo==5)
                 {
                     ciclovalidacion = true;
-                    nombrePersonaje = archivosimagenes[indexEnemigo];
+                    nombrePersonaje = Archivosimagenes[indexEnemigo];
                 }
                 else
                 {
@@ -65,9 +65,26 @@ namespace juego
             
             return nombrePersonaje;
         }
-        public void AdministradorJefes()
+        public void AdministradorJefes(byte contadorenemigo, PictureBox EnemiJefe,Form Escenario)
         {
-
+            switch (contadorenemigo) {
+                case 3:
+                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image29.png");
+                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image22.png");
+                    break;
+                case 6:
+                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image13.png");
+                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
+                    break;
+                case 9:
+                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image7.png");
+                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
+                    break;
+                case 10:
+                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image3.png");
+                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image20.png");
+                    break;
+            }
         }
         public void MuestraCorazones(PictureBox[] corazones)
         {

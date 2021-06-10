@@ -96,6 +96,7 @@ namespace juego
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 362F));
@@ -284,6 +285,7 @@ namespace juego
             // 
             // panelBotones
             // 
+            this.panelBotones.BackColor = System.Drawing.Color.Transparent;
             this.panelBotones.Controls.Add(this.punto);
             this.panelBotones.Controls.Add(this.cero);
             this.panelBotones.Controls.Add(this.nuebe);
@@ -302,7 +304,7 @@ namespace juego
             // 
             // punto
             // 
-            this.punto.BackColor = System.Drawing.SystemColors.Control;
+            this.punto.BackColor = System.Drawing.Color.Transparent;
             this.punto.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.punto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.punto.FlatAppearance.BorderSize = 0;
@@ -319,7 +321,7 @@ namespace juego
             // 
             // cero
             // 
-            this.cero.BackColor = System.Drawing.SystemColors.Control;
+            this.cero.BackColor = System.Drawing.Color.Transparent;
             this.cero.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cero.FlatAppearance.BorderSize = 0;
@@ -335,7 +337,7 @@ namespace juego
             // 
             // nuebe
             // 
-            this.nuebe.BackColor = System.Drawing.SystemColors.Control;
+            this.nuebe.BackColor = System.Drawing.Color.Transparent;
             this.nuebe.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.nuebe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.nuebe.FlatAppearance.BorderSize = 0;
@@ -351,7 +353,7 @@ namespace juego
             // 
             // ocho
             // 
-            this.ocho.BackColor = System.Drawing.SystemColors.Control;
+            this.ocho.BackColor = System.Drawing.Color.Transparent;
             this.ocho.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.ocho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ocho.FlatAppearance.BorderSize = 0;
@@ -367,7 +369,7 @@ namespace juego
             // 
             // siete
             // 
-            this.siete.BackColor = System.Drawing.SystemColors.Control;
+            this.siete.BackColor = System.Drawing.Color.Transparent;
             this.siete.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.siete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.siete.FlatAppearance.BorderSize = 0;
@@ -383,7 +385,7 @@ namespace juego
             // 
             // seis
             // 
-            this.seis.BackColor = System.Drawing.SystemColors.Control;
+            this.seis.BackColor = System.Drawing.Color.Transparent;
             this.seis.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.seis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.seis.FlatAppearance.BorderSize = 0;
@@ -399,7 +401,7 @@ namespace juego
             // 
             // cinco
             // 
-            this.cinco.BackColor = System.Drawing.SystemColors.Control;
+            this.cinco.BackColor = System.Drawing.Color.Transparent;
             this.cinco.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cinco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cinco.FlatAppearance.BorderSize = 0;
@@ -415,7 +417,7 @@ namespace juego
             // 
             // cuatro
             // 
-            this.cuatro.BackColor = System.Drawing.SystemColors.Control;
+            this.cuatro.BackColor = System.Drawing.Color.Transparent;
             this.cuatro.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.cuatro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cuatro.FlatAppearance.BorderSize = 0;
@@ -431,7 +433,7 @@ namespace juego
             // 
             // tres
             // 
-            this.tres.BackColor = System.Drawing.SystemColors.Control;
+            this.tres.BackColor = System.Drawing.Color.Transparent;
             this.tres.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.tres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tres.FlatAppearance.BorderSize = 0;
@@ -447,7 +449,7 @@ namespace juego
             // 
             // dos
             // 
-            this.dos.BackColor = System.Drawing.SystemColors.Control;
+            this.dos.BackColor = System.Drawing.Color.Transparent;
             this.dos.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.dos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.dos.FlatAppearance.BorderSize = 0;
@@ -463,7 +465,7 @@ namespace juego
             // 
             // uno
             // 
-            this.uno.BackColor = System.Drawing.SystemColors.Control;
+            this.uno.BackColor = System.Drawing.Color.Transparent;
             this.uno.BackgroundImage = global::juego.Properties.Resources.Boton2;
             this.uno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.uno.FlatAppearance.BorderSize = 0;
@@ -546,7 +548,6 @@ namespace juego
             this.Name = "VentanaJuego";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaJuego";
-            this.Load += new System.EventHandler(this.VentanaJuego_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
