@@ -7,18 +7,21 @@ namespace juego
 {
     class Personajes
     {
-        //Hola soy Jose
+        
         //Dirección del directorio actual
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
         public string direccionEse=@"Escenarios\image22.png";
-        public byte posicionJefe;
-        private byte _contadorenemigo;
-        public byte Contadorenemigo { get => _contadorenemigo; set => _contadorenemigo = value; }
+        public byte posicionJefe,contadorvisibles;
+        
+        //Contador de los enemigos derrotados
+        
+        public byte Contadorenemigo;
 
+       
         //Dirección de las imagenes de los jefes
         private string[] _imagenesJefes;
         public string[] ImagenesJefes { get => _imagenesJefes; set => _imagenesJefes = Directory.GetFiles(DireccionImagenes + @"\JefesIma\", "*.*"); }
-
+        //Contador del daño de los jefes
         private byte _dañoEnemigo;
         public byte DañoEnemigo { get => _dañoEnemigo; set => _dañoEnemigo = value; }
 
@@ -44,11 +47,9 @@ namespace juego
             get => _enemigo;
             set=>_enemigo= (byte)new Random().Next(0, Archivosimagenes.Length);
         }
-        private byte _corazonesPayer;
-        public byte CorazonesPlayer {
-            get => _corazonesPayer;
-            set => _corazonesPayer = value;
-        }
+        //Contador de corazones del jugador
+        
+        public byte CorazonesPlayer;
         
 
         public Personajes()
@@ -86,29 +87,27 @@ namespace juego
             switch (contadorenemigo) {
                 case 3:
                     //Jefe planta
-                    posicionJefe = 4;
-                    direccionEse = @"Escenario\image22.png";
+                    posicionJefe = 3;
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 6:
                     //Jefe fantasma con hoz
                     posicionJefe = 1;
-                    direccionEse = @"Escenario\image21.png";
+                    
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 9:
                     //Jefe robot
                     posicionJefe = 10;
-                    direccionEse = @"Escenario\image21.png";
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 10:
                     posicionJefe = 7;
                     //Jefe brujita
-                    direccionEse = @"Escenario\image20.png";
+                    direccionEse = @"Escenarios\image20.png";
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
@@ -118,7 +117,8 @@ namespace juego
         {
             for (byte i = 0; i <= CorazonesPlayer; i++)
             {
-                corazones[i].Visible = true;  
+                corazones[i].Visible = true;
+                contadorvisibles++;
             }   
         }
         public void GeneradorCorazones(PictureBox corazon1, PictureBox corazon2, PictureBox corazon3, PictureBox corazon4, PictureBox corazon5, PictureBox corazon6, Panel PanCora1)

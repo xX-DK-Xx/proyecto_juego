@@ -29,7 +29,7 @@ namespace juego
         private void botonImprimir_Click(object sender, EventArgs e)
         {
            
-            VentanaJuego Juego = new VentanaJuego();
+            VentanaJuego Juego = new VentanaJuego(3,0);
             Menu.Ctlcontrols.stop();
             time_bu.Stop();
             this.Hide();
