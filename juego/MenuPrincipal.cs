@@ -62,5 +62,14 @@ namespace juego
             this.Hide();
             gato.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ahorcado aho = new ahorcado();
+            Menu.Ctlcontrols.stop();
+            time_bu.Stop();
+            this.Hide();
+            aho.Show();
+        }
     }
 }

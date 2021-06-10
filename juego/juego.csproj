@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ahorcado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ahorcado.Designer.cs">
+      <DependentUpon>ahorcado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gato_raton.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Ventana_Jefes.Designer.cs">
       <DependentUpon>Ventana_Jefes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ahorcado.resx">
+      <DependentUpon>ahorcado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gato_raton.resx">
       <DependentUpon>Gato_raton.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\boton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\imaaho\marco.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
