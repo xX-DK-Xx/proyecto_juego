@@ -90,7 +90,7 @@ namespace juego
                 time_music.Stop();
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
-                Ventana_JefesES clasjefes = new Ventana_JefesES(imagenes.Contadorenemigo);
+                Ventana_JefesES clasjefes = new Ventana_JefesES(imagenes.Contadorenemigo,imagenes.CorazonesPlayer);
                 this.Close();
                 clasjefes.Show();
             }

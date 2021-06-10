@@ -19,9 +19,9 @@ namespace juego
         private Problemas_Y_Control mateproblem = new Problemas_Y_Control();
         
 
-        public Ventana_JefesES(byte eleccionJefe)
+        public Ventana_JefesES(byte eleccionJefe,byte contacorazones)
         {
-
+            imagenes.CorazonesPlayer = contacorazones;
             InitializeComponent();
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
@@ -48,16 +48,14 @@ namespace juego
                 /*si la variable "Cambio Imagen" es verdadera, entonces cambiara la imagen 
                  * del enemigo                 
                  */
-                if (imagenes.Contadorenemigo == 10)
+                if (imagenes.Contadorenemigo!=10) {
+                    enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe]);
+                }
+                else
                 {
 
                 }
-                else {
-                    imagenes.DañoEnemigo = 0;
-                    imagenes.direccionEse = @"Escenarios\image21.png";
-                    Cambioventana();
-                }
-                
+
             }
             else
             {
@@ -158,8 +156,8 @@ namespace juego
 
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 imagenes.DañoEnemigo++;
-                DerrotaJefe();
                 timer1.Start();
+                CambioImagen = true;
             }
             else
             {
@@ -190,7 +188,7 @@ namespace juego
         }
         private void DerrotaJefe(){
             if(imagenes.Contadorenemigo==2){
-                CambioImagen = true;
+                imagenes.CorazonesPlayer = imagenes.contadorvisibles ++;
             }
         }
         private void Cambioventana()
