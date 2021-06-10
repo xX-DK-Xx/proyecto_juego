@@ -134,6 +134,7 @@ namespace juego
                                 break;
                         }
                     }
+                    Math.Round(RespuestaCorrecta,2);
                 }
             }
             Problema.Text = problemagenerado;

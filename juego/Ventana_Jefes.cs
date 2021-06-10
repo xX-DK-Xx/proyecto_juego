@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.IO;
 using System.Drawing;
 
 using System.Threading.Tasks;
@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace juego
 {
-    public partial class Ventana_Jefes : Form
+    public partial class Ventana_JefesES : Form
     {
         //hola
         //hola
@@ -22,10 +22,11 @@ namespace juego
         private Problemas_Y_Control mateproblem = new Problemas_Y_Control();
         
 
-        public Ventana_Jefes (byte eleccionJefe)
+        public Ventana_JefesES (byte eleccionJefe)
         {
 
             InitializeComponent();
+          
             corazones=new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             imagenes.CorazonesPlayer = 3;
             imagenes.MuestraCorazones(corazones);
@@ -34,7 +35,8 @@ namespace juego
 
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
-            switch (eleccionJefe)
+            imagenes.AdministradorJefes(eleccionJefe,enemi);
+           /* switch (eleccionJefe)
             {
                 case 3:
                     enemi.Image = Image.FromFile(imagenes.Archivosimagenes[4]);
@@ -49,7 +51,7 @@ namespace juego
                     MessageBox.Show("Esta es una prueba xdxd");
                     break;
 
-            }
+            }*/
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
@@ -158,7 +160,8 @@ namespace juego
         {
             if (respuestarecibida == mateproblem.RespuestaCorrecta)
             {
-                enemi.Image = Image.FromFile(imagenes.Archivosimagenes[imagenes.Enemigo + 1]);
+                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe+1]);
+                //enemi.Image = Image.FromFile(ImagenesJefes[imagenes.]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = true;
                
@@ -169,14 +172,14 @@ namespace juego
                 imagenes.CorazonesPlayer--;
                 imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
                 
-                player.Image = Image.FromFile(imagenes.Archivosimagenes[10]);
+                player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = false;
                 timer1.Start();
             }
             textoRespuesta.Text = "";
 
-            textoRespuesta.Text = new Random().Next(0, 101).ToString();
+            textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
         }
 
         private void BotonCura_Click(object sender, EventArgs e)

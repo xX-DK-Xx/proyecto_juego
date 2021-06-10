@@ -8,11 +8,23 @@ namespace juego
     class Personajes
     {
         //Hola soy Jose
-        //Dirección de todos los personajes
+        //Dirección del directorio actual
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
-        public Form nombreFormularioescenario;
+        public string direccionEse=@"Escenario\image22.png";
+        public byte posicionJefe;
+        private byte _contadorenemigo;
+        public byte Contadorenemigo { get => _contadorenemigo; set => _contadorenemigo = value; }
+
+        //Dirección de las imagenes de los jefes
+        private string[] _imagenesJefes;
+        public string[] ImagenesJefes { get => _imagenesJefes; set => _imagenesJefes = Directory.GetFiles(DireccionImagenes + @"\JefesIma\", "*.*"); }
+
+        private byte _dañoEnemigo;
+        public byte DañoEnemigo { get => _dañoEnemigo; set => _dañoEnemigo = value; }
+
         //Arreglo que almacena cada dirección 
         private string[] _archivosimagenes;
+        
         public string[] Archivosimagenes
         {
             get => _archivosimagenes;
@@ -37,9 +49,12 @@ namespace juego
             get => _corazonesPayer;
             set => _corazonesPayer = value;
         }
+        
+
         public Personajes()
         {
             Archivosimagenes = Archivosimagenes;
+            ImagenesJefes = ImagenesJefes;
             AdministradorEnemigos();
         }
 
@@ -65,29 +80,37 @@ namespace juego
             
             return nombrePersonaje;
         }
-        public void AdministradorJefes(byte contadorenemigo, PictureBox EnemiJefe,Form Escenario)
+        public void AdministradorJefes(byte contadorenemigo, PictureBox EnemiJefe)
         {
-            nombreFormularioescenario = Escenario;
+            
             switch (contadorenemigo) {
                 case 3:
                     //Jefe planta
-                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image29.png");
-                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image22.png");
+                    posicionJefe = 4;
+                    direccionEse = @"Escenario\image22.png";
+                    EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
+                    
                     break;
                 case 6:
                     //Jefe fantasma con hoz
-                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image13.png");
-                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
+                    posicionJefe = 1;
+                    direccionEse = @"Escenario\image21.png";
+                    EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
+                    
                     break;
                 case 9:
                     //Jefe robot
-                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image7.png");
-                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
+                    posicionJefe = 10;
+                    direccionEse = @"Escenario\image21.png";
+                    EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
+                    
                     break;
                 case 10:
+                    posicionJefe = 7;
                     //Jefe brujita
-                    EnemiJefe.Image = Image.FromFile(@"JefesIma\image3.png");
-                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image20.png");
+                    direccionEse = @"Escenario\image20.png";
+                    EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
+                    
                     break;
             }
         }

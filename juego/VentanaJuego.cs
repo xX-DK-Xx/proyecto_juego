@@ -20,19 +20,19 @@ namespace juego
         private string mensaje;
         private int numerador = new Random().Next(0, 101), denominador = new Random().Next(0, 101);
         private string respaldopersonaje;
-        private byte contadorenemigos = 0;
+        
         Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
         private PictureBox[] corazones;
         public VentanaJuego()
         {
-            
+            imagenes.Contadorenemigo = 0;    
             InitializeComponent();
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
-            this.BackgroundImage = Image.FromFile(@"Escenarios\image22.png");
+            this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
             this.BackgroundImageLayout = ImageLayout.Stretch;
-            problemMatematicas.AdministradorElementos(contadorenemigos, panel1, textoRespuesta, TextboxRespuestaDenominador);
+            problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel1, textoRespuesta, TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas);
 
             imagenes.CorazonesPlayer = 3;
@@ -79,13 +79,13 @@ namespace juego
             timer1.Stop();
 
             //Llamamiento de los jefes
-            if (contadorenemigos % 3 == 0 && contadorenemigos != 0 || contadorenemigos == 10)
+            if (imagenes.Contadorenemigo% 3 == 0 && imagenes.Contadorenemigo!= 0 || imagenes.Contadorenemigo== 10)
             {
                 Musica.Ctlcontrols.stop();
                 time_music.Stop();
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
-                Ventana_Jefes clasjefes = new Ventana_Jefes(contadorenemigos);
+                Ventana_JefesES clasjefes = new Ventana_JefesES(imagenes.Contadorenemigo);
                 this.Hide();
                 clasjefes.Show();
             }
@@ -111,7 +111,7 @@ namespace juego
                     Musica.settings.volume = 15;
                     Musica.URL = @"so\loss.wav";
                     time_music.Start();
-                    contadorenemigos = 0;
+                    imagenes.Contadorenemigo= 0;
                     panelBotones.Visible = true;
                     tableLayoutPanel1.Visible = true;
                     imagenes.CorazonesPlayer = 3;
@@ -220,7 +220,7 @@ namespace juego
                 enemi.Image = Image.FromFile(imagenes.Archivosimagenes[imagenes.Enemigo + 1]);
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 CambioImagen = true;
-                contadorenemigos++;
+                imagenes.Contadorenemigo++;
                 SoundPlayer sd = new SoundPlayer(@"so\exp1.wav");
                 sd.Play();
                 timer1.Start();

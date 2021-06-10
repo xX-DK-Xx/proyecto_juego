@@ -1,7 +1,7 @@
 ﻿
 namespace juego
 {
-    partial class Ventana_Jefes
+    partial class Ventana_JefesES
     {
         /// <summary>
         /// Required designer variable.
@@ -473,7 +473,7 @@ namespace juego
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Visible = false;
             // 
-            // Ventana_Jefes
+            // Ventana_JefesES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -481,7 +481,7 @@ namespace juego
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.Name = "Ventana_Jefes";
+            this.Name = "Ventana_JefesES";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventana_Jefes";
             this.panel1.ResumeLayout(false);
