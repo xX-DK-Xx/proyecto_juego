@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+
 using System.Drawing;
-using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
@@ -34,12 +31,13 @@ namespace juego
             Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
             this.BackgroundImage = Image.FromFile(@"Escenarios\image22.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
             problemMatematicas.AdministradorElementos(contadorenemigos, panel1, textoRespuesta, TextboxRespuestaDenominador);
-            problemMatematicas.GeneradorProblemas(MuestraProblemas, panel2Problemas);
+            problemMatematicas.GeneradorProblemas(MuestraProblemas);
 
             imagenes.CorazonesPlayer = 3;
             imagenes.MuestraCorazones(corazones);
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,panelCorazones2);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones);
             //HP();
 
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
@@ -117,7 +115,7 @@ namespace juego
                     panelBotones.Visible = true;
                     tableLayoutPanel1.Visible = true;
                     imagenes.CorazonesPlayer = 3;
-                    imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+                    imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
                     this.BackColor = Color.White;
                 }
                 else
@@ -230,7 +228,7 @@ namespace juego
             else
             {
                 imagenes.CorazonesPlayer--;
-                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
                 //HP();
                 player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -240,7 +238,7 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            problemMatematicas.GeneradorProblemas(MuestraProblemas, panel2Problemas);
+            problemMatematicas.GeneradorProblemas(MuestraProblemas);
 
 
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
@@ -251,7 +249,7 @@ namespace juego
             SoundPlayer hp = new SoundPlayer(@"so\up0.wav");
             hp.Play();
             imagenes.CorazonesPlayer = 3;
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
             //            HP();
         }
 

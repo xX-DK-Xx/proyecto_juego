@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 
 namespace juego
@@ -51,7 +50,7 @@ namespace juego
             panel1.Controls.Add(textoRespuesta);*/
         } 
         //Genera el problema matematico
-        public void GeneradorProblemas(Label Problema,Panel PanelMuestraproblema)
+        public void GeneradorProblemas(Label Problema)
         {
             problemagenerado = "";
             RespuestaCorrecta = 0;
@@ -119,7 +118,8 @@ namespace juego
                         switch (Operacionazar()) {
                             case 1:
                                 RespuestaCorrecta += numero3;
-                                problemagenerado = "(" + numero3 + "+" + problemagenerado + ")"; break;
+                                problemagenerado = "(" + numero3 + "+" + problemagenerado + ")";
+                                break;
                             case 2:
                                 RespuestaCorrecta -= numero3;
                                 problemagenerado = "(" + numero3 + "-" + problemagenerado + ")";

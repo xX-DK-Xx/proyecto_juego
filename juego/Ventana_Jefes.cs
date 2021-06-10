@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+
 using System.Drawing;
-using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,7 +29,7 @@ namespace juego
             corazones=new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             imagenes.CorazonesPlayer = 3;
             imagenes.MuestraCorazones(corazones);
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,panelCorazones2);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones);
             //HP();
 
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
@@ -170,7 +167,7 @@ namespace juego
             else
             {
                 imagenes.CorazonesPlayer--;
-                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
                 
                 player.Image = Image.FromFile(imagenes.Archivosimagenes[10]);
                 player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -185,7 +182,7 @@ namespace juego
         private void BotonCura_Click(object sender, EventArgs e)
         {
             imagenes.CorazonesPlayer = 3;
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, panelCorazones2);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
             
         }
 
@@ -193,11 +190,6 @@ namespace juego
         {
             mateproblem.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima/image31.png");
             AnimacionBotones.Stop();
-        }
-
-        private void S(object sender, EventArgs e)
-        {
-
         }
     }
 }

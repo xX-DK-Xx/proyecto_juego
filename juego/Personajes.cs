@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
+
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
@@ -11,6 +10,7 @@ namespace juego
         //Hola soy Jose
         //Dirección de todos los personajes
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
+        public Form nombreFormularioescenario;
         //Arreglo que almacena cada dirección 
         private string[] _archivosimagenes;
         public string[] Archivosimagenes
@@ -67,22 +67,27 @@ namespace juego
         }
         public void AdministradorJefes(byte contadorenemigo, PictureBox EnemiJefe,Form Escenario)
         {
+            nombreFormularioescenario = Escenario;
             switch (contadorenemigo) {
                 case 3:
+                    //Jefe planta
                     EnemiJefe.Image = Image.FromFile(@"JefesIma\image29.png");
-                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image22.png");
+                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image22.png");
                     break;
                 case 6:
+                    //Jefe fantasma con hoz
                     EnemiJefe.Image = Image.FromFile(@"JefesIma\image13.png");
-                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
+                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
                     break;
                 case 9:
+                    //Jefe robot
                     EnemiJefe.Image = Image.FromFile(@"JefesIma\image7.png");
-                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
+                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image21.png");
                     break;
                 case 10:
+                    //Jefe brujita
                     EnemiJefe.Image = Image.FromFile(@"JefesIma\image3.png");
-                    Escenario.BackgroundImage = Image.FromFile(@"Escenarios\image20.png");
+                    nombreFormularioescenario.BackgroundImage = Image.FromFile(@"Escenarios\image20.png");
                     break;
             }
         }
@@ -93,12 +98,12 @@ namespace juego
                 corazones[i].Visible = true;  
             }   
         }
-        public void GeneradorCorazones(PictureBox corazon1, PictureBox corazon2, PictureBox corazon3, PictureBox corazon4, PictureBox corazon5, PictureBox corazon6, Panel PanCora1, Panel PanCora2)
+        public void GeneradorCorazones(PictureBox corazon1, PictureBox corazon2, PictureBox corazon3, PictureBox corazon4, PictureBox corazon5, PictureBox corazon6, Panel PanCora1)
         {
 
             if (CorazonesPlayer <= 3)
             {
-                PanCora2.Visible = false;
+                
                 switch (CorazonesPlayer)
                 {
                     case 0:
@@ -146,12 +151,12 @@ namespace juego
             }
             else
             {
-                PanCora2.Visible = true;
+                
                 switch (CorazonesPlayer)
                 {
                     case 0:
                         PanCora1.Visible = false;
-                        PanCora2.Visible = false;
+                        
                         corazon1.Image = Image.FromFile(@"ima\image6.png");
                         corazon1.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon2.Image = Image.FromFile(@"ima\image6.png");
@@ -164,12 +169,12 @@ namespace juego
                         corazon5.SizeMode=PictureBoxSizeMode.Zoom;
                         corazon6.Image = Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode=PictureBoxSizeMode.Zoom;
-                        PanCora2.Visible = true;
+                       
                         PanCora1.Visible = true;
                         break;
                     case 1:
                         PanCora1.Visible = false;
-                        PanCora2.Visible = false;
+                       
                         corazon1.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon2.Image=Image.FromFile(@"ima\image6.png");
@@ -182,12 +187,12 @@ namespace juego
                         corazon5.SizeMode=PictureBoxSizeMode.Zoom;
                         corazon6.Image=Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode=PictureBoxSizeMode.Zoom;
-                        PanCora2.Visible = true;
+                        
                         PanCora1.Visible = true;
                         break;
                     case 2:
                         PanCora1.Visible = false;
-                        PanCora2.Visible = false;
+                        
                         corazon1.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon2.Image=Image.FromFile(@"ima\imagegif2.gif");
@@ -200,12 +205,12 @@ namespace juego
                         corazon5.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon6.Image=Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode = PictureBoxSizeMode.Zoom;
-                        PanCora2.Visible = true;
+                        
                         PanCora1.Visible = true;
                         break;
                     case 3:
                         PanCora1.Visible = false;
-                        PanCora2.Visible = false;
+                        
                         corazon1.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon2.Image=Image.FromFile(@"ima\imagegif2.gif");
@@ -218,12 +223,12 @@ namespace juego
                         corazon5.SizeMode=PictureBoxSizeMode.Zoom;
                         corazon6.Image=Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode=PictureBoxSizeMode.Zoom;
-                        PanCora2.Visible = true;
+                        
                         PanCora1.Visible = true;
                         break;
                     case 4:
                         PanCora1.Visible = false;
-                        PanCora2.Visible = false;
+                        
                         corazon1.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon2.Image=Image.FromFile(@"ima\imagegif2.gif");
@@ -236,12 +241,12 @@ namespace juego
                         corazon5.SizeMode=PictureBoxSizeMode.Zoom;
                         corazon6.Image=Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode=PictureBoxSizeMode.Zoom;
-                        PanCora2.Visible = true;
+                        
                         PanCora1.Visible = true;
                         break;
                     case 5:
                         PanCora1.Visible = false;
-                        PanCora2.Visible = false;
+                        
                         corazon1.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode=PictureBoxSizeMode.Zoom;
                         corazon2.Image=Image.FromFile(@"ima\imagegif2.gif");
@@ -254,12 +259,12 @@ namespace juego
                         corazon5.SizeMode=PictureBoxSizeMode.Zoom;
                         corazon6.Image=Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode=PictureBoxSizeMode.Zoom;
-                        PanCora2.Visible = true;
+                        
                         PanCora1.Visible = true;
                         break;
                     case 6:
                         PanCora1.Visible = false;
-                        PanCora2.Visible = false;
+                        
                         corazon1.Image = Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon2.Image = Image.FromFile(@"ima\imagegif2.gif");
@@ -272,7 +277,7 @@ namespace juego
                         corazon5.SizeMode = PictureBoxSizeMode.Zoom;
                         corazon6.Image = Image.FromFile(@"ima\imagegif2.gif");
                         corazon6.SizeMode = PictureBoxSizeMode.Zoom;
-                        PanCora2.Visible = true;
+                        
                         PanCora1.Visible = true;
                         break;
 
