@@ -530,6 +530,7 @@ namespace juego
             this.Controls.Add(this.OverM);
             this.Controls.Add(this.Musica);
             this.Controls.Add(this.trackBar1);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Name = "VentanaJuego";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentanaJuego";

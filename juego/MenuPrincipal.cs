@@ -49,11 +49,6 @@ namespace juego
             Menu.settings.volume = trackBar1.Value;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Gato_raton gato = new Gato_raton();
