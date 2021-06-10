@@ -84,3 +84,5 @@ C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Ven
 C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Gato_raton.resources
 C:\Users\carlo\Desktop\proyecto_juego\juego\obj\Debug\juego.Gato_raton.resources
 C:\Users\link5\Documents\Programación II\Proyectos Visual\ProyectoJuego\proyecto_juego\juego\obj\Debug\juego.Gato_raton.resources
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.ahorcado.resources
+C:\Users\Salomé\Desktop\josue\semestre2\program\juego\juego\obj\Debug\juego.Ventana_JefesES.resources
