@@ -60,11 +60,11 @@ namespace juego
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
-                    CatLose.settings.volume = 15;
+                    CatWin.settings.volume = 15;
                     CatM.Ctlcontrols.stop();
                     FM_Cat.Stop();
-                    CatLose.URL = @"so\over.wav";
-                    FML_Cat.Start();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -74,6 +74,11 @@ namespace juego
                 if (tablero[3] == "x" || tablero[4] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatWin.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -83,6 +88,11 @@ namespace juego
                 if (tablero[6] == "x" || tablero[6] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatWin.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -92,6 +102,11 @@ namespace juego
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatWin.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -110,6 +125,11 @@ namespace juego
                 if (tablero[2] == "x" || tablero[2] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatWin.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -119,6 +139,11 @@ namespace juego
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatWin.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -128,6 +153,11 @@ namespace juego
                 if (tablero[2] == "x" || tablero[2] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatWin.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
@@ -135,6 +165,11 @@ namespace juego
             else if (con == 9)
             {
                 label1.Text = "ES UN EMPATE";
+                CatLose.settings.volume = 15;
+                CatM.Ctlcontrols.stop();
+                FM_Cat.Stop();
+                CatLose.URL = @"so\over.wav";
+                FML_Cat.Start();
                 gana = true;
                 desa();
             }
@@ -376,6 +411,13 @@ namespace juego
 
         private void cambiar_modo_Click(object sender, EventArgs e)
         {
+            CatM.settings.volume = 15;
+            CatM.URL = @"so\cat.wav";
+            FM_Cat.Start();
+            FML_Cat.Stop();
+            CatLose.Ctlcontrols.stop();
+            CatWin.Ctlcontrols.stop();
+            FMW_Cat.Stop();
             arreglar_botones();
             label1.Visible = false;
             button1.Enabled = false;
@@ -413,12 +455,22 @@ namespace juego
             MenuPrincipal menu = new MenuPrincipal();
             CatM.Ctlcontrols.stop();
             FM_Cat.Stop();
+            CatWin.Ctlcontrols.stop();
+            FMW_Cat.Stop();
+            FML_Cat.Stop();
+            CatLose.Ctlcontrols.stop();
             this.Hide();
             menu.Show();
         }
 
         private void jugar_nuevo_Click(object sender, EventArgs e)
         {
+            CatWin.Ctlcontrols.stop();
+            FMW_Cat.Stop();
+            CatLose.Ctlcontrols.stop();
+            FML_Cat.Stop();
+            CatM.Ctlcontrols.play();
+            FM_Cat.Start();
             jugar_nuevo.Enabled = false;            
             regresar.Enabled = false;
             cambiar_modo.Enabled = false;
@@ -481,6 +533,18 @@ namespace juego
                     button9.Enabled = true;
                     break;
             }
+        }
+
+        private void Gato_raton_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Win(object sender, EventArgs e)
+        {
+            CatWin.settings.volume = 15;
+            CatWin.URL = @"so\win.wav";
+            CatWin.Ctlcontrols.play();
         }
 
         private void arreglar_botones()
