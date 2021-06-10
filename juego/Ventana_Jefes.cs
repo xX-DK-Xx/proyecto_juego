@@ -31,27 +31,12 @@ namespace juego
             imagenes.CorazonesPlayer = 3;
             imagenes.MuestraCorazones(corazones);
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones);
-            //HP();
+            
 
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             imagenes.AdministradorJefes(eleccionJefe,enemi);
-           /* switch (eleccionJefe)
-            {
-                case 3:
-                    enemi.Image = Image.FromFile(imagenes.Archivosimagenes[4]);
-                    break;
-                case 6: 
-                    enemi.Image = Image.FromFile(imagenes.Archivosimagenes[11]);
-                    break;
-                case 9:
-                    enemi.Image = Image.FromFile(imagenes.Archivosimagenes[15]);
-                    break;
-                case 10:
-                    MessageBox.Show("Esta es una prueba xdxd");
-                    break;
-
-            }*/
+          
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
@@ -194,5 +179,7 @@ namespace juego
             mateproblem.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima/image31.png");
             AnimacionBotones.Stop();
         }
+
+       
     }
 }

@@ -21,8 +21,6 @@ namespace juego
 
         private double _respuestacorrecta;
 
-
-
         public Problemas_Y_Control()
         {
 

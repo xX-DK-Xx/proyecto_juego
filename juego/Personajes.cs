@@ -10,7 +10,7 @@ namespace juego
         //Hola soy Jose
         //Dirección del directorio actual
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
-        public string direccionEse=@"Escenario\image22.png";
+        public string direccionEse=@"Escenarios\image22.png";
         public byte posicionJefe;
         private byte _contadorenemigo;
         public byte Contadorenemigo { get => _contadorenemigo; set => _contadorenemigo = value; }
@@ -87,28 +87,28 @@ namespace juego
                 case 3:
                     //Jefe planta
                     posicionJefe = 4;
-                    direccionEse = @"Escenario\image22.png";
+                    direccionEse = @"Escenarios\image22.png";
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 6:
                     //Jefe fantasma con hoz
                     posicionJefe = 1;
-                    direccionEse = @"Escenario\image21.png";
+                    direccionEse = @"Escenarios\image21.png";
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 9:
                     //Jefe robot
                     posicionJefe = 10;
-                    direccionEse = @"Escenario\image21.png";
+                    direccionEse = @"Escenarios\image21.png";
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;
                 case 10:
                     posicionJefe = 7;
                     //Jefe brujita
-                    direccionEse = @"Escenario\image20.png";
+                    direccionEse = @"Escenarios\image20.png";
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
                     
                     break;

@@ -32,7 +32,7 @@ namespace juego
             Musica.URL = @"so\loss.wav";
             this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
             this.BackgroundImageLayout = ImageLayout.Stretch;
-            problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel1, textoRespuesta, TextboxRespuestaDenominador);
+            problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel2, textoRespuesta, TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas);
 
             imagenes.CorazonesPlayer = 3;
@@ -99,7 +99,7 @@ namespace juego
                 OverM.URL = @"so\over.wav";
                 MF2.Start();
                 panelBotones.Visible = false;
-                tableLayoutPanel1.Visible = false;
+                panel1.Visible = false;
                 this.BackColor = Color.Black;
                 MessageBoxButtons botones = MessageBoxButtons.YesNo;
                 DialogResult respuesta;
@@ -113,7 +113,7 @@ namespace juego
                     time_music.Start();
                     imagenes.Contadorenemigo= 0;
                     panelBotones.Visible = true;
-                    tableLayoutPanel1.Visible = true;
+                    panel1.Visible = true;
                     imagenes.CorazonesPlayer = 3;
                     imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
                     this.BackColor = Color.White;
@@ -250,7 +250,7 @@ namespace juego
             hp.Play();
             imagenes.CorazonesPlayer = 3;
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
-            //            HP();
+            
         }
 
         private void CambioEnemigo()
@@ -258,7 +258,7 @@ namespace juego
             timer2.Start();
             this.BackColor = Color.Black;
             panelBotones.Visible = false;
-            tableLayoutPanel1.Visible = false;
+            panel1.Visible = false;
             enemi.Image = Image.FromFile(imagenes.AdministradorEnemigos());
 
         }
@@ -278,7 +278,7 @@ namespace juego
             this.BackColor = Color.White;
             //this.BackgroundImage = Image.FromFile(@"")
             panelBotones.Visible = true;
-            tableLayoutPanel1.Visible = true;
+            panel1.Visible = true;
             timer2.Stop();
 
         }
@@ -297,12 +297,6 @@ namespace juego
             OverM.URL = @"so\over.wav";
             OverM.Ctlcontrols.play();
         }
-
-        private void VentanaJuego_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void FinAnimacion_tick(object sender, EventArgs e)
         {
