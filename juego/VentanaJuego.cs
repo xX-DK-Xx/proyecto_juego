@@ -38,6 +38,7 @@ namespace juego
 
             if (problemMatematicas.Fracciones==true)
             {
+                SeleccionNumDem.Enabled = true;
                 problemMatematicas.GeneradorProblefracciones(NumPan1,DenPan1,NumPan2,DenPan1,NumPan3,DenPan3,panel3Fraccion1, panel4Fraccion5, panel5Fraccion3,MuestraProblemas,labelPrimeroperador,labelSegundooperador);
                 textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
                 TextboxRespuestaDenominador.Text = problemMatematicas.RespuestaDenominador.ToString();

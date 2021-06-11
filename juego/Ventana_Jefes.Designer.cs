@@ -80,8 +80,7 @@ namespace juego
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.AnimacionCambioImagen = new System.Windows.Forms.Timer(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SeleccionNumDem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -132,8 +131,7 @@ namespace juego
             // panelBotones
             // 
             this.panelBotones.BackColor = System.Drawing.Color.Transparent;
-            this.panelBotones.Controls.Add(this.button3);
-            this.panelBotones.Controls.Add(this.button2);
+            this.panelBotones.Controls.Add(this.SeleccionNumDem);
             this.panelBotones.Controls.Add(this.punto);
             this.panelBotones.Controls.Add(this.cero);
             this.panelBotones.Controls.Add(this.nuebe);
@@ -665,37 +663,23 @@ namespace juego
             this.label5.TabIndex = 4;
             this.label5.Text = "________";
             // 
-            // button2
+            // SeleccionNumDem
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(3, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 55);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::juego.Properties.Resources.Boton2;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(3, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 55);
-            this.button3.TabIndex = 41;
-            this.button3.Text = "↓";
-            this.button3.UseVisualStyleBackColor = false;
+            this.SeleccionNumDem.BackColor = System.Drawing.Color.Transparent;
+            this.SeleccionNumDem.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.SeleccionNumDem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SeleccionNumDem.Enabled = false;
+            this.SeleccionNumDem.FlatAppearance.BorderSize = 0;
+            this.SeleccionNumDem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SeleccionNumDem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeleccionNumDem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.SeleccionNumDem.Location = new System.Drawing.Point(18, 62);
+            this.SeleccionNumDem.Name = "SeleccionNumDem";
+            this.SeleccionNumDem.Size = new System.Drawing.Size(88, 55);
+            this.SeleccionNumDem.TabIndex = 41;
+            this.SeleccionNumDem.Text = "⇵";
+            this.SeleccionNumDem.UseVisualStyleBackColor = false;
+            this.SeleccionNumDem.Click += new System.EventHandler(this.CambioDemNum_Click);
             // 
             // Ventana_JefesES
             // 
@@ -788,7 +772,6 @@ namespace juego
         private System.Windows.Forms.Label NumPan1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label DenPan1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SeleccionNumDem;
     }
 }

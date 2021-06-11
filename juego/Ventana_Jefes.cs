@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Drawing;
-
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +17,7 @@ namespace juego
         private Personajes imagenes = new Personajes();
         private PictureBox[] corazones;
         private Problemas_Y_Control mateproblem = new Problemas_Y_Control();
-        
+        private bool cambiodenominador = false;
 
         public Ventana_JefesES(byte eleccionJefe,byte contacorazones,byte contadorvisibles,string direccionfondo)
         {
@@ -40,7 +40,10 @@ namespace juego
             mateproblem.AdministradorElementos(imagenes.Contadorenemigo,panel2,textoRespuesta,TextboxRespuestaDenominador);
             if (mateproblem.Fracciones == true)
             {
+                SeleccionNumDem.Enabled = true;
                 mateproblem.GeneradorProblefracciones(NumPan1, DenPan1, NumPan1, DenPan2, NumPan3, DenPan3, panel3Fraccion1, panel4Fraccion2, panel5Fraccion3 , MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+                textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
+                TextboxRespuestaDenominador.Text = mateproblem.RespuestaDenominador.ToString();
             }
             else
             {
@@ -72,7 +75,7 @@ namespace juego
                 }
                 else
                 {
-
+                    enemi.Image = Image.FromFile(@"JefesIma\image3.png");
                 }
 
             }
@@ -154,18 +157,41 @@ namespace juego
 
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
         {
-            try {
-                double res = double.Parse(textoRespuesta.Text);
-                Cal_res(res);
+            if (mateproblem.Fracciones == true)
+            {
+                try
+                {
+                    double res = double.Parse(textoRespuesta.Text);
+                    Cal_res(res);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Ingresaste una cantidad que no es correcta");
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                    textoRespuesta.Text = "";
+                }
             }
-            catch (FormatException) {
-                MessageBox.Show("Ingresaste una cantidad que no es correcta");
-            }
-            catch (OverflowException) {
-                MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
-                textoRespuesta.Text = "";
-            }
+            else {
 
+                try
+                {
+                    double res = double.Parse(textoRespuesta.Text);
+                    double denominador = double.Parse(TextboxRespuestaDenominador.Text);
+                    Cal_res(res,denominador);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Ingresaste una cantidad que no es correcta");
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                    textoRespuesta.Text = "";
+                }
+            }
         }
         private void Cal_res(double respuestarecibida)
         {
@@ -199,6 +225,73 @@ namespace juego
                 mateproblem.GeneradorProblemas(MuestraProblemas); 
             }
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
+        }
+        private void Cal_res(double respuestarecibida, double resupetadenominador)
+        {
+            if (imagenes.Contadorenemigo == 10)
+            {
+                if (respuestarecibida == mateproblem.RespuestaCorrecta && resupetadenominador == mateproblem.RespuestaDenominador)
+                {
+                    enemi.Image = Image.FromFile(@"JefesIma\imagegif1.gif");
+                    enemi.SizeMode = PictureBoxSizeMode.Zoom;
+                    CambioImagen = true;
+                    imagenes.Contadorenemigo++;
+                    SoundPlayer sd = new SoundPlayer(@"so\exp1.wav");
+                    sd.Play();
+                    timer1.Start();
+                }
+                else {
+                    imagenes.CorazonesPlayer--;
+                    imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, imagenes.seccion3arriba);
+                    //HP();
+                    player.Image = Image.FromFile(@"ima\image2.png");
+                    player.SizeMode = PictureBoxSizeMode.Zoom;
+                    CambioImagen = false;
+                    SoundPlayer sd1 = new SoundPlayer(@"so\hit2.wav");
+                    sd1.Play();
+                    timer1.Start();
+                }
+            }
+            else
+            {
+                if (respuestarecibida == mateproblem.RespuestaCorrecta && resupetadenominador == mateproblem.RespuestaDenominador)
+                {
+                    enemi.Image = Image.FromFile(imagenes.Archivosimagenes[imagenes.Enemigo + 1]);
+                    enemi.SizeMode = PictureBoxSizeMode.Zoom;
+                    CambioImagen = true;
+                    imagenes.Contadorenemigo++;
+                    SoundPlayer sd = new SoundPlayer(@"so\exp1.wav");
+                    sd.Play();
+                    timer1.Start();
+                }
+                else
+                {
+                    imagenes.CorazonesPlayer--;
+                    imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, imagenes.seccion3arriba);
+                    //HP();
+                    player.Image = Image.FromFile(@"ima\image2.png");
+                    player.SizeMode = PictureBoxSizeMode.Zoom;
+                    CambioImagen = false;
+                    SoundPlayer sd1 = new SoundPlayer(@"so\hit2.wav");
+                    sd1.Play();
+                    timer1.Start();
+                }
+            }
+            textoRespuesta.Text = "";
+
+            if (mateproblem.Fracciones == true)
+            {
+                mateproblem.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan1, NumPan3, DenPan3, panel3Fraccion1, panel4Fraccion2, panel5Fraccion3, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+            }
+            else
+            {
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false;
+                mateproblem.GeneradorProblemas(MuestraProblemas);
+            }
+
+            textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
+            TextboxRespuestaDenominador.Text = mateproblem.RespuestaDenominador.ToString();
         }
 
         private void BotonCura_Click(object sender, EventArgs e)
@@ -259,8 +352,16 @@ namespace juego
                 BackColor = Color.White;
                 panel1.Visible=true;
                 BackgroundImage = Image.FromFile(@"Escenarios\image20.png");
+                enemi.Image = Image.FromFile(@"JefesIma\image3.png");
             }
         }
+
+        private void CambioDemNum_Click(object sender, EventArgs e)
+        {
+            if (cambiodenominador == false) { cambiodenominador = true; } else { cambiodenominador = false; }
+
+        }
+        
     }
 }
 //

@@ -85,6 +85,7 @@ namespace juego
             this.MuestraProblemas = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.SeleccionNumDem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Musica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OverM)).BeginInit();
@@ -237,6 +238,7 @@ namespace juego
             // panelBotones
             // 
             this.panelBotones.BackColor = System.Drawing.Color.Transparent;
+            this.panelBotones.Controls.Add(this.SeleccionNumDem);
             this.panelBotones.Controls.Add(this.punto);
             this.panelBotones.Controls.Add(this.cero);
             this.panelBotones.Controls.Add(this.nuebe);
@@ -248,9 +250,9 @@ namespace juego
             this.panelBotones.Controls.Add(this.tres);
             this.panelBotones.Controls.Add(this.dos);
             this.panelBotones.Controls.Add(this.uno);
-            this.panelBotones.Location = new System.Drawing.Point(154, 485);
+            this.panelBotones.Location = new System.Drawing.Point(62, 485);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(739, 149);
+            this.panelBotones.Size = new System.Drawing.Size(831, 149);
             this.panelBotones.TabIndex = 53;
             // 
             // punto
@@ -262,7 +264,7 @@ namespace juego
             this.punto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.punto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.punto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.punto.Location = new System.Drawing.Point(630, 60);
+            this.punto.Location = new System.Drawing.Point(732, 62);
             this.punto.Name = "punto";
             this.punto.Size = new System.Drawing.Size(88, 55);
             this.punto.TabIndex = 38;
@@ -279,7 +281,7 @@ namespace juego
             this.cero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cero.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cero.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cero.Location = new System.Drawing.Point(520, 92);
+            this.cero.Location = new System.Drawing.Point(622, 94);
             this.cero.Name = "cero";
             this.cero.Size = new System.Drawing.Size(88, 55);
             this.cero.TabIndex = 37;
@@ -296,7 +298,7 @@ namespace juego
             this.nuebe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuebe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.nuebe.Location = new System.Drawing.Point(392, 89);
+            this.nuebe.Location = new System.Drawing.Point(494, 91);
             this.nuebe.Name = "nuebe";
             this.nuebe.Size = new System.Drawing.Size(88, 55);
             this.nuebe.TabIndex = 36;
@@ -313,7 +315,7 @@ namespace juego
             this.ocho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ocho.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ocho.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ocho.Location = new System.Drawing.Point(259, 92);
+            this.ocho.Location = new System.Drawing.Point(361, 94);
             this.ocho.Name = "ocho";
             this.ocho.Size = new System.Drawing.Size(88, 55);
             this.ocho.TabIndex = 35;
@@ -330,7 +332,7 @@ namespace juego
             this.siete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.siete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.siete.Location = new System.Drawing.Point(143, 95);
+            this.siete.Location = new System.Drawing.Point(245, 97);
             this.siete.Name = "siete";
             this.siete.Size = new System.Drawing.Size(88, 55);
             this.siete.TabIndex = 34;
@@ -347,7 +349,7 @@ namespace juego
             this.seis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seis.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.seis.Location = new System.Drawing.Point(26, 95);
+            this.seis.Location = new System.Drawing.Point(128, 97);
             this.seis.Name = "seis";
             this.seis.Size = new System.Drawing.Size(88, 55);
             this.seis.TabIndex = 33;
@@ -364,7 +366,7 @@ namespace juego
             this.cinco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cinco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cinco.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cinco.Location = new System.Drawing.Point(520, 20);
+            this.cinco.Location = new System.Drawing.Point(622, 22);
             this.cinco.Name = "cinco";
             this.cinco.Size = new System.Drawing.Size(88, 55);
             this.cinco.TabIndex = 32;
@@ -381,7 +383,7 @@ namespace juego
             this.cuatro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cuatro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuatro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cuatro.Location = new System.Drawing.Point(392, 20);
+            this.cuatro.Location = new System.Drawing.Point(494, 22);
             this.cuatro.Name = "cuatro";
             this.cuatro.Size = new System.Drawing.Size(88, 55);
             this.cuatro.TabIndex = 31;
@@ -398,7 +400,7 @@ namespace juego
             this.tres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tres.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tres.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tres.Location = new System.Drawing.Point(259, 20);
+            this.tres.Location = new System.Drawing.Point(361, 22);
             this.tres.Name = "tres";
             this.tres.Size = new System.Drawing.Size(88, 55);
             this.tres.TabIndex = 30;
@@ -415,7 +417,7 @@ namespace juego
             this.dos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dos.Location = new System.Drawing.Point(143, 20);
+            this.dos.Location = new System.Drawing.Point(245, 22);
             this.dos.Name = "dos";
             this.dos.Size = new System.Drawing.Size(88, 55);
             this.dos.TabIndex = 29;
@@ -432,7 +434,7 @@ namespace juego
             this.uno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uno.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uno.Location = new System.Drawing.Point(26, 20);
+            this.uno.Location = new System.Drawing.Point(128, 22);
             this.uno.Name = "uno";
             this.uno.Size = new System.Drawing.Size(88, 55);
             this.uno.TabIndex = 21;
@@ -714,6 +716,23 @@ namespace juego
             this.label5.TabIndex = 4;
             this.label5.Text = "________";
             // 
+            // SeleccionNumDem
+            // 
+            this.SeleccionNumDem.BackColor = System.Drawing.Color.Transparent;
+            this.SeleccionNumDem.BackgroundImage = global::juego.Properties.Resources.Boton2;
+            this.SeleccionNumDem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SeleccionNumDem.Enabled = false;
+            this.SeleccionNumDem.FlatAppearance.BorderSize = 0;
+            this.SeleccionNumDem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SeleccionNumDem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeleccionNumDem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.SeleccionNumDem.Location = new System.Drawing.Point(7, 53);
+            this.SeleccionNumDem.Name = "SeleccionNumDem";
+            this.SeleccionNumDem.Size = new System.Drawing.Size(88, 55);
+            this.SeleccionNumDem.TabIndex = 54;
+            this.SeleccionNumDem.Text = "⇵";
+            this.SeleccionNumDem.UseVisualStyleBackColor = false;
+            // 
             // VentanaJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -819,5 +838,6 @@ namespace juego
         private System.Windows.Forms.Label DenPan1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label NumPan1;
+        private System.Windows.Forms.Button SeleccionNumDem;
     }
 }
