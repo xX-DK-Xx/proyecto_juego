@@ -65,7 +65,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(192, 113);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 185);
             this.button1.TabIndex = 11;
@@ -81,7 +81,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(433, 113);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 185);
             this.button2.TabIndex = 12;
@@ -97,7 +97,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(672, 113);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 185);
             this.button3.TabIndex = 13;
@@ -113,7 +113,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(192, 331);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 185);
             this.button4.TabIndex = 14;
@@ -129,7 +129,7 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(433, 331);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(200, 185);
             this.button5.TabIndex = 15;
@@ -145,7 +145,7 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(672, 331);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(200, 185);
             this.button6.TabIndex = 16;
@@ -161,7 +161,7 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Location = new System.Drawing.Point(192, 549);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(200, 185);
             this.button7.TabIndex = 17;
@@ -177,7 +177,7 @@
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Location = new System.Drawing.Point(433, 549);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(200, 185);
             this.button8.TabIndex = 18;
@@ -193,7 +193,7 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Location = new System.Drawing.Point(672, 549);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(200, 185);
             this.button9.TabIndex = 19;
@@ -216,9 +216,9 @@
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Font = new System.Drawing.Font("Dogica", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Location = new System.Drawing.Point(419, 256);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(231, 103);
             this.button10.TabIndex = 21;
@@ -232,9 +232,9 @@
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Font = new System.Drawing.Font("Dogica", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Location = new System.Drawing.Point(419, 367);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(231, 103);
             this.button11.TabIndex = 22;
@@ -279,9 +279,9 @@
             this.cambiar_modo.Enabled = false;
             this.cambiar_modo.FlatAppearance.BorderSize = 0;
             this.cambiar_modo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cambiar_modo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cambiar_modo.Font = new System.Drawing.Font("Dogica", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cambiar_modo.Location = new System.Drawing.Point(924, 233);
-            this.cambiar_modo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cambiar_modo.Margin = new System.Windows.Forms.Padding(4);
             this.cambiar_modo.Name = "cambiar_modo";
             this.cambiar_modo.Size = new System.Drawing.Size(231, 103);
             this.cambiar_modo.TabIndex = 25;
@@ -297,9 +297,9 @@
             this.regresar.Enabled = false;
             this.regresar.FlatAppearance.BorderSize = 0;
             this.regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regresar.Font = new System.Drawing.Font("Dogica", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regresar.Location = new System.Drawing.Point(924, 343);
-            this.regresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.regresar.Margin = new System.Windows.Forms.Padding(4);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(231, 103);
             this.regresar.TabIndex = 26;
@@ -315,9 +315,9 @@
             this.jugar_nuevo.Enabled = false;
             this.jugar_nuevo.FlatAppearance.BorderSize = 0;
             this.jugar_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.jugar_nuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jugar_nuevo.Font = new System.Drawing.Font("Dogica", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jugar_nuevo.Location = new System.Drawing.Point(924, 454);
-            this.jugar_nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.jugar_nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.jugar_nuevo.Name = "jugar_nuevo";
             this.jugar_nuevo.Size = new System.Drawing.Size(231, 103);
             this.jugar_nuevo.TabIndex = 27;
@@ -368,7 +368,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Gato_raton";
             this.Text = "Gato_raton";
             this.Load += new System.EventHandler(this.Gato_raton_Load);
