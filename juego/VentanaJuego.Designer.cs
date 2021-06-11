@@ -86,12 +86,9 @@ namespace juego
             this.label8 = new System.Windows.Forms.Label();
             this.NumPan3 = new System.Windows.Forms.Label();
             this.MuestraProblemas = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.panel4 = new System.Windows.Forms.Panel();
             this.NumPan1 = new System.Windows.Forms.Label();
             this.DenPan1 = new System.Windows.Forms.Label();
-=======
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SeleccionNumDem = new System.Windows.Forms.Button();
