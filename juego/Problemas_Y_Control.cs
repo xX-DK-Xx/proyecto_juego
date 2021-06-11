@@ -58,7 +58,7 @@ namespace juego
         //Genera el problema matematico
         public void GeneradorProblemas(Label Problema)
         {
-            Problema.Location = new Point(40, 42);
+            Problema.Location = new Point(149, 46);
             problemagenerado = "";
             RespuestaCorrecta = 0;
             //Determina si la operación generada sera de fracciones o no
@@ -148,7 +148,6 @@ namespace juego
             ProblemaGen.Visible = false;
             ProblemaGen.Enabled = false;
             
-            
             int numeroOpera = azar.Next(1, 2);
             if (numeroOpera == 1) {
                 PrimeraFrac.Visible = true;
@@ -156,6 +155,7 @@ namespace juego
                 PrimeraFrac.Location = new Point(111,33);
                 segundofrac.Location = new Point(243, 33);
                 Operador1.Location = new Point(211, 83);
+                
                 int operacion = Operacionazar();
                 //Numerador y denominador para la primera fracción
                 int numdem = Numeroazar();
@@ -204,8 +204,10 @@ namespace juego
                 PrimeraFrac.Visible = true;
                 segundofrac.Visible = true;
                 TerceraFrac.Visible = true;
-
-                
+                Operador1.Visible = true;
+                Operador2.Visible = true;
+                Operador1.Location = new Point(123, 70);
+                Operador2.Location = new Point(228, 70);
 
 
                 bool operacionsiguiente = false ;

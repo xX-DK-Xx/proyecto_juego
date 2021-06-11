@@ -21,12 +21,15 @@ namespace juego
 
         public Ventana_JefesES(byte eleccionJefe,byte contacorazones,byte contadorvisibles,string direccionfondo)
         {
+            
             imagenes.CorazonesPlayer = contacorazones;
             imagenes.Contadorenemigo = eleccionJefe;
             imagenes.contadorvisibles = contadorvisibles;
             imagenes.direccionEse = direccionfondo;
             if (imagenes.contadorvisibles<=3) { imagenes.seccion3arriba = true; }
+            
             InitializeComponent();
+            panel2Problemas.BackColor = Color.FromArgb(150, 166, 166, 166);
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -35,7 +38,16 @@ namespace juego
             imagenes.MuestraCorazones(corazones);
             
             mateproblem.AdministradorElementos(imagenes.Contadorenemigo,panel2,textoRespuesta,TextboxRespuestaDenominador);
-            mateproblem.GeneradorProblemas(MuestraProblemas);
+            if (mateproblem.Fracciones == true)
+            {
+                mateproblem.GeneradorProblefracciones(NumPan1, DenPan1, NumPan1, DenPan2, NumPan3, DenPan3, panel3Fraccion1, panel4Fraccion2, panel5Fraccion3 , MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+            }
+            else
+            {
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false;
+                mateproblem.GeneradorProblemas(MuestraProblemas);
+            }
 
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -179,9 +191,13 @@ namespace juego
             textoRespuesta.Text = "";
             if (mateproblem.Fracciones == true)
             {
-                mateproblem.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan2, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion2, panel4Fraccion3, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+                mateproblem.GeneradorProblefracciones(NumPan1, DenPan1, NumPan1, DenPan2, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion3, panel4Fraccion2, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
             }
-            else { mateproblem.GeneradorProblemas(MuestraProblemas); }
+            else {
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false;
+                mateproblem.GeneradorProblemas(MuestraProblemas); 
+            }
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
         }
 

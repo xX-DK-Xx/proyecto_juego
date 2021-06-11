@@ -62,21 +62,23 @@ namespace juego
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
             this.panel2Problemas = new System.Windows.Forms.Panel();
+            this.panel4Fraccion2 = new System.Windows.Forms.Panel();
+            this.DenPan2 = new System.Windows.Forms.Label();
+            this.NumPan2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel3Fraccion1 = new System.Windows.Forms.Panel();
+            this.NumPan1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.DenPan1 = new System.Windows.Forms.Label();
             this.labelSegundooperador = new System.Windows.Forms.Label();
             this.labelPrimeroperador = new System.Windows.Forms.Label();
-            this.panel5Fraccion2 = new System.Windows.Forms.Panel();
+            this.panel5Fraccion3 = new System.Windows.Forms.Panel();
             this.DenPan3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.NumPan3 = new System.Windows.Forms.Label();
             this.MuestraProblemas = new System.Windows.Forms.Label();
-            this.panel4Fraccion3 = new System.Windows.Forms.Panel();
-            this.NumPan1 = new System.Windows.Forms.Label();
-            this.DenPan1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3Fraccion1 = new System.Windows.Forms.Panel();
-            this.DenPan2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.NumPan2 = new System.Windows.Forms.Label();
             this.AnimacionCambioImagen = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelBotones.SuspendLayout();
@@ -91,9 +93,9 @@ namespace juego
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel2Problemas.SuspendLayout();
-            this.panel5Fraccion2.SuspendLayout();
-            this.panel4Fraccion3.SuspendLayout();
+            this.panel4Fraccion2.SuspendLayout();
             this.panel3Fraccion1.SuspendLayout();
+            this.panel5Fraccion3.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -482,19 +484,95 @@ namespace juego
             // panel2Problemas
             // 
             this.panel2Problemas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2Problemas.Controls.Add(this.panel4Fraccion2);
+            this.panel2Problemas.Controls.Add(this.panel3Fraccion1);
             this.panel2Problemas.Controls.Add(this.labelSegundooperador);
             this.panel2Problemas.Controls.Add(this.labelPrimeroperador);
-            this.panel2Problemas.Controls.Add(this.panel5Fraccion2);
+            this.panel2Problemas.Controls.Add(this.panel5Fraccion3);
             this.panel2Problemas.Controls.Add(this.MuestraProblemas);
             this.panel2Problemas.Location = new System.Drawing.Point(224, 134);
             this.panel2Problemas.Name = "panel2Problemas";
             this.panel2Problemas.Size = new System.Drawing.Size(501, 146);
             this.panel2Problemas.TabIndex = 53;
             // 
+            // panel4Fraccion2
+            // 
+            this.panel4Fraccion2.Controls.Add(this.DenPan2);
+            this.panel4Fraccion2.Controls.Add(this.NumPan2);
+            this.panel4Fraccion2.Controls.Add(this.label9);
+            this.panel4Fraccion2.Location = new System.Drawing.Point(141, 30);
+            this.panel4Fraccion2.Name = "panel4Fraccion2";
+            this.panel4Fraccion2.Size = new System.Drawing.Size(60, 89);
+            this.panel4Fraccion2.TabIndex = 55;
+            // 
+            // DenPan2
+            // 
+            this.DenPan2.AutoSize = true;
+            this.DenPan2.Location = new System.Drawing.Point(12, 61);
+            this.DenPan2.Name = "DenPan2";
+            this.DenPan2.Size = new System.Drawing.Size(41, 13);
+            this.DenPan2.TabIndex = 59;
+            this.DenPan2.Text = "label10";
+            // 
+            // NumPan2
+            // 
+            this.NumPan2.AutoSize = true;
+            this.NumPan2.Location = new System.Drawing.Point(12, 14);
+            this.NumPan2.Name = "NumPan2";
+            this.NumPan2.Size = new System.Drawing.Size(35, 13);
+            this.NumPan2.TabIndex = 57;
+            this.NumPan2.Text = "label7";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "________";
+            // 
+            // panel3Fraccion1
+            // 
+            this.panel3Fraccion1.Controls.Add(this.NumPan1);
+            this.panel3Fraccion1.Controls.Add(this.label7);
+            this.panel3Fraccion1.Controls.Add(this.DenPan1);
+            this.panel3Fraccion1.Location = new System.Drawing.Point(48, 30);
+            this.panel3Fraccion1.Name = "panel3Fraccion1";
+            this.panel3Fraccion1.Size = new System.Drawing.Size(60, 89);
+            this.panel3Fraccion1.TabIndex = 56;
+            // 
+            // NumPan1
+            // 
+            this.NumPan1.AutoSize = true;
+            this.NumPan1.Location = new System.Drawing.Point(12, 15);
+            this.NumPan1.Name = "NumPan1";
+            this.NumPan1.Size = new System.Drawing.Size(35, 13);
+            this.NumPan1.TabIndex = 54;
+            this.NumPan1.Text = "label3";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "________";
+            // 
+            // DenPan1
+            // 
+            this.DenPan1.AutoSize = true;
+            this.DenPan1.Location = new System.Drawing.Point(12, 61);
+            this.DenPan1.Name = "DenPan1";
+            this.DenPan1.Size = new System.Drawing.Size(35, 13);
+            this.DenPan1.TabIndex = 56;
+            this.DenPan1.Text = "label6";
+            // 
             // labelSegundooperador
             // 
             this.labelSegundooperador.AutoSize = true;
-            this.labelSegundooperador.Location = new System.Drawing.Point(196, 70);
+            this.labelSegundooperador.Location = new System.Drawing.Point(228, 70);
             this.labelSegundooperador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSegundooperador.Name = "labelSegundooperador";
             this.labelSegundooperador.Size = new System.Drawing.Size(10, 13);
@@ -504,23 +582,24 @@ namespace juego
             // labelPrimeroperador
             // 
             this.labelPrimeroperador.AutoSize = true;
-            this.labelPrimeroperador.Location = new System.Drawing.Point(106, 70);
+            this.labelPrimeroperador.Location = new System.Drawing.Point(123, 70);
             this.labelPrimeroperador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPrimeroperador.Name = "labelPrimeroperador";
             this.labelPrimeroperador.Size = new System.Drawing.Size(13, 13);
             this.labelPrimeroperador.TabIndex = 12;
             this.labelPrimeroperador.Text = "+";
             // 
-            // panel5Fraccion2
+            // panel5Fraccion3
             // 
-            this.panel5Fraccion2.Controls.Add(this.DenPan3);
-            this.panel5Fraccion2.Controls.Add(this.label8);
-            this.panel5Fraccion2.Controls.Add(this.NumPan3);
-            this.panel5Fraccion2.Location = new System.Drawing.Point(267, 34);
-            this.panel5Fraccion2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5Fraccion2.Name = "panel5Fraccion2";
-            this.panel5Fraccion2.Size = new System.Drawing.Size(59, 85);
-            this.panel5Fraccion2.TabIndex = 11;
+            this.panel5Fraccion3.Controls.Add(this.DenPan3);
+            this.panel5Fraccion3.Controls.Add(this.label8);
+            this.panel5Fraccion3.Controls.Add(this.NumPan3);
+            this.panel5Fraccion3.Location = new System.Drawing.Point(267, 34);
+            this.panel5Fraccion3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5Fraccion3.Name = "panel5Fraccion3";
+            this.panel5Fraccion3.Size = new System.Drawing.Size(59, 85);
+            this.panel5Fraccion3.TabIndex = 11;
+            this.panel5Fraccion3.Visible = false;
             // 
             // DenPan3
             // 
@@ -562,34 +641,6 @@ namespace juego
             this.MuestraProblemas.TabIndex = 0;
             this.MuestraProblemas.Text = "label2";
             // 
-            // panel4Fraccion3
-            // 
-            this.panel4Fraccion3.Controls.Add(this.NumPan1);
-            this.panel4Fraccion3.Controls.Add(this.DenPan1);
-            this.panel4Fraccion3.Controls.Add(this.label2);
-            this.panel4Fraccion3.Location = new System.Drawing.Point(53, 36);
-            this.panel4Fraccion3.Name = "panel4Fraccion3";
-            this.panel4Fraccion3.Size = new System.Drawing.Size(73, 105);
-            this.panel4Fraccion3.TabIndex = 10;
-            // 
-            // NumPan1
-            // 
-            this.NumPan1.AutoSize = true;
-            this.NumPan1.Location = new System.Drawing.Point(10, 19);
-            this.NumPan1.Name = "NumPan1";
-            this.NumPan1.Size = new System.Drawing.Size(54, 13);
-            this.NumPan1.TabIndex = 3;
-            this.NumPan1.Text = "NumPan1";
-            // 
-            // DenPan1
-            // 
-            this.DenPan1.AutoSize = true;
-            this.DenPan1.Location = new System.Drawing.Point(15, 74);
-            this.DenPan1.Name = "DenPan1";
-            this.DenPan1.Size = new System.Drawing.Size(72, 13);
-            this.DenPan1.TabIndex = 2;
-            this.DenPan1.Text = "DenPan1sdfg";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -599,25 +650,6 @@ namespace juego
             this.label2.TabIndex = 1;
             this.label2.Text = "________";
             // 
-            // panel3Fraccion1
-            // 
-            this.panel3Fraccion1.Controls.Add(this.DenPan2);
-            this.panel3Fraccion1.Controls.Add(this.label5);
-            this.panel3Fraccion1.Controls.Add(this.NumPan2);
-            this.panel3Fraccion1.Location = new System.Drawing.Point(172, 36);
-            this.panel3Fraccion1.Name = "panel3Fraccion1";
-            this.panel3Fraccion1.Size = new System.Drawing.Size(73, 105);
-            this.panel3Fraccion1.TabIndex = 9;
-            // 
-            // DenPan2
-            // 
-            this.DenPan2.AutoSize = true;
-            this.DenPan2.Location = new System.Drawing.Point(19, 72);
-            this.DenPan2.Name = "DenPan2";
-            this.DenPan2.Size = new System.Drawing.Size(35, 13);
-            this.DenPan2.TabIndex = 5;
-            this.DenPan2.Text = "label6";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -626,15 +658,6 @@ namespace juego
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "________";
-            // 
-            // NumPan2
-            // 
-            this.NumPan2.AutoSize = true;
-            this.NumPan2.Location = new System.Drawing.Point(19, 20);
-            this.NumPan2.Name = "NumPan2";
-            this.NumPan2.Size = new System.Drawing.Size(35, 13);
-            this.NumPan2.TabIndex = 3;
-            this.NumPan2.Text = "label4";
             // 
             // Ventana_JefesES
             // 
@@ -661,12 +684,12 @@ namespace juego
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.panel2Problemas.ResumeLayout(false);
             this.panel2Problemas.PerformLayout();
-            this.panel5Fraccion2.ResumeLayout(false);
-            this.panel5Fraccion2.PerformLayout();
-            this.panel4Fraccion3.ResumeLayout(false);
-            this.panel4Fraccion3.PerformLayout();
+            this.panel4Fraccion2.ResumeLayout(false);
+            this.panel4Fraccion2.PerformLayout();
             this.panel3Fraccion1.ResumeLayout(false);
             this.panel3Fraccion1.PerformLayout();
+            this.panel5Fraccion3.ResumeLayout(false);
+            this.panel5Fraccion3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -706,19 +729,26 @@ namespace juego
         private System.Windows.Forms.Button dos;
         private System.Windows.Forms.Button uno;
         private System.Windows.Forms.Timer AnimacionCambioImagen;
-        private System.Windows.Forms.Panel panel5Fraccion2;
+        private System.Windows.Forms.Panel panel5Fraccion3;
         private System.Windows.Forms.Label DenPan3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label NumPan3;
-        private System.Windows.Forms.Panel panel4Fraccion3;
-        private System.Windows.Forms.Label NumPan1;
-        private System.Windows.Forms.Label DenPan1;
+        
+        
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3Fraccion1;
-        private System.Windows.Forms.Label DenPan2;
+        
+        
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label NumPan2;
+        
         private System.Windows.Forms.Label labelSegundooperador;
         private System.Windows.Forms.Label labelPrimeroperador;
+        private System.Windows.Forms.Panel panel4Fraccion2;
+        private System.Windows.Forms.Label DenPan2;
+        private System.Windows.Forms.Label NumPan2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel3Fraccion1;
+        private System.Windows.Forms.Label NumPan1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label DenPan1;
     }
 }

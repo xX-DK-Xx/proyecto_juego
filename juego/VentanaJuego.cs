@@ -1,7 +1,5 @@
 ﻿using System;
-
 using System.Drawing;
-
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
@@ -27,6 +25,7 @@ namespace juego
         {
             InitializeComponent();
             //Inicio del juego
+            panel2Problemas.BackColor = Color.FromArgb(150,166,166,166);
             imagenes.contadorvisibles = contadorvisibles;
             imagenes.CorazonesPlayer = corazonesinicio;
             imagenes.Contadorenemigo = contadorenemis;
@@ -40,11 +39,14 @@ namespace juego
             problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel2, textoRespuesta, TextboxRespuestaDenominador);
             if (problemMatematicas.Fracciones==true)
             {
-                problemMatematicas.GeneradorProblefracciones(NumPan1,DenPan1,NumPan2,DenPan2,NumPan3,DenPan3,panel3Fraccion1,panel5Fraccion2,panel4Fraccion5,MuestraProblemas,labelPrimeroperador,labelSegundooperador);
+                problemMatematicas.GeneradorProblefracciones(NumPan1,DenPan1,NumPan2,DenPan1,NumPan3,DenPan3,panel3Fraccion1, panel4Fraccion5, panel5Fraccion3,MuestraProblemas,labelPrimeroperador,labelSegundooperador);
             }
-            else { problemMatematicas.GeneradorProblemas(MuestraProblemas); }
+            else {
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false;
+                problemMatematicas.GeneradorProblemas(MuestraProblemas); 
+            }
             
-
             
             imagenes.MuestraCorazones(corazones);
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,imagenes.seccion3arriba);
@@ -250,9 +252,13 @@ namespace juego
             textoRespuesta.Text = "";
             if (problemMatematicas.Fracciones == true)
             {
-                problemMatematicas.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan2, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion2, panel4Fraccion5, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+                problemMatematicas.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan1, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion3, panel4Fraccion5, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
             }
-            else { problemMatematicas.GeneradorProblemas(MuestraProblemas); }
+            else {
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false; 
+                problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            }
             
 
 
