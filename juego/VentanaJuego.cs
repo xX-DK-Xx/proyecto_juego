@@ -312,6 +312,5 @@ namespace juego
             problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
             Animacionbotones.Stop();
         }
-
     }
 }
