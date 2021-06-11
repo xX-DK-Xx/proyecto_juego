@@ -177,6 +177,14 @@ namespace juego
         }
         public void desa()
         {
+            if (computadora==true)
+            {
+                //musica de derrota
+            }
+            else
+            {
+                //musica de victoria
+            }
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -332,7 +340,7 @@ namespace juego
                             direccion = @"imagato\raton.png";                          
                             boton(tpc);
                             label1.Text = "Turno de Gato";
-                            quiengana = "RATON";
+                            quiengana = "Computadora";
                             ganar();
                         }
                     } while (tur != true);

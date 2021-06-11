@@ -44,12 +44,12 @@ namespace juego
         }
         private void palabras()
         {
-            int numpalabra = ranpalabra.Next(1,5);
+            int numpalabra = ranpalabra.Next(1,21);
             switch (numpalabra)
             {
                 case 1:
                     palabra = "vaca";
-                    pista = "animal terrsetre";
+                    pista = "animal terrestre";
                     break;
                 case 2:
                     palabra = "ballena";
@@ -63,70 +63,70 @@ namespace juego
                     palabra = "matematicas";
                     pista = "materia escolar";
                     break;
-               /*case 5:
-                    palabra = "";
-                    pista = "";
+                case 5:
+                    palabra = "chilate";
+                    pista = "bebida";
                     break;
                 case 6:
-                    palabra = "";
-                    pista = "";
+                    palabra = "facebook";
+                    pista = "red social";
                     break;
                 case 7:
-                    palabra = "";
-                    pista = "";
+                    palabra = "telefono";
+                    pista = "dispositivo electronico";
                     break;
                 case 8:
-                    palabra = "";
-                    pista = "";
+                    palabra = "lapiz";
+                    pista = "material escolar";
                     break;
                 case 9:
-                    palabra = "";
-                    pista = "";
+                    palabra = "silla";
+                    pista = "mueble";
                     break;
                 case 10:
-                    palabra = "";
-                    pista = "";
+                    palabra = "mesa";
+                    pista = "mueble";
                     break;
                 case 11:
-                    palabra = "";
-                    pista = "";
+                    palabra = "escuela";
+                    pista = "edificio";
                     break;
                 case 12:
-                    palabra = "";
-                    pista = "";
+                    palabra = "hospital";
+                    pista = "edificio";
                     break;
                 case 13:
-                    palabra = "";
-                    pista = "";
+                    palabra = "tacos";
+                    pista = "comida";
                     break;
                 case 14:
-                    palabra = "";
-                    pista = "";
+                    palabra = "chilaquiles";
+                    pista = "comida";
                     break;
                 case 15:
-                    palabra = "";
-                    pista = "";
+                    palabra = "pozole";
+                    pista = "comida";
                     break;
                 case 16:
-                    palabra = "";
-                    pista = "";
+                    palabra = "delfin";
+                    pista = "animal marino";
                     break;
                 case 17:
-                    palabra = "";
-                    pista = "";
+                    palabra = "elefante";
+                    pista = "animal terrestre";
                     break;
                 case 18:
-                    palabra = "";
-                    pista = "";
+                    palabra = "peru";
+                    pista = "pais";
                     break;
                 case 19:
-                    palabra = "";
-                    pista = "";
+                    palabra = "rusia";
+                    pista = "pais";
                     break;
                 case 20:
-                    palabra = "";
-                    pista = "";
-                    break;*/
+                    palabra = "japon";
+                    pista = "pais";
+                    break;
             }
         }
         private void arreglopalabra ()
@@ -153,12 +153,14 @@ namespace juego
             }
             if (con==0)
             {
+                //sonido de error
                 intentos--;
                 mensajes.Text = "LETRA EQUIVOCADA";
                 calcular_intentos();
             }
             else
             {
+                //sonido de acierto
                 label3.Text = "";
                 for (int i = 0; i < palabra2.Length; i++)
                 {
