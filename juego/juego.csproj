@@ -105,6 +105,7 @@
     <EmbeddedResource Include="Ventana_Jefes.resx">
       <DependentUpon>Ventana_Jefes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Fonts\dogica.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
