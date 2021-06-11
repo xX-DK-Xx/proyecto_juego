@@ -34,13 +34,19 @@ namespace juego
         {
             respu = textBox1.Text.ToLower();
             textBox1.Text = "";
-            if (respu.Length == 1)
-            {
-                comprobarrespuesta();
+            if (respu=="") {
+                mensajes.Text = "INGRESE UNA LETRA";
             }
             else
             {
-                mensajes.Text = "INGRESE SOLO UNA LETRA";
+                if (respu.Length == 1)
+                {
+                    comprobarrespuesta();
+                }
+                else
+                {
+                    mensajes.Text = "INGRESE SOLO UNA LETRA";
+                }
             }
         }
         private void palabras()
