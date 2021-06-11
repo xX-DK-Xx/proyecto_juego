@@ -356,20 +356,12 @@ namespace juego
             }
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 25306c60efe29c57718163c79da8a9999ce6899b
         private void CambioDemNum_Click(object sender, EventArgs e)
         {
             if (cambiodenominador == false) { cambiodenominador = true; } else { cambiodenominador = false; }
 
         }
         
-<<<<<<< HEAD
-=======
-
->>>>>>> 25306c60efe29c57718163c79da8a9999ce6899b
         private void Ventana_JefesES_Load(object sender, EventArgs e)
         {
             comparacion_musica();
@@ -448,9 +440,6 @@ namespace juego
             }
 
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 25306c60efe29c57718163c79da8a9999ce6899b
     }
 }
