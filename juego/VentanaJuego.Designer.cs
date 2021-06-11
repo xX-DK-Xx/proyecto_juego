@@ -611,6 +611,7 @@ namespace juego
             this.panel4Fraccion5.Name = "panel4Fraccion5";
             this.panel4Fraccion5.Size = new System.Drawing.Size(60, 89);
             this.panel4Fraccion5.TabIndex = 54;
+            this.panel4Fraccion5.Visible = false;
             // 
             // panel3Fraccion1
             // 
@@ -621,11 +622,12 @@ namespace juego
             this.panel3Fraccion1.Name = "panel3Fraccion1";
             this.panel3Fraccion1.Size = new System.Drawing.Size(60, 89);
             this.panel3Fraccion1.TabIndex = 54;
+            this.panel3Fraccion1.Visible = false;
             // 
             // labelSegundooperador
             // 
             this.labelSegundooperador.AutoSize = true;
-            this.labelSegundooperador.Location = new System.Drawing.Point(180, 67);
+            this.labelSegundooperador.Location = new System.Drawing.Point(198, 67);
             this.labelSegundooperador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSegundooperador.Name = "labelSegundooperador";
             this.labelSegundooperador.Size = new System.Drawing.Size(10, 13);
