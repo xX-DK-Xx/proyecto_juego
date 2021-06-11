@@ -16,9 +16,6 @@ namespace juego
         public MenuPrincipal()
         {
             InitializeComponent();
-            Menu.settings.volume = 15;
-            Menu.URL= @"so\menu.wav";
-            time_bu.Start();
             //VentanaJuego Juego = new VentanaJuego();
             //Juego.Show();
         }
@@ -62,6 +59,13 @@ namespace juego
             time_bu.Stop();
             this.Hide();
             aho.Show();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            Menu.settings.volume = 15;
+            Menu.URL = @"so\menu.wav";
+            time_bu.Start();
         }
     }
 }

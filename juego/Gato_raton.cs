@@ -180,9 +180,21 @@ namespace juego
             if (computadora==true)
             {
                 //musica de derrota
+                CatM.Ctlcontrols.stop();
+                CatWin.Ctlcontrols.stop();
+                FMW_Cat.Stop();
+                FM_Cat.Stop();
+                CatLose.Ctlcontrols.play();
+                FML_Cat.Start();
             }
             else
             {
+                CatM.Ctlcontrols.play();
+                CatWin.Ctlcontrols.play();
+                FMW_Cat.Stop();
+                FM_Cat.Stop();
+                CatLose.Ctlcontrols.stop();
+                FML_Cat.Stop();
                 //musica de victoria
             }
             button1.Enabled = false;
@@ -553,6 +565,13 @@ namespace juego
             CatWin.settings.volume = 15;
             CatWin.URL = @"so\win.wav";
             CatWin.Ctlcontrols.play();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            CatM.settings.volume = trackBar1.Value;
+            CatWin.settings.volume = trackBar1.Value;
+            CatLose.settings.volume = trackBar1.Value;
         }
 
         private void arreglar_botones()

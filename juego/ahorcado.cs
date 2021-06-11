@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Media;
+    
 namespace juego
 {
     public partial class ahorcado : Form
@@ -33,7 +34,7 @@ namespace juego
         {
             respu = textBox1.Text.ToLower();
             textBox1.Text = "";
-            if (respu.Length==1)
+            if (respu.Length == 1)
             {
                 comprobarrespuesta();
             }
@@ -44,7 +45,7 @@ namespace juego
         }
         private void palabras()
         {
-            int numpalabra = ranpalabra.Next(1,21);
+            int numpalabra = ranpalabra.Next(1, 21);
             switch (numpalabra)
             {
                 case 1:
@@ -129,31 +130,34 @@ namespace juego
                     break;
             }
         }
-        private void arreglopalabra ()
+        private void arreglopalabra()
         {
             palabra2 = new string[palabra.Length];
-            for (int i=0;i<palabra2.Length;i++)
+            for (int i = 0; i < palabra2.Length; i++)
             {
                 palabra2[i] = " - ";
                 label3.Text += "" + palabra2[i];
             }
         }
+
         private void comprobarrespuesta()
         {
             string letra = "";
             int con = 0;
-            for (int i=0;i<palabra.Length ;i++)
+            for (int i = 0; i < palabra.Length; i++)
             {
-                letra = ""+palabra[i];
-                if (letra==respu)
+                letra = "" + palabra[i];
+                if (letra == respu)
                 {
-                    palabra2[i] = ""+palabra[i];
+                    palabra2[i] = "" + palabra[i];
                     con++;
                 }
             }
-            if (con==0)
+            if (con == 0)
             {
                 //sonido de error
+                SoundPlayer sound = new SoundPlayer(@"so\fail02.wav");
+                sound.Play();
                 intentos--;
                 mensajes.Text = "LETRA EQUIVOCADA";
                 calcular_intentos();
@@ -166,6 +170,8 @@ namespace juego
                 {
                     label3.Text += "" + palabra2[i];
                 }
+                SoundPlayer co = new SoundPlayer(@"so\correct.wav");
+                co.Play();
                 mensajes.Text = "LETRA CORRECTA";
                 ganar();
             }
@@ -201,6 +207,8 @@ namespace juego
                     button1.Enabled = false;
                     juganu.Visible = true;
                     juganu.Enabled = true;
+                    stop();
+                    over();
                     mensajes.Text = "HAZ PERDIDO";
                     timer1.Start();
                     break;
@@ -210,6 +218,7 @@ namespace juego
 
         private void gameover(object sender, EventArgs e)
         {
+            time_over.Start();
             pictureBox1.Image = Image.FromFile(@"imaaho\Bombagameover.png");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             timer1.Stop();
@@ -228,7 +237,11 @@ namespace juego
             }
             if (con == 0)
             {
+
                 mensajes.Text = "HAZ GANADO";
+                stop();
+                winn();
+                timer_win.Start();
                 textBox1.Enabled = false;
                 button1.Enabled = false;
                 juganu.Visible = true;
@@ -238,6 +251,7 @@ namespace juego
 
         private void regre_Click(object sender, EventArgs e)
         {
+            stop();
             MenuPrincipal menu = new MenuPrincipal();
             this.Hide();
             menu.Show();
@@ -245,6 +259,9 @@ namespace juego
 
         private void juganu_Click(object sender, EventArgs e)
         {
+            stop();
+            fondo();
+            time_fondo.Start();
             pictureBox1.Image = Image.FromFile(@"imaaho\Bomba5.png");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             textBox1.Enabled = true;
@@ -260,6 +277,65 @@ namespace juego
         private void mensajes_Click(object sender, EventArgs e)
         {
 
+        }
+        private void ahorcado_Load(object sender, EventArgs e)
+        {
+            fondo();
+        }
+        public void stop()
+        {
+            fondis.Ctlcontrols.stop();
+            Oveer.Ctlcontrols.stop();
+            time_fondo.Stop();
+            time_over.Stop();
+            win.Ctlcontrols.stop();
+            timer_win.Stop();
+        }
+        public void fondo()
+        {
+            fondis.settings.volume = 15;
+            fondis.URL = @"so\ahorcado.wav";
+            fondis.Ctlcontrols.play();
+        }
+        public void over()
+        {
+            Oveer.settings.volume = 15;
+            Oveer.URL = @"so\over.wav";
+            Oveer.Ctlcontrols.play();
+        }
+
+        private void time_fondo_Tick(object sender, EventArgs e)
+        {
+            fondis.settings.volume = 15;
+            fondis.URL = @"so\ahorcado.wav";
+            fondis.Ctlcontrols.play();
+        }
+
+        private void time_over_Tick(object sender, EventArgs e)
+        {
+            Oveer.settings.volume = 15;
+            Oveer.URL = @"so\over.wav";
+            Oveer.Ctlcontrols.play();
+        }
+
+        private void timer_win_Tick(object sender, EventArgs e)
+        {
+            win.settings.volume = 15;
+            win.URL = @"so\win.wav";
+            win.Ctlcontrols.play();
+        }
+        public void winn()
+        {
+            win.settings.volume = 15;
+            win.URL = @"so\win.wav";
+            win.Ctlcontrols.play();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            fondis.settings.volume = trackBar1.Value;
+            win.settings.volume = trackBar1.Value;
+            Oveer.settings.volume = trackBar1.Value;
         }
     }
 }

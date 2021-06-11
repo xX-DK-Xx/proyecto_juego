@@ -40,7 +40,6 @@ namespace juego
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
             player.SizeMode = PictureBoxSizeMode.Zoom;
             imagenes.AdministradorJefes(eleccionJefe, enemi);
-
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
@@ -220,6 +219,7 @@ namespace juego
         }
         private void Cambioventana()
         {
+            stop();
             panel1.Visible = false;
             imagenes.direccionEse = @"Escenarios\image21.png";
             this.BackgroundImage = null;
@@ -241,6 +241,84 @@ namespace juego
                 BackgroundImage = Image.FromFile(@"Escenarios\image.20.png");
             }
         }
+
+        private void Ventana_JefesES_Load(object sender, EventArgs e)
+        {
+            comparacion_musica();
+        }
+        
+
+        private void Witch_Tick(object sender, EventArgs e)
+        {
+            Bruja.settings.volume = 15;
+            Bruja.URL = @"so\planta.wav";
+            Bruja.Ctlcontrols.play();
+        
     }
-}
-//
+
+        private void Danny_Tick(object sender, EventArgs e)
+        {
+            buuh.settings.volume = 15;
+            buuh.URL = @"so\planta.wav";
+            buuh.Ctlcontrols.play();
+        }
+
+        private void Planta_Tick(object sender, EventArgs e)
+        {
+            plant.settings.volume = 15;
+            plant.URL = @"so\planta.wav";
+            plant.Ctlcontrols.play();
+        }
+        public void stop()
+        {
+            plant.Ctlcontrols.stop();
+            buuh.Ctlcontrols.stop();
+            plant.Ctlcontrols.stop();
+            Planta.Stop();
+            Danny.Stop();
+            Witch.Stop();
+        }
+        public void br()
+        {
+            Bruja.settings.volume = 15;
+            Bruja.URL = @"so\brujita.wav";
+            Bruja.Ctlcontrols.play();
+        }
+        public void pl()
+        {
+            plant.settings.volume = 15;
+            plant.URL = @"so\planta.wav";
+            plant.Ctlcontrols.play();
+        }
+        public void ft()
+        {
+            buuh.settings.volume = 15;
+            buuh.URL = @"so\phantom.wav";
+            buuh.Ctlcontrols.play();
+        }
+        public void comparacion_musica()
+        {
+            if (imagenes.direccionEse == @"Escenarios\image21.png")
+            {
+                stop();
+                ft();
+                Danny.Start();
+            }
+            else
+                if (imagenes.direccionEse == @"Escenarios\image22.png")
+            {
+                stop();
+                pl();
+                Danny.Start();
+            }
+            else
+                if (imagenes.direccionEse == @"Escenarios\image20.png")
+            {
+                stop();
+                br();
+                Witch.Start();
+            }
+
+        }
+    }
+    }
