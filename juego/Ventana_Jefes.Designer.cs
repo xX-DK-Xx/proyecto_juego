@@ -84,18 +84,13 @@ namespace juego
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.AnimacionCambioImagen = new System.Windows.Forms.Timer(this.components);
-<<<<<<< HEAD
             this.SeleccionNumDem = new System.Windows.Forms.Button();
-=======
-<<<<<<< HEAD
             this.Planta = new System.Windows.Forms.Timer(this.components);
             this.Danny = new System.Windows.Forms.Timer(this.components);
             this.Witch = new System.Windows.Forms.Timer(this.components);
-=======
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
->>>>>>> a0bf7c616582ec548796979d2c9a8fb6e818893e
+
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buuh)).BeginInit();
@@ -452,16 +447,13 @@ namespace juego
             // enemi
             // 
             this.enemi.Anchor = System.Windows.Forms.AnchorStyles.Left;
-<<<<<<< HEAD
             this.enemi.Location = new System.Drawing.Point(941, 426);
             this.enemi.Margin = new System.Windows.Forms.Padding(4);
             this.enemi.Name = "enemi";
             this.enemi.Size = new System.Drawing.Size(179, 171);
-=======
             this.enemi.Location = new System.Drawing.Point(706, 321);
             this.enemi.Name = "enemi";
             this.enemi.Size = new System.Drawing.Size(187, 164);
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             this.enemi.TabIndex = 50;
             this.enemi.TabStop = false;
             // 
@@ -532,16 +524,14 @@ namespace juego
             // player
             // 
             this.player.Anchor = System.Windows.Forms.AnchorStyles.Right;
-<<<<<<< HEAD
+
             this.player.Location = new System.Drawing.Point(192, 426);
             this.player.Margin = new System.Windows.Forms.Padding(4);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(195, 171);
-=======
             this.player.Location = new System.Drawing.Point(114, 321);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(176, 164);
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             this.player.TabIndex = 51;
             this.player.TabStop = false;
             // 
@@ -554,16 +544,13 @@ namespace juego
             this.panel2Problemas.Controls.Add(this.labelPrimeroperador);
             this.panel2Problemas.Controls.Add(this.panel5Fraccion3);
             this.panel2Problemas.Controls.Add(this.MuestraProblemas);
-<<<<<<< HEAD
             this.panel2Problemas.Location = new System.Drawing.Point(424, 250);
             this.panel2Problemas.Margin = new System.Windows.Forms.Padding(4);
             this.panel2Problemas.Name = "panel2Problemas";
             this.panel2Problemas.Size = new System.Drawing.Size(472, 153);
-=======
             this.panel2Problemas.Location = new System.Drawing.Point(224, 134);
             this.panel2Problemas.Name = "panel2Problemas";
             this.panel2Problemas.Size = new System.Drawing.Size(501, 146);
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             this.panel2Problemas.TabIndex = 53;
             // 
             // panel4Fraccion2
@@ -707,29 +694,25 @@ namespace juego
             // MuestraProblemas
             // 
             this.MuestraProblemas.AutoSize = true;
-<<<<<<< HEAD
             this.MuestraProblemas.Font = new System.Drawing.Font("Dogica", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MuestraProblemas.Location = new System.Drawing.Point(158, 65);
             this.MuestraProblemas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
             this.MuestraProblemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MuestraProblemas.Location = new System.Drawing.Point(407, 43);
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             this.MuestraProblemas.Name = "MuestraProblemas";
             this.MuestraProblemas.Size = new System.Drawing.Size(60, 24);
             this.MuestraProblemas.TabIndex = 0;
             this.MuestraProblemas.Text = "label2";
             // 
-<<<<<<< HEAD
             // panel4
             // 
-            this.panel4.Controls.Add(this.NumPan1);
+           /* this.panel4.Controls.Add(this.NumPan1);
             this.panel4.Controls.Add(this.DenPan1);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(53, 36);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(73, 105);
-            this.panel4.TabIndex = 10;
+            this.panel4.TabIndex = 10;*/
             // 
             // NumPan1
             // 
@@ -749,8 +732,6 @@ namespace juego
             this.DenPan1.TabIndex = 2;
             this.DenPan1.Text = "DenPan1";
             // 
-=======
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             // label2
             // 
             this.label2.AutoSize = true;
@@ -760,16 +741,15 @@ namespace juego
             this.label2.TabIndex = 1;
             this.label2.Text = "________";
             // 
-<<<<<<< HEAD
             // panel3
             // 
-            this.panel3.Controls.Add(this.DenPan2);
+           /* this.panel3.Controls.Add(this.DenPan2);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.NumPan2);
             this.panel3.Location = new System.Drawing.Point(172, 36);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(73, 105);
-            this.panel3.TabIndex = 9;
+            this.panel3.TabIndex = 9;*/
             // 
             // DenPan2
             // 
@@ -780,8 +760,6 @@ namespace juego
             this.DenPan2.TabIndex = 5;
             this.DenPan2.Text = "label6";
             // 
-=======
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             // label5
             // 
             this.label5.AutoSize = true;
@@ -791,7 +769,6 @@ namespace juego
             this.label5.TabIndex = 4;
             this.label5.Text = "________";
             // 
-<<<<<<< HEAD
             // SeleccionNumDem
             // 
             this.SeleccionNumDem.BackColor = System.Drawing.Color.Transparent;
@@ -809,8 +786,6 @@ namespace juego
             this.SeleccionNumDem.Text = "⇵";
             this.SeleccionNumDem.UseVisualStyleBackColor = false;
             this.SeleccionNumDem.Click += new System.EventHandler(this.CambioDemNum_Click);
-=======
-<<<<<<< HEAD
             // NumPan2
             // 
             this.NumPan2.AutoSize = true;
@@ -819,7 +794,6 @@ namespace juego
             this.NumPan2.Size = new System.Drawing.Size(46, 17);
             this.NumPan2.TabIndex = 3;
             this.NumPan2.Text = "label4";
-=======
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
@@ -851,23 +825,22 @@ namespace juego
             this.button3.TabIndex = 41;
             this.button3.Text = "↓";
             this.button3.UseVisualStyleBackColor = false;
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
             // 
             // Planta
             // 
             this.Planta.Interval = 379800;
-            this.Planta.Tick += new System.EventHandler(this.Planta_Tick);
+            //this.Planta.Tick += new System.EventHandler(this.Planta_Tick);
             // 
             // Danny
             // 
             this.Danny.Interval = 214800;
-            this.Danny.Tick += new System.EventHandler(this.Danny_Tick);
+           // this.Danny.Tick += new System.EventHandler(this.Danny_Tick);
             // 
             // Witch
             // 
             this.Witch.Interval = 196800;
-            this.Witch.Tick += new System.EventHandler(this.Witch_Tick);
->>>>>>> a0bf7c616582ec548796979d2c9a8fb6e818893e
+            //this.Witch.Tick += new System.EventHandler(this.Witch_Tick);
+
             // 
             // Ventana_JefesES
             // 
@@ -879,7 +852,7 @@ namespace juego
             this.Name = "Ventana_JefesES";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventana_Jefes";
-            this.Load += new System.EventHandler(this.Ventana_JefesES_Load);
+            //this.Load += new System.EventHandler(this.Ventana_JefesES_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buuh)).EndInit();
@@ -956,7 +929,7 @@ namespace juego
         
         private System.Windows.Forms.Label labelSegundooperador;
         private System.Windows.Forms.Label labelPrimeroperador;
-<<<<<<< HEAD
+
         private System.Windows.Forms.Timer Boss1;
         private System.Windows.Forms.Timer Boss2;
         private System.Windows.Forms.Timer Boss3;
@@ -966,7 +939,7 @@ namespace juego
         public AxWMPLib.AxWindowsMediaPlayer plant;
         public AxWMPLib.AxWindowsMediaPlayer buuh;
         public AxWMPLib.AxWindowsMediaPlayer Bruja;
-=======
+
         private System.Windows.Forms.Panel panel4Fraccion2;
         private System.Windows.Forms.Label DenPan2;
         private System.Windows.Forms.Label NumPan2;
@@ -975,12 +948,12 @@ namespace juego
         private System.Windows.Forms.Label NumPan1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label DenPan1;
-<<<<<<< HEAD
+
         private System.Windows.Forms.Button SeleccionNumDem;
-=======
+
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
->>>>>>> 0d965249d83bda385565b12eb1c8fb3e8a777af6
->>>>>>> a0bf7c616582ec548796979d2c9a8fb6e818893e
+
+
     }
 }
