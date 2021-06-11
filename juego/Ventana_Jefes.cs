@@ -158,10 +158,12 @@ namespace juego
         {
             if (mateproblem.Fracciones == true)
             {
+
                 try
                 {
                     double res = double.Parse(textoRespuesta.Text);
-                    Cal_res(res);
+                    double denominador = double.Parse(TextboxRespuestaDenominador.Text);
+                    Cal_res(res, denominador);
                 }
                 catch (FormatException)
                 {
@@ -174,12 +176,10 @@ namespace juego
                 }
             }
             else {
-
                 try
                 {
                     double res = double.Parse(textoRespuesta.Text);
-                    double denominador = double.Parse(TextboxRespuestaDenominador.Text);
-                    Cal_res(res,denominador);
+                    Cal_res(res);
                 }
                 catch (FormatException)
                 {
