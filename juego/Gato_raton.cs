@@ -116,6 +116,11 @@ namespace juego
                 if (tablero[1] == "x" || tablero[1] == "o")
                 {
                     label1.Text = "EL GANADOR ES " + quiengana;
+                    CatWin.settings.volume = 15;
+                    CatM.Ctlcontrols.stop();
+                    FM_Cat.Stop();
+                    CatWin.URL = @"so\win.wav";
+                    FMW_Cat.Start();
                     gana = true;
                     desa();
                 }
