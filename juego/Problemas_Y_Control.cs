@@ -30,7 +30,7 @@ namespace juego
 
         }
 
-        private bool Fracciones;
+        public bool Fracciones;
         /*Recibe los objetos de */
         public void AdministradorElementos(byte contador, Panel PanelProblemas, TextBox Numerado, TextBox Denominador)
         {
@@ -204,6 +204,11 @@ namespace juego
                 PrimeraFrac.Visible = true;
                 segundofrac.Visible = true;
                 TerceraFrac.Visible = true;
+
+                
+
+
+                bool operacionsiguiente = false ;
                 //Numerador y denominador para la primera fracción
                 int numdem = Numeroazar();
                 int numNumerador = Numeroazar();
@@ -213,49 +218,120 @@ namespace juego
                 //Numerador y denominador para la tercera fracción
                 int numefrac3 = Numeroazar();
                 int denofrac3 = Numeroazar();
-                
-                int operacionhacer = Operacionazar();
 
+                int numefracr1=0,denfracr1=0;
+
+                numerador1.Text = numNumerador.ToString();
+                numerador2.Text = Numerador2frac.ToString();
+                denominador1.Text = numdem.ToString();
+                denominador2.Text = Denominador2frac.ToString();
+                numerador3.Text = numefrac3.ToString();
+                denominador3.Text = denofrac3.ToString();
                 //Primero hace la operación del denominador y luego la del numerador
 
                 for (byte i=0;i<2 ;i++) {
                     if (i == 0) {
                         if (operadores[i] > operadores[i + 1])
                         {
+                            operacionsiguiente = true;
                             switch (operadores[i])
                             {
                                 case 1:
                                     Validadordenominador(numdem,Denominador2frac,numNumerador,Numerador2frac,'+');
+                                    Operador1.Text = "+";
                                     break;
                                 case 2:
                                     Validadordenominador(numdem, Denominador2frac, numNumerador, Numerador2frac, '-');
+                                    Operador1.Text = "-";
+
                                     break;
                                 case 3:
                                     RespuestaDenominador = numdem * Denominador2frac;
                                     //Numerador
                                     RespuestaCorrecta = numNumerador * Numerador2frac;
+                                    Operador1.Text = "x";
+
                                     break;
                                 case 4:
+                                    RespuestaCorrecta = numNumerador * Denominador2frac;
+                                    RespuestaDenominador = numdem * Numerador2frac;
+
+                                    Operador1.Text = "÷";
                                     break;
 
                             }
+                            numefracr1 = (int)RespuestaCorrecta;
+                            denfracr1 = (int)RespuestaDenominador;
                         }
                         else {
+                            operacionsiguiente = false;
                             switch (operadores[i+1]) {
                                 case 1:
+                                    Validadordenominador(Denominador2frac,denofrac3 , Numerador2frac,numefrac3 , '+');
+                                    Operador2.Text = "+";
                                     break;
                                 case 2:
+                                    Validadordenominador(Denominador2frac, denofrac3, Numerador2frac, numefrac3, '-');
+                                    Operador2.Text = "-";
                                     break;
                                 case 3:
+                                    RespuestaDenominador = denofrac3 * Denominador2frac;
+                                    //Numerador
+                                    RespuestaCorrecta = numefrac3 * Numerador2frac;
+                                    Operador2.Text = "x";
                                     break;
                                 case 4:
+                                    RespuestaCorrecta = Numerador2frac * denofrac3;
+                                    RespuestaDenominador = Denominador2frac * numefrac3;
+                                    Operador2.Text = "÷";
+                                    break;
+                            }
+                            numefracr1 = (int)RespuestaCorrecta;
+                            denfracr1 = (int)RespuestaDenominador;
+                        }
+                    }
+                    else{
+                        if (operacionsiguiente==false) {
+                            switch (operadores[i-1]) {
+                                case 1:
+                                    if (numdem==denfracr1) {
+                                        RespuestaDenominador = numdem;
+                                        RespuestaCorrecta = (numNumerador+numefracr1);
+                                    }
+                                    else
+                                    {
+                                        RespuestaDenominador = (numdem * denfracr1);
+                                        RespuestaCorrecta = (numNumerador * denfracr1) + (numdem * numefracr1);
+                                    }
+                                    break;
+                                case 2:
+                                    if (numdem == denfracr1)
+                                    {
+                                        RespuestaDenominador = numdem;
+                                        RespuestaCorrecta = (numNumerador - numefracr1);
+                                    }
+                                    else
+                                    {
+                                        RespuestaDenominador = (numdem * denfracr1);
+                                        RespuestaCorrecta = (numNumerador * denfracr1) - (numdem * numefracr1);
+                                    }
+                                    break;
+                                case 3:
+                                    RespuestaCorrecta = (numNumerador*numefracr1);
+                                    RespuestaDenominador = numdem * denfracr1;
+                                    break;
+                                case 4:
+                                    RespuestaCorrecta = (numNumerador * denfracr1);
+                                    RespuestaDenominador = numdem * numefracr1;
                                     break;
                             }
                         }
                     }
+
                 }
                 
             }
+            
         }
 
         public void Animacionboton(Button botonImagen, Timer tiempoAnimacion) {

@@ -38,7 +38,12 @@ namespace juego
             this.BackgroundImage = Image.FromFile(direccionFondo);
             this.BackgroundImageLayout = ImageLayout.Stretch;
             problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel2, textoRespuesta, TextboxRespuestaDenominador);
-            problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            if (problemMatematicas.Fracciones==true)
+            {
+                problemMatematicas.GeneradorProblefracciones(NumPan1,DenPan1,NumPan2,DenPan2,NumPan3,DenPan3,panel3Fraccion1,panel5Fraccion2,panel4Fraccion5,MuestraProblemas,labelPrimeroperador,labelSegundooperador);
+            }
+            else { problemMatematicas.GeneradorProblemas(MuestraProblemas); }
+            
 
             
             imagenes.MuestraCorazones(corazones);
@@ -243,7 +248,12 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            if (problemMatematicas.Fracciones == true)
+            {
+                problemMatematicas.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan2, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion2, panel4Fraccion5, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+            }
+            else { problemMatematicas.GeneradorProblemas(MuestraProblemas); }
+            
 
 
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();

@@ -177,7 +177,11 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            mateproblem.GeneradorProblemas(MuestraProblemas);
+            if (mateproblem.Fracciones == true)
+            {
+                mateproblem.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan2, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion2, panel4Fraccion3, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+            }
+            else { mateproblem.GeneradorProblemas(MuestraProblemas); }
             textoRespuesta.Text = mateproblem.RespuestaCorrecta.ToString();
         }
 
@@ -238,7 +242,7 @@ namespace juego
             else {
                 BackColor = Color.White;
                 panel1.Visible=true;
-                BackgroundImage = Image.FromFile(@"Escenarios\image.20.png");
+                BackgroundImage = Image.FromFile(@"Escenarios\image20.png");
             }
         }
     }
