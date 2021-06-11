@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ahorcado));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -41,17 +42,28 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.mensajes = new System.Windows.Forms.Label();
+            this.fondis = new AxWMPLib.AxWindowsMediaPlayer();
+            this.time_over = new System.Windows.Forms.Timer(this.components);
+            this.Oveer = new AxWMPLib.AxWindowsMediaPlayer();
+            this.time_fondo = new System.Windows.Forms.Timer(this.components);
+            this.win = new AxWMPLib.AxWindowsMediaPlayer();
+            this.timer_win = new System.Windows.Forms.Timer(this.components);
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fondis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Oveer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.win)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Dogica", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(484, 418);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 37);
             this.textBox1.TabIndex = 2;
@@ -66,7 +78,7 @@
             this.pictureBox2.BackgroundImage = global::juego.Properties.Resources.marco;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(709, 64);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(341, 87);
             this.pictureBox2.TabIndex = 9;
@@ -82,7 +94,7 @@
             this.juganu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.juganu.Font = new System.Drawing.Font("Dogica", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.juganu.Location = new System.Drawing.Point(771, 395);
-            this.juganu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.juganu.Margin = new System.Windows.Forms.Padding(4);
             this.juganu.Name = "juganu";
             this.juganu.Size = new System.Drawing.Size(237, 107);
             this.juganu.TabIndex = 8;
@@ -99,7 +111,7 @@
             this.regre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regre.Font = new System.Drawing.Font("Dogica", 13F, System.Drawing.FontStyle.Bold);
             this.regre.Location = new System.Drawing.Point(771, 254);
-            this.regre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.regre.Margin = new System.Windows.Forms.Padding(4);
             this.regre.Name = "regre";
             this.regre.Size = new System.Drawing.Size(237, 107);
             this.regre.TabIndex = 7;
@@ -110,7 +122,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(129, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(560, 399);
             this.pictureBox1.TabIndex = 4;
@@ -125,7 +137,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Dogica", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(129, 418);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(239, 107);
             this.button1.TabIndex = 1;
@@ -138,7 +150,7 @@
             this.pictureBox3.BackgroundImage = global::juego.Properties.Resources.marco;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(709, 159);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(341, 87);
             this.pictureBox3.TabIndex = 10;
@@ -172,7 +184,7 @@
             this.pictureBox4.BackgroundImage = global::juego.Properties.Resources.marco;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(129, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(560, 75);
             this.pictureBox4.TabIndex = 13;
@@ -190,11 +202,68 @@
             this.mensajes.TabIndex = 14;
             this.mensajes.Click += new System.EventHandler(this.mensajes_Click);
             // 
+            // fondis
+            // 
+            this.fondis.Enabled = true;
+            this.fondis.Location = new System.Drawing.Point(0, 547);
+            this.fondis.Name = "fondis";
+            this.fondis.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("fondis.OcxState")));
+            this.fondis.Size = new System.Drawing.Size(22, 23);
+            this.fondis.TabIndex = 15;
+            // 
+            // time_over
+            // 
+            this.time_over.Interval = 35000;
+            this.time_over.Tick += new System.EventHandler(this.time_over_Tick);
+            // 
+            // Oveer
+            // 
+            this.Oveer.Enabled = true;
+            this.Oveer.Location = new System.Drawing.Point(28, 547);
+            this.Oveer.Name = "Oveer";
+            this.Oveer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Oveer.OcxState")));
+            this.Oveer.Size = new System.Drawing.Size(22, 23);
+            this.Oveer.TabIndex = 16;
+            // 
+            // time_fondo
+            // 
+            this.time_fondo.Interval = 142800;
+            this.time_fondo.Tick += new System.EventHandler(this.time_fondo_Tick);
+            // 
+            // win
+            // 
+            this.win.Enabled = true;
+            this.win.Location = new System.Drawing.Point(56, 547);
+            this.win.Name = "win";
+            this.win.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("win.OcxState")));
+            this.win.Size = new System.Drawing.Size(22, 23);
+            this.win.TabIndex = 17;
+            // 
+            // timer_win
+            // 
+            this.timer_win.Interval = 65000;
+            this.timer_win.Tick += new System.EventHandler(this.timer_win_Tick);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(936, 535);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(128, 56);
+            this.trackBar1.TabIndex = 18;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar1.Value = 15;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // ahorcado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 567);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.win);
+            this.Controls.Add(this.Oveer);
+            this.Controls.Add(this.fondis);
             this.Controls.Add(this.mensajes);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label3);
@@ -206,13 +275,18 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ahorcado";
             this.Text = "ahorcado";
+            this.Load += new System.EventHandler(this.ahorcado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fondis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Oveer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.win)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +305,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label mensajes;
+        private AxWMPLib.AxWindowsMediaPlayer fondis;
+        private System.Windows.Forms.Timer time_over;
+        private AxWMPLib.AxWindowsMediaPlayer Oveer;
+        private System.Windows.Forms.Timer time_fondo;
+        private AxWMPLib.AxWindowsMediaPlayer win;
+        private System.Windows.Forms.Timer timer_win;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }

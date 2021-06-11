@@ -13,8 +13,9 @@ namespace juego
 
         //private bool cambiosEcenario;
         private Personajes imagenes = new Personajes();
-        private string mensaje;
-        
+        public string mensaje;
+
+        public Font mifuente = new Font("Dogica", 13.0f, FontStyle.Regular);
         private string respaldopersonaje;
         
         Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
@@ -118,6 +119,7 @@ namespace juego
                 this.BackColor = Color.Black;
                 MessageBoxButtons botones = MessageBoxButtons.YesNo;
                 DialogResult respuesta;
+                
                 respuesta = MessageBox.Show("¿Quieres volver a jugar?", mensaje, botones);
                 if (respuesta == DialogResult.Yes)
                 {
@@ -398,6 +400,11 @@ namespace juego
         {
             problemMatematicas.botoncambioImagen.BackgroundImage = Image.FromFile(@"ima\image31.png");
             Animacionbotones.Stop();
+        }
+
+        private void VentanaJuego_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

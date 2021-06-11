@@ -3,11 +3,15 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Media;
 namespace juego
 {
     class Personajes
     {
-        
+        public string bruji = @"JefesIma\image3.png";
+        public string fantis = @"JefesIma\image13.png";
+        public string planti = @"JefesIma\image27.ng";
+        public string cangreji = @"JefesIma\image7.png";
         //Dirección del directorio actual
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
         public string direccionEse=@"Escenarios\image22.png";
@@ -93,7 +97,7 @@ namespace juego
                     
                     break;
                 case 6:
-                    direccionEse = @"Escenarios\image21";
+                    direccionEse = @"Escenarios\image21.png";
                     //Jefe fantasma con hoz
                     posicionJefe = 0;
                     

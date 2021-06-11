@@ -52,9 +52,11 @@
             this.botones = new System.Windows.Forms.Timer(this.components);
             this.CatWin = new AxWMPLib.AxWindowsMediaPlayer();
             this.FMW_Cat = new System.Windows.Forms.Timer(this.components);
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.CatM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatLose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatWin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -345,11 +347,23 @@
             this.FMW_Cat.Interval = 65000;
             this.FMW_Cat.Tick += new System.EventHandler(this.Win);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(1014, 716);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(141, 56);
+            this.trackBar1.TabIndex = 29;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar1.Value = 15;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // Gato_raton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 748);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.CatWin);
             this.Controls.Add(this.jugar_nuevo);
             this.Controls.Add(this.regresar);
@@ -375,6 +389,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CatM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatLose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatWin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,5 +419,6 @@
         private System.Windows.Forms.Timer botones;
         private AxWMPLib.AxWindowsMediaPlayer CatWin;
         private System.Windows.Forms.Timer FMW_Cat;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
