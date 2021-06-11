@@ -105,7 +105,7 @@ namespace juego
             this.panel1.Controls.Add(this.panel2Problemas);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1091, 637);
+            this.panel1.Size = new System.Drawing.Size(1081, 637);
             this.panel1.TabIndex = 47;
             // 
             // panelBotones
@@ -441,7 +441,7 @@ namespace juego
             // player
             // 
             this.player.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.player.Location = new System.Drawing.Point(154, 346);
+            this.player.Location = new System.Drawing.Point(144, 346);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(146, 139);
             this.player.TabIndex = 51;
@@ -451,7 +451,7 @@ namespace juego
             // 
             this.panel2Problemas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2Problemas.Controls.Add(this.MuestraProblemas);
-            this.panel2Problemas.Location = new System.Drawing.Point(323, 203);
+            this.panel2Problemas.Location = new System.Drawing.Point(318, 203);
             this.panel2Problemas.Name = "panel2Problemas";
             this.panel2Problemas.Size = new System.Drawing.Size(354, 124);
             this.panel2Problemas.TabIndex = 53;

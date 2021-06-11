@@ -12,6 +12,7 @@ namespace juego
         private static string DireccionImagenes = Directory.GetCurrentDirectory();
         public string direccionEse=@"Escenarios\image22.png";
         public byte posicionJefe,contadorvisibles;
+        public bool seccion3arriba;
         
         //Contador de los enemigos derrotados
         
@@ -92,6 +93,7 @@ namespace juego
                     
                     break;
                 case 6:
+                    direccionEse = @"Escenarios\image21";
                     //Jefe fantasma con hoz
                     posicionJefe = 0;
                     
@@ -99,6 +101,7 @@ namespace juego
                     
                     break;
                 case 9:
+                    direccionEse = @"Escenarios\image21";
                     //Jefe robot
                     posicionJefe = 9;
                     EnemiJefe.Image = Image.FromFile(ImagenesJefes[posicionJefe]);
@@ -115,16 +118,16 @@ namespace juego
         }
         public void MuestraCorazones(PictureBox[] corazones)
         {
-            for (byte i = 0; i <= CorazonesPlayer; i++)
+            for (byte i = 0; i < contadorvisibles; i++)
             {
                 corazones[i].Visible = true;
-                contadorvisibles++;
-            }   
+            }
+            
         }
-        public void GeneradorCorazones(PictureBox corazon1, PictureBox corazon2, PictureBox corazon3, PictureBox corazon4, PictureBox corazon5, PictureBox corazon6, Panel PanCora1)
+        public void GeneradorCorazones(PictureBox corazon1, PictureBox corazon2, PictureBox corazon3, PictureBox corazon4, PictureBox corazon5, PictureBox corazon6, Panel PanCora1,bool validador)
         {
 
-            if (CorazonesPlayer <= 3)
+            if (CorazonesPlayer <= 3 && seccion3arriba==true)
             {
                 
                 switch (CorazonesPlayer)
@@ -254,14 +257,19 @@ namespace juego
                         
                         corazon1.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode = PictureBoxSizeMode.Zoom;
+
                         corazon2.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon2.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon3.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon3.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon4.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon4.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon5.Image=Image.FromFile(@"ima\image6.png");
                         corazon5.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon6.Image=Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode=PictureBoxSizeMode.Zoom;
                         
@@ -272,14 +280,19 @@ namespace juego
                         
                         corazon1.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon1.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon2.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon2.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon3.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon3.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon4.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon4.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon5.Image=Image.FromFile(@"ima\imagegif2.gif");
                         corazon5.SizeMode=PictureBoxSizeMode.Zoom;
+
                         corazon6.Image=Image.FromFile(@"ima\image6.png");
                         corazon6.SizeMode=PictureBoxSizeMode.Zoom;
                         

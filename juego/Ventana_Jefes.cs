@@ -19,15 +19,19 @@ namespace juego
         private Problemas_Y_Control mateproblem = new Problemas_Y_Control();
         
 
-        public Ventana_JefesES(byte eleccionJefe,byte contacorazones)
+        public Ventana_JefesES(byte eleccionJefe,byte contacorazones,byte contadorvisibles,string direccionfondo)
         {
             imagenes.CorazonesPlayer = contacorazones;
             imagenes.Contadorenemigo = eleccionJefe;
+            imagenes.contadorvisibles = contadorvisibles;
+            imagenes.direccionEse = direccionfondo;
+            if (imagenes.contadorvisibles<=3) { imagenes.seccion3arriba = true; }
             InitializeComponent();
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
             this.BackgroundImageLayout = ImageLayout.Stretch;
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
+
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones,imagenes.seccion3arriba);
             imagenes.MuestraCorazones(corazones);
             
             mateproblem.AdministradorElementos(imagenes.Contadorenemigo,panel2,textoRespuesta,TextboxRespuestaDenominador);
@@ -50,8 +54,9 @@ namespace juego
                  * del enemigo                 
                  */
                 if (imagenes.Contadorenemigo!=10) {
-                    enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe]);
                     DerrotaJefe();
+                    enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe]);
+
                 }
                 else
                 {
@@ -154,8 +159,8 @@ namespace juego
         {
             if (respuestarecibida == mateproblem.RespuestaCorrecta)
             {
-                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe + 1]);
-
+                DerrotaJefe();
+                
                 enemi.SizeMode = PictureBoxSizeMode.Zoom;
                 imagenes.DañoEnemigo++;
                 timer1.Start();
@@ -163,8 +168,8 @@ namespace juego
             }
             else
             {
-                imagenes.CorazonesPlayer--;
-                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
+                imagenes.CorazonesPlayer-=2;
+                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones,imagenes.seccion3arriba);
 
                 player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -179,7 +184,7 @@ namespace juego
         private void BotonCura_Click(object sender, EventArgs e)
         {
             imagenes.CorazonesPlayer = 3;
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones,imagenes.seccion3arriba);
 
         }
 
@@ -189,17 +194,34 @@ namespace juego
             AnimacionBotones.Stop();
         }
         private void DerrotaJefe(){
-            if(imagenes.DañoEnemigo==2){
+            if (imagenes.DañoEnemigo == 2)
+            {
                 Transicionventana.Start();
-                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe+2]);
-                imagenes.CorazonesPlayer = imagenes.contadorvisibles++;
+                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe + 2]);
+                imagenes.contadorvisibles++;
+                imagenes.CorazonesPlayer = imagenes.contadorvisibles;
                 imagenes.Contadorenemigo++;
-                Cambioventana();
+                if (imagenes.Contadorenemigo == 10)
+                {
+                    panel1.Visible = false;
+                    BackgroundImage = null;
+                    BackColor = Color.Black;
+                    Transicionventana.Start();
+                    
+                }
+                else {
+                    Cambioventana();
+                }
+                
+            }
+            else {
+                enemi.Image = Image.FromFile(imagenes.ImagenesJefes[imagenes.posicionJefe + 1]);
             }
         }
         private void Cambioventana()
         {
             panel1.Visible = false;
+            imagenes.direccionEse = @"Escenarios\image21.png";
             this.BackgroundImage = null;
             this.BackColor = Color.Black;
 
@@ -208,10 +230,17 @@ namespace juego
         private void CambioVen_Tick(object sender, EventArgs e)
         {
             Transicionventana.Stop();
-            
-            VentanaJuego enemigo = new VentanaJuego(imagenes.CorazonesPlayer,imagenes.Contadorenemigo);
-            enemigo.Show();
-            this.Hide();
+            if (imagenes.Contadorenemigo!=10) {
+                VentanaJuego enemigo = new VentanaJuego(imagenes.CorazonesPlayer, imagenes.Contadorenemigo, imagenes.contadorvisibles, imagenes.direccionEse);
+                enemigo.Show();
+                this.Hide();
+            }
+            else {
+                BackColor = Color.White;
+                panel1.Visible=true;
+                BackgroundImage = Image.FromFile(@"Escenarios\image.20.png");
+            }
         }
     }
 }
+//

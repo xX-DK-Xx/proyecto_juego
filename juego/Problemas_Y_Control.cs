@@ -32,6 +32,10 @@ namespace juego
         {
             if (contador > 5) {
                 Fracciones = true;
+                Denominador.Visible = true;
+                Numerado.Location = new Point(132,8);
+                PanelProblemas.Controls.Add(Numerado);
+                
             }
             else
             {
@@ -55,13 +59,17 @@ namespace juego
             //Determina si la operación generada sera de fracciones o no
             if (Fracciones == true)
             {
+                int numoperacion = azar.Next(1,2);
+                if (numoperacion==1) {
+                    
+                }
             }
             else {
                 //Genera el núemero de operaciones que se harán
                 int numeroOperaciones = Operacionazar();
                 if (numeroOperaciones==1) {
-                    int num1 = Numeroazar();
-                    int num2 = Numeroazar();
+                    double num1 = Numeroazar();
+                    double num2 = Numeroazar();
                     int operadornum = Operacionazar();
                     switch (operadornum)
                     {
@@ -112,33 +120,34 @@ namespace juego
                                         
                             }
                         }
-                        int numero3 = Numeroazar();
+                        double numero3 = Numeroazar();
                         switch (Operacionazar()) {
                             case 1:
                                 RespuestaCorrecta += numero3;
-                                problemagenerado = "(" + numero3 + "+" + problemagenerado + ")";
+                                problemagenerado = "(" + problemagenerado  + "+" + numero3 + ")";
                                 break;
                             case 2:
                                 RespuestaCorrecta -= numero3;
-                                problemagenerado = "(" + numero3 + "-" + problemagenerado + ")";
+                                problemagenerado = "(" + problemagenerado  + "-" + numero3 + ")";
                                 break;
                             case 3:
                                 RespuestaCorrecta *= numero3;
-                                problemagenerado = "(" + numero3 + "x" + problemagenerado + ")";
+                                problemagenerado = "(" + problemagenerado  + "x" + numero3 + ")";
                                 break;
                             case 4:
                                 RespuestaCorrecta /= numero3;
-                                problemagenerado = "(" + numero3 + "➗" + problemagenerado + ")";
+                                problemagenerado = "(" + problemagenerado  + "➗" + numero3 + ")";
                                 break;
                         }
                     }
-                    RespuestaCorrecta=Math.Round(RespuestaCorrecta,2);
+                    
+                    RespuestaCorrecta=Math.Round(RespuestaCorrecta,3,MidpointRounding.AwayFromZero);
                 }
             }
             Problema.Text = problemagenerado;
 
         }
-        //optiene los números de la operación generada
+       
      
         public void Animacionboton(Button botonImagen, Timer tiempoAnimacion) {
             botonImagen.BackgroundImage = Image.FromFile(@"ima\image19.png");

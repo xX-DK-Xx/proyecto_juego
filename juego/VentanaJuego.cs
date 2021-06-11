@@ -23,23 +23,26 @@ namespace juego
         
         Problemas_Y_Control problemMatematicas = new Problemas_Y_Control();
         private PictureBox[] corazones;
-        public VentanaJuego(byte corazonesinicio,byte contadorenemis)
+        public VentanaJuego(byte corazonesinicio,byte contadorenemis,byte contadorvisibles,string direccionFondo)
         {
             InitializeComponent();
             //Inicio del juego
+            imagenes.contadorvisibles = contadorvisibles;
             imagenes.CorazonesPlayer = corazonesinicio;
             imagenes.Contadorenemigo = contadorenemis;
+            imagenes.direccionEse = direccionFondo;
+            if (imagenes.contadorvisibles<=3) { imagenes.seccion3arriba = true; }
             corazones = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6 };
             Musica.settings.volume = 15;
             Musica.URL = @"so\loss.wav";
-            this.BackgroundImage = Image.FromFile(imagenes.direccionEse);
+            this.BackgroundImage = Image.FromFile(direccionFondo);
             this.BackgroundImageLayout = ImageLayout.Stretch;
             problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel2, textoRespuesta, TextboxRespuestaDenominador);
             problemMatematicas.GeneradorProblemas(MuestraProblemas);
 
             
             imagenes.MuestraCorazones(corazones);
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,imagenes.seccion3arriba);
             //HP();
 
             player.Image = Image.FromFile(imagenes.Archivosimagenes[0]);
@@ -81,13 +84,13 @@ namespace juego
             timer1.Stop();
 
             //Llamamiento de los jefes
-            if (imagenes.Contadorenemigo% 3 == 0 && imagenes.Contadorenemigo!= 0 || imagenes.Contadorenemigo== 10)
+            if (imagenes.Contadorenemigo% 3 == 0 && imagenes.Contadorenemigo!= 0)
             {
                 Musica.Ctlcontrols.stop();
                 time_music.Stop();
                 OverM.Ctlcontrols.stop();
                 MF2.Stop();
-                Ventana_JefesES clasjefes = new Ventana_JefesES(imagenes.Contadorenemigo,imagenes.CorazonesPlayer);
+                Ventana_JefesES clasjefes = new Ventana_JefesES(imagenes.Contadorenemigo,imagenes.CorazonesPlayer,imagenes.contadorvisibles,imagenes.direccionEse);
                 this.Hide();
                 clasjefes.Show();
             }
@@ -117,7 +120,7 @@ namespace juego
                     panelBotones.Visible = true;
                     panel1.Visible = true;
                     imagenes.CorazonesPlayer = 3;
-                    imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
+                    imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones,imagenes.seccion3arriba);
                     this.BackColor = Color.White;
                 }
                 else
@@ -230,7 +233,7 @@ namespace juego
             else
             {
                 imagenes.CorazonesPlayer--;
-                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
+                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones,imagenes.seccion3arriba);
                 //HP();
                 player.Image = Image.FromFile(@"ima\image2.png");
                 player.SizeMode = PictureBoxSizeMode.Zoom;
@@ -253,7 +256,7 @@ namespace juego
             SoundPlayer hp = new SoundPlayer(@"so\up0.wav");
             hp.Play();
             imagenes.CorazonesPlayer = 3;
-            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones);
+            imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones,imagenes.seccion3arriba);
             
         }
 

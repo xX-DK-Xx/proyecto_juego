@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+
 using System.Drawing;
-using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
@@ -29,7 +26,7 @@ namespace juego
         private void botonImprimir_Click(object sender, EventArgs e)
         {
            
-            VentanaJuego Juego = new VentanaJuego(3,0);
+            VentanaJuego Juego = new VentanaJuego(3,0,3,@"Escenarios\image22.png");
             Menu.Ctlcontrols.stop();
             time_bu.Stop();
             this.Hide();
