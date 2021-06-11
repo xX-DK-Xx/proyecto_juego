@@ -1,7 +1,5 @@
 ﻿using System;
-
 using System.Drawing;
-
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
@@ -10,8 +8,6 @@ namespace juego
 {
     public partial class VentanaJuego : Form
     {
-
-
         private bool CambioImagen;//Determina que personaje cambiara de imagen para poder 
         //volver a la normalidads
 
@@ -28,6 +24,7 @@ namespace juego
         {
             InitializeComponent();
             //Inicio del juego
+            panel2Problemas.BackColor = Color.FromArgb(150,166,166,166);
             imagenes.contadorvisibles = contadorvisibles;
             imagenes.CorazonesPlayer = corazonesinicio;
             imagenes.Contadorenemigo = contadorenemis;
@@ -39,9 +36,21 @@ namespace juego
             this.BackgroundImage = Image.FromFile(direccionFondo);
             this.BackgroundImageLayout = ImageLayout.Stretch;
             problemMatematicas.AdministradorElementos(imagenes.Contadorenemigo, panel2, textoRespuesta, TextboxRespuestaDenominador);
-            problemMatematicas.GeneradorProblemas(MuestraProblemas);
 
-            
+            if (problemMatematicas.Fracciones==true)
+            {
+                problemMatematicas.GeneradorProblefracciones(NumPan1,DenPan1,NumPan2,DenPan1,NumPan3,DenPan3,panel3Fraccion1, panel4Fraccion5, panel5Fraccion3,MuestraProblemas,labelPrimeroperador,labelSegundooperador);
+                textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
+                TextboxRespuestaDenominador.Text = problemMatematicas.RespuestaDenominador.ToString();
+            }
+            else {
+                
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false;
+                problemMatematicas.GeneradorProblemas(MuestraProblemas);
+                textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
+            }
+                        
             imagenes.MuestraCorazones(corazones);
             imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,PanelCorazones,imagenes.seccion3arriba);
             //HP();
@@ -53,7 +62,7 @@ namespace juego
             enemi.Image = Image.FromFile(respaldopersonaje);
             enemi.SizeMode = PictureBoxSizeMode.Zoom;
 
-            textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
+            
             time_music.Start();
         }
        
@@ -201,23 +210,49 @@ namespace juego
 
         private void BotonenviarRespuesta_Click(object sender, EventArgs e)
         {
-            try
-            {
-                double res = double.Parse(textoRespuesta.Text);
-                cal_res(res);
+            if (problemMatematicas.Fracciones == true) {
+                try
+                {
+                    double res = double.Parse(textoRespuesta.Text);
+                    double denominador = double.Parse(TextboxRespuestaDenominador.Text);
+                    cal_res(res,denominador);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Introduciste una cantidad no aceptada");
+                    textoRespuesta.Text = "";
+                }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Ingresa un número correcto");
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                    textoRespuesta.Text = "";
+                }
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Introduciste una cantidad no aceptada");
-                textoRespuesta.Text = "";
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Ingresa un número correcto");
-            }
-            catch (OverflowException) {
-                MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
-                textoRespuesta.Text = "";
+                try
+                {
+                    double res = double.Parse(textoRespuesta.Text);
+                    cal_res(res);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Introduciste una cantidad no aceptada");
+                    textoRespuesta.Text = "";
+                }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Ingresa un número correcto");
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("La cantidad que introduciste es muuuyyy grande\nVuelve a ingresar otra cantidad");
+                    textoRespuesta.Text = "";
+                }
             }
         }
         private void cal_res(double respuestarecibida)
@@ -245,10 +280,61 @@ namespace juego
                 timer1.Start();
             }
             textoRespuesta.Text = "";
-            problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            if (problemMatematicas.Fracciones == true)
+            {
+                problemMatematicas.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan1, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion3, panel4Fraccion5, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+            }
+            else {
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false; 
+                problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            }
+            
 
 
             textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
+        }
+
+        private void cal_res(double respuestarecibida,double resupetadenominador)
+        {
+            if (respuestarecibida == problemMatematicas.RespuestaCorrecta)
+            {
+                enemi.Image = Image.FromFile(imagenes.Archivosimagenes[imagenes.Enemigo + 1]);
+                enemi.SizeMode = PictureBoxSizeMode.Zoom;
+                CambioImagen = true;
+                imagenes.Contadorenemigo++;
+                SoundPlayer sd = new SoundPlayer(@"so\exp1.wav");
+                sd.Play();
+                timer1.Start();
+            }
+            else
+            {
+                imagenes.CorazonesPlayer--;
+                imagenes.GeneradorCorazones(pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, PanelCorazones, imagenes.seccion3arriba);
+                //HP();
+                player.Image = Image.FromFile(@"ima\image2.png");
+                player.SizeMode = PictureBoxSizeMode.Zoom;
+                CambioImagen = false;
+                SoundPlayer sd1 = new SoundPlayer(@"so\hit2.wav");
+                sd1.Play();
+                timer1.Start();
+            }
+            textoRespuesta.Text = "";
+            if (problemMatematicas.Fracciones == true)
+            {
+                problemMatematicas.GeneradorProblefracciones(NumPan1, DenPan1, NumPan2, DenPan1, NumPan3, DenPan3, panel3Fraccion1, panel5Fraccion3, panel4Fraccion5, MuestraProblemas, labelPrimeroperador, labelSegundooperador);
+            }
+            else
+            {
+                labelPrimeroperador.Visible = false;
+                labelSegundooperador.Visible = false;
+                problemMatematicas.GeneradorProblemas(MuestraProblemas);
+            }
+
+
+
+            textoRespuesta.Text = problemMatematicas.RespuestaCorrecta.ToString();
+            TextboxRespuestaDenominador.Text = problemMatematicas.RespuestaDenominador.ToString();
         }
 
         private void BotonCura_Click(object sender, EventArgs e)
