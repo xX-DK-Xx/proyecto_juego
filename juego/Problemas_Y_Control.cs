@@ -231,6 +231,9 @@ namespace juego
                                     Validadordenominador(numdem, Denominador2frac, numNumerador, Numerador2frac, '-');
                                     break;
                                 case 3:
+                                    RespuestaDenominador = numdem * Denominador2frac;
+                                    //Numerador
+                                    RespuestaCorrecta = numNumerador * Numerador2frac;
                                     break;
                                 case 4:
                                     break;
