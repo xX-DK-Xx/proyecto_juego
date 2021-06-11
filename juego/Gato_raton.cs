@@ -69,7 +69,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (tablero[3] == tablero[4] && tablero[3] == tablero[5])
+             if (tablero[3] == tablero[4] && tablero[3] == tablero[5])
             {
                 if (tablero[3] == "x" || tablero[4] == "o")
                 {
@@ -83,7 +83,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (tablero[6] == tablero[7] && tablero[6] == tablero[8])
+             if (tablero[6] == tablero[7] && tablero[6] == tablero[8])
             {
                 if (tablero[6] == "x" || tablero[6] == "o")
                 {
@@ -97,7 +97,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (tablero[0] == tablero[3] && tablero[0] == tablero[6])
+             if (tablero[0] == tablero[3] && tablero[0] == tablero[6])
             {
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
@@ -111,7 +111,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (tablero[1] == tablero[4] && tablero[1] == tablero[7])
+             if (tablero[1] == tablero[4] && tablero[1] == tablero[7])
             {
                 if (tablero[1] == "x" || tablero[1] == "o")
                 {
@@ -125,7 +125,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (tablero[2] == tablero[5] && tablero[2] == tablero[8])
+             if (tablero[2] == tablero[5] && tablero[2] == tablero[8])
             {
                 if (tablero[2] == "x" || tablero[2] == "o")
                 {
@@ -139,7 +139,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (tablero[0] == tablero[4] && tablero[0] == tablero[8])
+             if (tablero[0] == tablero[4] && tablero[0] == tablero[8])
             {
                 if (tablero[0] == "x" || tablero[0] == "o")
                 {
@@ -153,7 +153,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (tablero[2] == tablero[4] && tablero[2] == tablero[6])
+             if (tablero[2] == tablero[4] && tablero[2] == tablero[6])
             {
                 if (tablero[2] == "x" || tablero[2] == "o")
                 {
@@ -167,7 +167,7 @@ namespace juego
                     desa();
                 }
             }
-            else if (con == 9)
+            if (con == 9)
             {
                 label1.Text = "ES UN EMPATE";
                 CatLose.settings.volume = 15;
